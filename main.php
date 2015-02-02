@@ -7,16 +7,14 @@ use Comja\Services\Translator;
 
 // 翻訳データ読み込み
 
-print '翻訳開始…';
+print '翻訳開始…'.PHP_EOL;
 
 $translationRepo = new TranslationRepo();
 $translations = $translationRepo->get();
 
-var_dump($translations); die();
-
 // 翻訳
 
 $translator = new Translator;
-$translator->trans($translations);
+$translator->trans( $translations );
 
-print '翻訳終了';
+print '翻訳終了'.PHP_EOL;
