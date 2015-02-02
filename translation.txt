@@ -1,0 +1,460 @@
+読み込み:app/Console/Commands/Inspire.php
+The console command name.	コンソールコマンド名
+The console command description.	コンソールコマンドの説明
+Execute the console command.	コンソールコマンドのジック
+
+読み込み:app/Console/Kernel.php
+The Artisan commands provided by your application.	アプリケーションで提供するArtisanコマンド
+Define the application's command schedule.	アプリケーションのコマンド実行スケジュール定義
+
+読み込み:app/Exceptions/Handler.php
+A list of the exception types that should not be reported.	レポートしない例外タイプのリスト
+Report or log an exception.	例外をレポート、もしくはログ
+This is a great spot to send exceptions to Sentry, Bugsnag, etc.	ここはSentryやBugsnagなどに例外を送るために良い場所
+Render an exception into an HTTP response.	HTTPレスポンスに設置する例外をレンダー
+
+読み込み:app/Http/Controllers/Auth/AuthController.php
+Registration & Login Controller	登録／ログインコントローラー
+This controller handles the registration of new users, as well as the	このコントローラハンドラーは新ユーザーを登録し、同時に既存の
+authentication of existing users. By default, this controller uses	ユーザーを認証します。デフォルトでこのコントローラーは振る舞いを
+a simple trait to add these behaviors. Why don't you explore it?	追加するためにシンプルなトレイトを使用します。試してみませんか？
+Create a new authentication controller instance.	新しい認証コントローラインスタンスの生成
+
+読み込み:app/Http/Controllers/Auth/PasswordController.php
+Password Reset Controller	パスワードリセットコントローラー
+This controller is responsible for handling password reset requests	このコントローラーはパスワードリセットリクエストの処理に責任を持ち、その
+and uses a simple trait to include this behavior. You're free to	振る舞いを取り込むために、シンプルなトレイトを使用しています。望み通りに
+explore this trait and override any methods you wish to tweak.	調整するため、このトレイトを使い、メソッドをオーバーライドしてください。
+Create a new password controller instance.	新しいパスワードコントローラーインスタンスの生成
+
+読み込み:app/Http/Controllers/HomeController.php
+Home Controller	ホームコントローラー
+This controller renders your application's "dashboard" for users that	このコントローラーは認証済みのユーザーのアプリケーション
+are authenticated. Of course, you are free to change or remove the	「ダッシュボード」をレンダーします。もちろん、希望に合わせ
+controller as you wish. It is just here to get your app started!	コントローラーを変更したり削除したりしてください。ここからappがスタートします！
+Create a new controller instance.	新しいコントローラーインスタンスの生成
+Show the application dashboard to the user.	アプリケーションのダッシュボードをユーザーへ表示
+
+読み込み:app/Http/Controllers/WelcomeController.php
+Welcome Controller
+This controller renders the "marketing page" for the application and
+is configured to only allow guests. Like most of the other sample
+controllers, you are free to modify or remove it as you desire.
+Create a new controller instance.
+Show the application welcome screen to the user.
+
+読み込み:app/Http/Kernel.php
+The application's global HTTP middleware stack.
+The application's route middleware.
+
+読み込み:app/Http/Middleware/Authenticate.php
+The Guard implementation.
+Create a new filter instance.
+Handle an incoming request.
+
+読み込み:app/Http/Middleware/RedirectIfAuthenticated.php
+The Guard implementation.
+Create a new filter instance.
+Handle an incoming request.
+
+読み込み:app/Http/Middleware/VerifyCsrfToken.php
+Handle an incoming request.
+
+読み込み:app/Http/routes.php
+Application Routes
+Here is where you can register all of the routes for an application.
+It's a breeze. Simply tell Laravel the URIs it should respond to
+and give it the controller to call when that URI is requested.
+
+読み込み:app/Providers/AppServiceProvider.php
+Bootstrap any application services.
+Register any application services.
+This service provider is a great spot to register your various container
+bindings with the application. As you can see, we are registering our
+"Registrar" implementation here. You can add your own bindings too!
+
+読み込み:app/Providers/BusServiceProvider.php
+Registration & Login Controller
+Register any application services.
+
+読み込み:app/Providers/ConfigServiceProvider.php
+Registration & Login Controller
+This service provider is intended to provide a convenient location for you
+to overwrite any "vendor" or package configuration that you may want to
+modify before the application handles the incoming request / command.
+
+読み込み:app/Providers/EventServiceProvider.php
+The event handler mappings for the application.
+Register any other events for your application.
+
+読み込み:app/Providers/RouteServiceProvider.php
+This namespace is applied to the controller routes in your routes file.
+In addition, it is set as the URL generator's root namespace.
+Define your route model bindings, pattern filters, etc.
+Define the routes for the application.
+
+読み込み:app/Services/Registrar.php
+Get a validator for an incoming registration request.
+Create a new user instance after a valid registration.
+
+読み込み:app/User.php
+Get a validator for an incoming registration request.
+The attributes that are mass assignable.
+The attributes excluded from the model's JSON form.
+
+読み込み:bootstrap/app.php
+Get a validator for an incoming registration request.
+The first thing we will do is create a new Laravel application instance
+which serves as the "glue" for all the components of Laravel, and is
+the IoC container for the system binding all of the various parts.
+Get a validator for an incoming registration request.
+Next, we need to bind some important interfaces into the container so
+we will be able to resolve them when needed. The kernels serve the
+incoming requests to this application from both the web and CLI.
+Return The Application
+This script returns the application instance. The instance is given to
+the calling script so we can separate the building of the instances
+from the actual running of the application and sending responses.
+
+読み込み:bootstrap/autoload.php
+Register The Composer Auto Loader
+Composer provides a convenient, automatically generated class loader
+for our application. We just need to utilize it! We'll require it
+into the script here so that we do not have to worry about the
+loading of any our classes "manually". Feels great to relax.
+Include The Compiled Class File
+To dramatically increase your application's performance, you may use a
+compiled class file which contains all of the classes commonly used
+by a request. The Artisan "optimize" is used to create this file.
+
+読み込み:config/app.php
+Application Debug Mode
+When your application is in debug mode, detailed error messages with
+stack traces will be shown on every error that occurs within your
+application. If disabled, a simple generic error page is shown.
+Application URL
+This URL is used by the console to properly generate URLs when using
+the Artisan command line tool. You should set this to the root of
+your application so that it is used when running Artisan tasks.
+Application Timezone
+Here you may specify the default timezone for your application, which
+will be used by the PHP date and date-time functions. We have gone
+ahead and set this to a sensible default for you out of the box.
+Application Locale Configuration
+The application locale determines the default locale that will be used
+by the translation service provider. You are free to set this value
+to any of the locales which will be supported by the application.
+Application Fallback Locale
+The fallback locale determines the locale to use when the current one
+is not available. You may change the value to correspond to any of
+the language folders that are provided through your application.
+Encryption Key
+This key is used by the Illuminate encrypter service and should be set
+to a random, 32 character string, otherwise these encrypted strings
+will not be safe. Please do this before deploying an application!
+Logging Configuration
+Here you may configure the log settings for your application. Out of
+the box, Laravel uses the Monolog PHP logging library. This gives
+you a variety of powerful log handlers / formatters to utilize.
+Available Settings: "single", "daily", "syslog"
+Autoloaded Service Providers
+The service providers listed here will be automatically loaded on the
+request to your application. Feel free to add your own services to
+this array to grant expanded functionality to your applications.
+Laravel Framework Service Providers...
+Application Service Providers...
+Class Aliases
+This array of class aliases will be registered when this application
+is started. However, feel free to register as many as you wish as
+the aliases are "lazy" loaded so they don't hinder performance.
+
+読み込み:config/auth.php
+Default Authentication Driver
+This option controls the authentication driver that will be utilized.
+This driver manages the retrieval and authentication of the users
+attempting to get access to protected areas of your application.
+Authentication Model
+When using the "Eloquent" authentication driver, we need to know which
+Eloquent model should be used to retrieve your users. Of course, it
+is often just the "User" model but you may use whatever you like.
+Authentication Table
+When using the "Database" authentication driver, we need to know which
+table should be used to retrieve your users. We have chosen a basic
+default value but you may easily change it to any table you like.
+Password Reset Settings
+Here you may set the options for resetting passwords including the view
+that is your password reset e-mail. You can also set the name of the
+table that maintains all of the reset tokens for your application.
+The expire time is the number of minutes that the reset token should be
+considered valid. This security feature keeps tokens short-lived so
+they have less time to be guessed. You may change this as needed.
+
+読み込み:config/cache.php
+Default Cache Store
+This option controls the default cache connection that gets used while
+using this caching library. This connection is used when another is
+not explicitly specified when executing a given caching function.
+Cache Stores
+Here you may define all of the cache "stores" for your application as
+well as their drivers. You may even define multiple stores for the
+same cache driver to group types of items stored in your caches.
+Cache Key Prefix
+When utilizing a RAM based store such as APC or Memcached, there might
+be other applications utilizing the same cache. So, we'll specify a
+value to get prefixed to all our keys so we can avoid collisions.
+
+読み込み:config/compile.php
+Additional Compiled Classes
+Here you may specify additional classes to include in the compiled file
+generated by the `artisan optimize` command. These should be classes
+that are included on basically every request into the application.
+Compiled File Providers
+Here you may list service providers which define a "compiles" function
+that returns additional files that should be compiled, providing an
+easy way to get common files from any packages you are utilizing.
+
+読み込み:config/database.php
+PDO Fetch Style
+By default, database results will be returned as instances of the PHP
+stdClass object; however, you may desire to retrieve records in an
+array format for simplicity. Here you can tweak the fetch style.
+Default Database Connection Name
+Here you may specify which of the database connections below you wish
+to use as your default connection for all database work. Of course
+you may use many connections at once using the Database library.
+Database Connections
+Here are each of the database connections setup for your application.
+Of course, examples of configuring each database platform that is
+supported by Laravel is shown below to make development simple.
+All database work in Laravel is done through the PHP PDO facilities
+so make sure you have the driver for your particular database of
+choice installed on your machine before you begin development.
+Migration Repository Table
+This table keeps track of all the migrations that have already run for
+your application. Using this information, we can determine which of
+the migrations on disk haven't actually been run in the database.
+Redis Databases
+Redis is an open source, fast, and advanced key-value store that also
+provides a richer set of commands than a typical key-value systems
+such as APC or Memcached. Laravel makes it easy to dig right in.
+
+読み込み:config/filesystems.php
+Default Filesystem Disk
+Here you may specify the default filesystem disk that should be used
+by the framework. A "local" driver, as well as a variety of cloud
+based drivers are available for your choosing. Just store away!
+Supported: "local", "s3", "rackspace"
+Default Cloud Filesystem Disk
+Many applications store files both locally and in the cloud. For this
+reason, you may specify a default "cloud" driver here. This driver
+will be bound as the Cloud disk implementation in the container.
+Filesystem Disks
+Here you may configure as many filesystem "disks" as you wish, and you
+may even configure multiple disks of the same driver. Defaults have
+been setup for each driver as an example of the required options.
+
+読み込み:config/mail.php
+Mail Driver
+Laravel supports both SMTP and PHP's "mail" function as drivers for the
+sending of e-mail. You may specify which one you're using throughout
+your application here. By default, Laravel is setup for SMTP mail.
+Supported: "smtp", "mail", "sendmail", "mailgun", "mandrill", "log"
+SMTP Host Address
+Here you may provide the host address of the SMTP server used by your
+applications. A default option is provided that is compatible with
+the Mailgun mail service which will provide reliable deliveries.
+SMTP Host Port
+This is the SMTP port used by your application to deliver e-mails to
+users of the application. Like the host we have set this value to
+stay compatible with the Mailgun e-mail application by default.
+Global "From" Address
+You may wish for all e-mails sent by your application to be sent from
+the same address. Here, you may specify a name and address that is
+used globally for all e-mails that are sent by your application.
+E-Mail Encryption Protocol
+Here you may specify the encryption protocol that should be used when
+the application send e-mail messages. A sensible default using the
+transport layer security protocol should provide great security.
+SMTP Server Username
+If your SMTP server requires a username for authentication, you should
+set it here. This will get used to authenticate with your server on
+connection. You may also set the "password" value below this one.
+SMTP Server Password
+Here you may set the password required by your SMTP server to send out
+messages from your application. This will be given to the server on
+connection so that the application will be able to send messages.
+Sendmail System Path
+When using the "sendmail" driver to send e-mails, we will need to know
+the path to where Sendmail lives on this server. A default path has
+been provided here, which will work well on most of your systems.
+Mail "Pretend"
+When this option is enabled, e-mail will not actually be sent over the
+web and will instead be written to your application's logs files so
+you may inspect the message. This is great for local development.
+
+読み込み:config/queue.php
+Default Queue Driver
+The Laravel queue API supports a variety of back-ends via an unified
+API, giving you convenient access to each back-end using the same
+syntax for each one. Here you may set the default queue driver.
+Supported: "null", "sync", "database", "beanstalkd",
+"sqs", "iron", "redis"
+Queue Connections
+Here you may configure the connection information for each server that
+is used by your application. A default configuration has been added
+for each back-end shipped with Laravel. You are free to add more.
+Failed Queue Jobs
+These options configure the behavior of failed queue job logging so you
+can control which database and table are used to store the jobs that
+have failed. You may change them to any database / table you wish.
+
+読み込み:config/services.php
+Third Party Services
+This file is for storing the credentials for third party services such
+as Stripe, Mailgun, Mandrill, and others. This file provides a sane
+default location for this type of information, allowing packages
+to have a conventional place to find your various credentials.
+
+読み込み:config/session.php
+Default Session Driver
+This option controls the default session "driver" that will be used on
+requests. By default, we will use the lightweight native driver but
+you may specify any of the other wonderful drivers provided here.
+Supported: "file", "cookie", "database", "apc",
+"memcached", "redis", "array"
+Session Lifetime
+Here you may specify the number of minutes that you wish the session
+to be allowed to remain idle before it expires. If you want them
+to immediately expire on the browser closing, set that option.
+Session Encryption
+This option allows you to easily specify that all of your session data
+hould be encrypted before it is stored. All encryption will be run
+automatically by Laravel and you can use the Session like normal.
+Session File Location
+When using the native session driver, we need a location where session
+files may be stored. A default has been set for you but a different
+location may be specified. This is only needed for file sessions.
+Session Database Connection
+When using the "database" or "redis" session drivers, you may specify a
+connection that should be used to manage these sessions. This should
+correspond to a connection in your database configuration options.
+Session Database Table
+When using the "database" session driver, you may specify the table we
+should use to manage the sessions. Of course, a sensible default is
+provided for you; however, you are free to change this as needed.
+Session Sweeping Lottery
+Some session drivers must manually sweep their storage location to get
+rid of old sessions from storage. Here are the chances that it will
+happen on a given request. By default, the odds are 2 out of 100.
+Session Cookie Name
+Here you may change the name of the cookie used to identify a session
+instance by ID. The name specified here will get used every time a
+new session cookie is created by the framework for every driver.
+Session Cookie Path
+The session cookie path determines the path for which the cookie will
+be regarded as available. Typically, this will be the root path of
+your application but you are free to change this when necessary.
+Session Cookie Domain
+Here you may change the domain of the cookie used to identify a session
+in your application. This will determine which domains the cookie is
+available to in your application. A sensible default has been set.
+HTTPS Only Cookies
+By setting this option to true, session cookies will only be sent back
+to the server if the browser has a HTTPS connection. This will keep
+the cookie from being sent to you if it can not be done securely.
+
+読み込み:config/view.php
+View Storage Paths
+Most templating systems load templates from disk. Here you may specify
+an array of paths that should be checked for your views. Of course
+the usual Laravel view path has already been registered for you.
+Compiled View Path
+This option determines where all the compiled Blade templates will be
+stored for your application. Typically, this is within the storage
+directory. However, as usual, you are free to change this value.
+
+読み込み:database/migrations/2014_10_12_000000_create_users_table.php
+Run the migrations.
+Reverse the migrations.
+
+読み込み:database/migrations/2014_10_12_100000_create_password_resets_table.php
+Run the migrations.
+Reverse the migrations.
+
+読み込み:database/seeds/DatabaseSeeder.php
+Run the database seeds.
+
+読み込み:public/index.php
+Register The Auto Loader
+Composer provides a convenient, automatically generated class loader for
+our application. We just need to utilize it! We'll simply require it
+into the script here so that we don't have to worry about manual
+Turn On The Lights
+We need to illuminate PHP development, so let us turn on the lights.
+This bootstraps the framework and gets it ready for use, then it
+will load up this application so that we can run it and send
+the responses back to the browser and delight our users.
+Run The Application
+Once we have the application, we can simply call the run method,
+which will execute the request and send the response back to
+the client's browser allowing them to enjoy the creative
+and wonderful application we have prepared for them.
+
+読み込み:resources/lang/en/pagination.php
+Pagination Language Lines
+The following language lines are used by the paginator library to build
+the simple pagination links. You are free to change them to anything
+you want to customize your views to better match your application.
+
+読み込み:resources/lang/en/passwords.php
+Password Reminder Language Lines
+The following language lines are the default lines which match reasons
+that are given by the password broker for a password update attempt
+has failed, such as for an invalid token or invalid new password.
+
+読み込み:resources/lang/en/validation.php
+Validation Language Lines
+The following language lines contain the default error messages used by
+the validator class. Some of these rules have multiple versions such
+as the size rules. Feel free to tweak each of these messages here.
+Custom Validation Language Lines
+Here you may specify custom validation messages for attributes using the
+convention "attribute.rule" to name the lines. This makes it quick to
+specify a specific custom language line for a given attribute rule.
+Custom Validation Attributes
+The following language lines are used to swap attribute place-holders
+with something more reader friendly such as E-Mail Address instead
+of "email". This simply helps us make messages a little cleaner.
+
+読み込み:server.php
+Laravel - A PHP Framework For Web Artisans
+This file allows us to emulate Apache's "mod_rewrite" functionality from the
+built-in PHP web server. This provides a convenient way to test a Laravel
+application without having installed a "real" web server software here.
+
+読み込み:artisan
+Register The Auto Loader
+Composer provides a convenient, automatically generated class loader
+for our application. We just need to utilize it! We'll require it
+into the script here so that we do not have to worry about the
+loading of any our classes "manually". Feels great to relax.
+Run The Artisan Application
+When we run the console application, the current CLI command will be
+executed in this console and the response sent back to a terminal
+or another output device for the developers. Here goes nothing!
+Shutdown The Application
+Once Artisan has finished running. We will fire off the shutdown events
+so that any final work may be done by the application before we shut
+down the process. This is the last thing to happen to the request.
+
+読み込み:gulpfile.js
+Elixir Asset Management
+Elixir provides a clean, fluent API for defining some basic Gulp tasks
+for your Laravel application. By default, we are compiling the Less
+file for our application, as well as publishing vendor resources.
+
+読み込み:tests/ExampleTest.php
+A basic functional test example.
+
+読み込み:tests/TestCase.php
+Creates the application.

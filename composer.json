@@ -1,0 +1,28 @@
+{
+    "name": "hirokws/comja5",
+    "description": "Translate comments in laravel/laravel version5 to Japanese",
+    "license": "MIT",
+    "keywords": [
+        "laravel", "japanese", "toranslator"
+    ],
+    "authors": [
+        {
+            "name": "Hirohisa Kawase",
+            "email": "hiro.soft@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Comja\\": "Comja/"
+        }
+    },
+    "require": {
+        "php": ">=5.4"
+    },
+    "bin": [
+        "comja",
+        "comja.bat"
+    ],
+    "minimum-stability": "dev"
+}
