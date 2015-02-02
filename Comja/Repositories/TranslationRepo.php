@@ -17,7 +17,7 @@ class TranslationRepo
      */
     public function get()
     {
-        $contents = explode( PHP_EOL, file_get_contents( __DIR__.'../../translation.txt' ) );
+        $contents = explode( PHP_EOL, file_get_contents( __DIR__.'/../../translation.txt' ) );
 
         $translations = [ ];
         $match = [ ];
