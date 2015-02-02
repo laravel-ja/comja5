@@ -1,5 +1,7 @@
 <?php
 
+include_once "vendor/autoload.php";
+
 use Comja\Repositories\TranslationRepo;
 use Comja\Services\Translator;
 
