@@ -1,7 +1,7 @@
 読み込み:app/Console/Commands/Inspire.php
 The console command name.	コンソールコマンド名
 The console command description.	コンソールコマンドの説明
-Execute the console command.	コンソールコマンドのジック
+Execute the console command.	コンソールコマンドの実行
 
 読み込み:app/Console/Kernel.php
 The Artisan commands provided by your application.	アプリケーションで提供するArtisanコマンド
@@ -36,207 +36,207 @@ Create a new controller instance.	新しいコントローラーインスタン�
 Show the application dashboard to the user.	アプリケーションのダッシュボードをユーザーへ表示
 
 読み込み:app/Http/Controllers/WelcomeController.php
-Welcome Controller
-This controller renders the "marketing page" for the application and
-is configured to only allow guests. Like most of the other sample
-controllers, you are free to modify or remove it as you desire.
-Create a new controller instance.
-Show the application welcome screen to the user.
+Welcome Controller	Welcomeコントローラー
+This controller renders the "marketing page" for the application and	このコントローラーはアプリケーションの「マーケティングページ」を
+is configured to only allow guests. Like most of the other sample	レンダーし、ゲストのみに表示されるように設定されています。
+controllers, you are free to modify or remove it as you desire.	他のコントローラサンプルと同様、好きなように変更したり、削除してください。
+Create a new controller instance.	新しいコントローラーインスタンスの生成
+Show the application welcome screen to the user.	アプリケーションのウェルカムページをユーザーへ表示
 
 読み込み:app/Http/Kernel.php
-The application's global HTTP middleware stack.
-The application's route middleware.
+The application's global HTTP middleware stack.	アプリケーションのグローバルHTTPミドルウェアスタック
+The application's route middleware.	アプリケーションのルートミドルウェアスタック
 
 読み込み:app/Http/Middleware/Authenticate.php
-The Guard implementation.
-Create a new filter instance.
-Handle an incoming request.
+The Guard implementation.	Guardの実装
+Create a new filter instance.	新しいフィルターインスタンス
+Handle an incoming request.	送られてきたリクエストの処理
 
 読み込み:app/Http/Middleware/RedirectIfAuthenticated.php
-The Guard implementation.
-Create a new filter instance.
-Handle an incoming request.
+The Guard implementation.	Guardの実装
+Create a new filter instance.	新しいフィルターインスタンス
+Handle an incoming request.	送られてきたリクエストの処理
 
 読み込み:app/Http/Middleware/VerifyCsrfToken.php
-Handle an incoming request.
+Handle an incoming request.	送られてきたリクエストの処理
 
 読み込み:app/Http/routes.php
-Application Routes
-Here is where you can register all of the routes for an application.
-It's a breeze. Simply tell Laravel the URIs it should respond to
-and give it the controller to call when that URI is requested.
+Application Routes	アプリケーションのルート
+Here is where you can register all of the routes for an application.	ここでアプリケーションのルートを全て登録することが可能です。
+It's a breeze. Simply tell Laravel the URIs it should respond to	簡単です。ただ、Laravelへ対応するURIと、そのURIがリクエスト
+and give it the controller to call when that URI is requested.	されたときに呼び出されるコントローラーを指定してください。
 
 読み込み:app/Providers/AppServiceProvider.php
-Bootstrap any application services.
-Register any application services.
-This service provider is a great spot to register your various container
-bindings with the application. As you can see, we are registering our
-"Registrar" implementation here. You can add your own bindings too!
+Bootstrap any application services.	全アプリケーションサービスの初期化処理
+Register any application services.	全アプリケーションサービスの登録
+This service provider is a great spot to register your various container	このサービスプロバイダーは、アプリケーションの様々な
+bindings with the application. As you can see, we are registering our	コンテナ結合を行うのに最適です。ご覧の通り、"Registrar"実装を
+"Registrar" implementation here. You can add your own bindings too!	ここで登録しています。皆さんの結合も追加できますよ！
 
 読み込み:app/Providers/BusServiceProvider.php
-Registration & Login Controller
-Register any application services.
+Registration & Login Controller	登録／ログインコントローラー
+Register any application services.	全アプリケーションサービスの登録
 
 読み込み:app/Providers/ConfigServiceProvider.php
-Registration & Login Controller
-This service provider is intended to provide a convenient location for you
-to overwrite any "vendor" or package configuration that you may want to
-modify before the application handles the incoming request / command.
+Registration & Login Controller	登録／ログインコントローラー
+This service provider is intended to provide a convenient location for you	このサービスプロバイダーは、アプリケーションが要求された
+to overwrite any "vendor" or package configuration that you may want to	リクエスト／コマンドを処理する前に変更したい、"vendor"やパッケージの
+modify before the application handles the incoming request / command.	設定をオーバーライトするため、便利な場所を提供することを意図しています。
 
 読み込み:app/Providers/EventServiceProvider.php
-The event handler mappings for the application.
-Register any other events for your application.
+The event handler mappings for the application.	アプリケーションのイベントハンドラーのマップ
+Register any other events for your application.	アプリケーションのその他のイベントの登録
 
 読み込み:app/Providers/RouteServiceProvider.php
-This namespace is applied to the controller routes in your routes file.
-In addition, it is set as the URL generator's root namespace.
-Define your route model bindings, pattern filters, etc.
-Define the routes for the application.
+This namespace is applied to the controller routes in your routes file.	この名前空間はルートファイルのコントローラールートへ適用されます。
+In addition, it is set as the URL generator's root namespace.	さらに、URLジェネレーターのルート名前空間としても設定されます。
+Define your route model bindings, pattern filters, etc.	ルートモデル結合、パターンフィルターなどを定義
+Define the routes for the application.	アプリケーションのルートを定義
 
 読み込み:app/Services/Registrar.php
-Get a validator for an incoming registration request.
-Create a new user instance after a valid registration.
+Get a validator for an incoming registration request.	登録リクエストに対するvalidator取得
+Create a new user instance after a valid registration.	登録内容の確認後、新しいユーザーインスタンスを生成
 
 読み込み:app/User.php
-Get a validator for an incoming registration request.
-The attributes that are mass assignable.
-The attributes excluded from the model's JSON form.
+Get a validator for an incoming registration request.	登録リクエストに対するvalidator取得
+The attributes that are mass assignable.	複数代入を行う属性
+The attributes excluded from the model's JSON form.	モデルのJSON形式に含めない属性
 
 読み込み:bootstrap/app.php
-Get a validator for an incoming registration request.
-The first thing we will do is create a new Laravel application instance
-which serves as the "glue" for all the components of Laravel, and is
-the IoC container for the system binding all of the various parts.
-Get a validator for an incoming registration request.
-Next, we need to bind some important interfaces into the container so
-we will be able to resolve them when needed. The kernels serve the
-incoming requests to this application from both the web and CLI.
-Return The Application
-This script returns the application instance. The instance is given to
-the calling script so we can separate the building of the instances
-from the actual running of the application and sending responses.
+Get a validator for an incoming registration request.	登録リクエストに対するvalidator取得
+The first thing we will do is create a new Laravel application instance	最初に行うことは、Laravelの全コンポーネントを「糊」のように
+which serves as the "glue" for all the components of Laravel, and is	まとめ、様々なパーツをシステムに全部結合させるIoCコンテナと
+the IoC container for the system binding all of the various parts.	して動作する、アプリケーションインスタンスを新規に作成します。
+Get a validator for an incoming registration request.	登録リクエストに対するvalidator取得
+Next, we need to bind some important interfaces into the container so	次に、重要なインターフェイスを必要なときに依存解決できるように、
+we will be able to resolve them when needed. The kernels serve the	コンテナへ結合する必要があります。アプリケーションにやってきた、
+incoming requests to this application from both the web and CLI.	WebとCLIの両方からのリクエストに対し、カーネルは動作します。
+Return The Application	アプリケーションを返す
+This script returns the application instance. The instance is given to	このスクリプトはアプリケーションインスタンスを返します。インスタンスは、
+the calling script so we can separate the building of the instances	実際のアプリケーションの実行とレスポンス送信から、インスタンスの
+from the actual running of the application and sending responses.	構築を分離できるように、呼び出し元のスクリプトへ与えられます。
 
 読み込み:bootstrap/autoload.php
-Register The Composer Auto Loader
-Composer provides a convenient, automatically generated class loader
-for our application. We just need to utilize it! We'll require it
-into the script here so that we do not have to worry about the
-loading of any our classes "manually". Feels great to relax.
-Include The Compiled Class File
-To dramatically increase your application's performance, you may use a
-compiled class file which contains all of the classes commonly used
-by a request. The Artisan "optimize" is used to create this file.
+Register The Composer Auto Loader	Composerのオートローダーの登録
+Composer provides a convenient, automatically generated class loader	Composerはアプリケーションのために、自動的にクラスローダーを
+for our application. We just need to utilize it! We'll require it	生成してくれます。それを利用しなくてはなりません！「手動」で
+into the script here so that we do not have to worry about the	クラスをローディングする手間を省くため、ここでそのスクリプトを
+loading of any our classes "manually". Feels great to relax.	読み込みましょう。リラックス、安心しましょう。
+Include The Compiled Class File	コンパイル済みクラスファイルの読み込み
+To dramatically increase your application's performance, you may use a	アプリケーションの効率を劇的に向上させるため、どのリクエストに
+compiled class file which contains all of the classes commonly used	対しても共通して使用される全クラスを含んだ、コンパイル済みクラス
+by a request. The Artisan "optimize" is used to create this file.	ファイルを使用しましょう。"optimize" Artisanコマンドで生成できます。
 
 読み込み:config/app.php
-Application Debug Mode
-When your application is in debug mode, detailed error messages with
-stack traces will be shown on every error that occurs within your
-application. If disabled, a simple generic error page is shown.
-Application URL
-This URL is used by the console to properly generate URLs when using
-the Artisan command line tool. You should set this to the root of
-your application so that it is used when running Artisan tasks.
-Application Timezone
-Here you may specify the default timezone for your application, which
-will be used by the PHP date and date-time functions. We have gone
-ahead and set this to a sensible default for you out of the box.
-Application Locale Configuration
-The application locale determines the default locale that will be used
-by the translation service provider. You are free to set this value
-to any of the locales which will be supported by the application.
-Application Fallback Locale
-The fallback locale determines the locale to use when the current one
-is not available. You may change the value to correspond to any of
-the language folders that are provided through your application.
-Encryption Key
-This key is used by the Illuminate encrypter service and should be set
-to a random, 32 character string, otherwise these encrypted strings
-will not be safe. Please do this before deploying an application!
-Logging Configuration
-Here you may configure the log settings for your application. Out of
-the box, Laravel uses the Monolog PHP logging library. This gives
-you a variety of powerful log handlers / formatters to utilize.
-Available Settings: "single", "daily", "syslog"
-Autoloaded Service Providers
-The service providers listed here will be automatically loaded on the
-request to your application. Feel free to add your own services to
-this array to grant expanded functionality to your applications.
-Laravel Framework Service Providers...
-Application Service Providers...
-Class Aliases
-This array of class aliases will be registered when this application
-is started. However, feel free to register as many as you wish as
-the aliases are "lazy" loaded so they don't hinder performance.
+Application Debug Mode	アプリケーションデバッグモード
+When your application is in debug mode, detailed error messages with	アプリケーションをデバッグモードにすると、アプリケーションでエラーが発生する
+stack traces will be shown on every error that occurs within your	たびにスタックトレースともに、詳細なエラーメッセージが表示されます。
+application. If disabled, a simple generic error page is shown.	このモードでない場合、シンプルで一般利用者向きなエラーページが表示されます。
+Application URL	アプリケーションURL
+This URL is used by the console to properly generate URLs when using	このURLはArtisanコマンドラインツールを使用する時に正しい
+the Artisan command line tool. You should set this to the root of	URLを生成するために使用します。アプリケーションのルートのURLを設定してください。
+your application so that it is used when running Artisan tasks.	Artisanコマンドを実行する時に使用されます。
+Application Timezone	アプリケーションタイムゾーン
+Here you may specify the default timezone for your application, which	ここではアプリケーションのデフォルトタイムゾーンを指定します。これは
+will be used by the PHP date and date-time functions. We have gone	PHPの日付／時間関数で使用されます。最初から未設定でも使用できるように
+ahead and set this to a sensible default for you out of the box.	適切なデフォルトを設定してあります。
+Application Locale Configuration	アプリケーションローカル設定
+The application locale determines the default locale that will be used	アプリケーションローカルは翻訳サービスプロバイダーにより使用される
+by the translation service provider. You are free to set this value	デフォルトローカルを指定します。アプリケーションで提供するローカルを
+to any of the locales which will be supported by the application.	自由に設定してください。
+Application Fallback Locale	アプリケーションフォールバック言語
+The fallback locale determines the locale to use when the current one	フォールバック言語は現在のローカルが使用できない場合に、
+is not available. You may change the value to correspond to any of	代替として使われます。アプリケーション全体に対して用意されている
+the language folders that are provided through your application.	言語フォルダーに対応するコードであればどれでも使用可能です。
+Encryption Key	暗号化キー
+This key is used by the Illuminate encrypter service and should be set	このキーはIlluminate暗号化サービスで使用されます。ランダムな32文字を
+to a random, 32 character string, otherwise these encrypted strings	セットしないと安全ではありません。アプリケーションをデプロイ
+will not be safe. Please do this before deploying an application!	る前に、必ず変更してください。
+Logging Configuration	ログ設定
+Here you may configure the log settings for your application. Out of	ここではアプリケーションのログ設定を指定します。Laravelは
+the box, Laravel uses the Monolog PHP logging library. This gives	初めから、Monolog PHPログライブラリーを使用しています。これは便利なように、
+you a variety of powerful log handlers / formatters to utilize.	強力でバリエーション豊かなログハンドラー／フォーマッターを提供しています。
+Available Settings:	使用可能な設定：
+Autoloaded Service Providers	自動ロードされるサービスプロバイダー
+The service providers listed here will be automatically loaded on the	ここにリストしたサービスプロバイダーはアプリケーションのリクエストに対し
+request to your application. Feel free to add your own services to	自動的にロードされます。アプリケーションの機能を拡張するため、この配列へ
+this array to grant expanded functionality to your applications.	自由に自分のサービスを付け加えてください。
+Laravel Framework Service Providers...	Laravelフレームワークサービスプロバイダー
+Application Service Providers...	アプリケーションサービスプロバイダー
+Class Aliases	クラスエイリアス
+This array of class aliases will be registered when this application	このクラスエイリアスの配列はこのアプリケーションが開始されると登録されます。
+is started. However, feel free to register as many as you wish as	エイリアスをどんなに好きなだけ自由に登録しても、「遅延」ロードされるので、
+the aliases are "lazy" loaded so they don't hinder performance.	パフォーマンスを妨げることはありません。
 
 読み込み:config/auth.php
-Default Authentication Driver
-This option controls the authentication driver that will be utilized.
-This driver manages the retrieval and authentication of the users
-attempting to get access to protected areas of your application.
-Authentication Model
-When using the "Eloquent" authentication driver, we need to know which
-Eloquent model should be used to retrieve your users. Of course, it
-is often just the "User" model but you may use whatever you like.
-Authentication Table
-When using the "Database" authentication driver, we need to know which
-table should be used to retrieve your users. We have chosen a basic
-default value but you may easily change it to any table you like.
-Password Reset Settings
-Here you may set the options for resetting passwords including the view
-that is your password reset e-mail. You can also set the name of the
-table that maintains all of the reset tokens for your application.
-The expire time is the number of minutes that the reset token should be
-considered valid. This security feature keeps tokens short-lived so
-they have less time to be guessed. You may change this as needed.
+Default Authentication Driver	デフォルト認証ドライバー
+This option controls the authentication driver that will be utilized.	このオプションは認証で使用するドライバーを設定します。
+This driver manages the retrieval and authentication of the users	このドライバーはアプリケーションの保護領域へユーザーがアクセスする時の
+attempting to get access to protected areas of your application.	認証とユーザーの取得を管理します。
+Authentication Model	認証モデル
+When using the "Eloquent" authentication driver, we need to know which	"Eloquent"認証ドライバーを使用する場合、ユーザー情報を取得する
+Eloquent model should be used to retrieve your users. Of course, it	Eloquentモデルの指定が必要です。もちろん、通常は"User"モデル
+is often just the "User" model but you may use whatever you like.	でしょうが、お好きなものをどうぞ。
+Authentication Table	認証テーブル
+When using the "Database" authentication driver, we need to know which	"Database"認証ドライバーを使用する場合、ユーザーを取得するための
+table should be used to retrieve your users. We have chosen a basic	テーブルを指定する必要があります。基本的な値をデフォルトにしていますが、
+default value but you may easily change it to any table you like.	お好きなテーブル名へ簡単に変更できます。
+Password Reset Settings	パスワードリセット設定
+Here you may set the options for resetting passwords including the view	ここではパスワードリマインダーの設定を行います。それにはパスワード
+that is your password reset e-mail. You can also set the name of the	メールにリセットメールのビューも含まれます。また、リセット
+table that maintains all of the reset tokens for your application.	トークンを保存しておくためのテーブル名も指定可能です。
+The expire time is the number of minutes that the reset token should be	有効時間の"expire"に指定する分数は、良く考えてください。
+considered valid. This security feature keeps tokens short-lived so	このトークン保存時間はセキュリティー機能で、短い時間ほど
+they have less time to be guessed. You may change this as needed.	安全になります。ですが、必要に応じ変更可能です。
 
 読み込み:config/cache.php
-Default Cache Store
-This option controls the default cache connection that gets used while
-using this caching library. This connection is used when another is
-not explicitly specified when executing a given caching function.
-Cache Stores
-Here you may define all of the cache "stores" for your application as
-well as their drivers. You may even define multiple stores for the
-same cache driver to group types of items stored in your caches.
-Cache Key Prefix
-When utilizing a RAM based store such as APC or Memcached, there might
-be other applications utilizing the same cache. So, we'll specify a
-value to get prefixed to all our keys so we can avoid collisions.
+Default Cache Store	デフォルトキャッシュ保存場所
+This option controls the default cache connection that gets used while	このオプションはこのキャッシュライブラリで使用するデフォルトの
+using this caching library. This connection is used when another is	キャッシュ接続を制御します。この接続はキャッシュ機能にどこへ
+not explicitly specified when executing a given caching function.	キャッシュするのか、明白に指定されていない場合に使用されます。
+Cache Stores	キャッシュ保存場所
+Here you may define all of the cache "stores" for your application as	ここでアプリケーションの全キャッシュ「保存場所」を定義し、
+well as their drivers. You may even define multiple stores for the	同時にドライバーを指定します。キャッシュに保存するアイテムのグループ
+same cache driver to group types of items stored in your caches.	タイプに対し、同じキャッシュドライバーを複数定義することもできます。
+Cache Key Prefix	キャッシュキープレフィックス
+When utilizing a RAM based store such as APC or Memcached, there might	APCやMemcachedのようなRAMベースでの保存法を使用する場合、
+be other applications utilizing the same cache. So, we'll specify a	他のアプリケーションも使用しているかも知れません。衝突を避けるために
+value to get prefixed to all our keys so we can avoid collisions.	全部のキーにプレフィックスをつけた値を指定します。
 
 読み込み:config/compile.php
-Additional Compiled Classes
-Here you may specify additional classes to include in the compiled file
-generated by the `artisan optimize` command. These should be classes
-that are included on basically every request into the application.
-Compiled File Providers
-Here you may list service providers which define a "compiles" function
-that returns additional files that should be compiled, providing an
-easy way to get common files from any packages you are utilizing.
+Additional Compiled Classes	追加のコンパイル対象クラス
+Here you may specify additional classes to include in the compiled file	ここで`artisan optimize`コマンドにより作成される、
+generated by the `artisan optimize` command. These should be classes	コンパイル済みファイルへ含める追加のクラスを指定できます。原則、
+that are included on basically every request into the application.	アプリケーションの全リクエストで読み込まれるクラスを指定すべきです。
+Compiled File Providers	コンパイル対象のプロバイダーファイル
+Here you may list service providers which define a "compiles" function	ここでは、コンパイルしなくてはならない追加のファイルを返す"compiles"
+that returns additional files that should be compiled, providing an	functionを定義している、サービスプロバイダーをリストします。
+easy way to get common files from any packages you are utilizing.	使用しているパッケージから、共通ファイルを簡単に指定する手段です。
 
 読み込み:config/database.php
-PDO Fetch Style
-By default, database results will be returned as instances of the PHP
-stdClass object; however, you may desire to retrieve records in an
-array format for simplicity. Here you can tweak the fetch style.
-Default Database Connection Name
-Here you may specify which of the database connections below you wish
-to use as your default connection for all database work. Of course
-you may use many connections at once using the Database library.
-Database Connections
-Here are each of the database connections setup for your application.
-Of course, examples of configuring each database platform that is
-supported by Laravel is shown below to make development simple.
-All database work in Laravel is done through the PHP PDO facilities
-so make sure you have the driver for your particular database of
-choice installed on your machine before you begin development.
-Migration Repository Table
-This table keeps track of all the migrations that have already run for
-your application. Using this information, we can determine which of
-the migrations on disk haven't actually been run in the database.
-Redis Databases
-Redis is an open source, fast, and advanced key-value store that also
-provides a richer set of commands than a typical key-value systems
-such as APC or Memcached. Laravel makes it easy to dig right in.
+PDO Fetch Style	PDO取得スタイル
+By default, database results will be returned as instances of the PHP	デフォルトでデータベースの結果はPHP stdClassオブジェクトのインスタンスが
+stdClass object; however, you may desire to retrieve records in an	リターンされます。しかし、ご希望であればレコードを単純な配列の形式でも
+array format for simplicity. Here you can tweak the fetch style.	取得できます。ここで取得するスタイルを調整します。
+Default Database Connection Name	デフォルトデータベース接続名
+Here you may specify which of the database connections below you wish	ここでは全てのデータベース動作で用いられるデフォルトデータベース接続を
+to use as your default connection for all database work. Of course	指定することができます。もちろん、データベースライブラリーを使用することで
+you may use many connections at once using the Database library.	多くの接続を一度に使うことができます。
+Database Connections	データベース接続
+Here are each of the database connections setup for your application.	ここではアプリケーションで用いる各データベース接続を設定します。
+Of course, examples of configuring each database platform that is	もちろん、以下はLaravelでサポートされているデータベースシステムの
+supported by Laravel is shown below to make development simple.	サンプル設定で、簡単に開発ができることを示すため設置してあります。
+All database work in Laravel is done through the PHP PDO facilities	Laravelで動作する全てのデータベースはPHP PDO機能上で動作します。
+so make sure you have the driver for your particular database of	ですから開発を始める前に選択したデータベースのドライバーが開発機に
+choice installed on your machine before you begin development.	インストールされていることを確認してください。
+Migration Repository Table	マイグレーションリポジトリテーブル
+This table keeps track of all the migrations that have already run for	こで指定したテーブルに、アプリケーションで実行済みの全マイグレーション
+your application. Using this information, we can determine which of	情報が保存されます。この情報を使用することで、ディスク上の
+the migrations on disk haven't actually been run in the database.	どのマイグレーションが未実行なのかを判断することができます。
+Redis Databases	Redisデータベース
+Redis is an open source, fast, and advanced key-value store that also	Redisはオープンソースで、早く、進歩的なキー／値保存システムであり
+provides a richer set of commands than a typical key-value systems	APCやMemecachedのような典型的なキー／値システムよりも、豊富なコマンドが
+such as APC or Memcached. Laravel makes it easy to dig right in.	用意されています。Laravelはこれを使用しやすくします。
 
 読み込み:config/filesystems.php
 Default Filesystem Disk
