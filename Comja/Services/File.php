@@ -20,7 +20,9 @@ class File
             $files = array_merge( $files, $this->globAll( $path, $pattern ) );
         }
 
-        return $files;
+        return array_filter( $files, function ($value) {
+            return substr($value, -1, 1) != '/';
+        });
     }
 
 }

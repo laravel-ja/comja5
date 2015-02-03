@@ -9,7 +9,8 @@ use Comja\Services\TabFormatter;
 
 // オプションの取り込み
 
-$options = getopt( "ctf", ["comment", "tab", "file" ] ); var_dump( $options );
+$options = getopt( "ctf", ["comment", "tab", "file" ] );
+
 if( $options === false || count( $options ) < 1 )
 {
     fputs( STDERR, "オプション指定がありません。".PHP_EOL );
