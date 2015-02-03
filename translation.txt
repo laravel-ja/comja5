@@ -239,222 +239,224 @@ provides a richer set of commands than a typical key-value systems	APCやMemecac
 such as APC or Memcached. Laravel makes it easy to dig right in.	用意されています。Laravelはこれを使用しやすくします。
 
 読み込み:config/filesystems.php
-Default Filesystem Disk
-Here you may specify the default filesystem disk that should be used
-by the framework. A "local" driver, as well as a variety of cloud
-based drivers are available for your choosing. Just store away!
-Supported: "local", "s3", "rackspace"
-Default Cloud Filesystem Disk
-Many applications store files both locally and in the cloud. For this
-reason, you may specify a default "cloud" driver here. This driver
-will be bound as the Cloud disk implementation in the container.
-Filesystem Disks
-Here you may configure as many filesystem "disks" as you wish, and you
-may even configure multiple disks of the same driver. Defaults have
-been setup for each driver as an example of the required options.
+Default Filesystem Disk	デフォルトファイルシステムディスク
+Here you may specify the default filesystem disk that should be used	フレームワークにより使用されるべき、デフォルトのファイルシステムを
+by the framework. A "local" driver, as well as a variety of cloud	ここに指定してください。"local"ドライバーの他に、様々なクラウド
+based drivers are available for your choosing. Just store away!	ベースのドライバーを選択することができます。どんどん保存しましょう！
+Supported:	サポートドライバー:
+Default Cloud Filesystem Disk	デフォルトクラウドファイルシステムディスク
+Many applications store files both locally and in the cloud. For this	多くのアプリケーションが、ローカルとクラウドの両方にファイルを保存します。
+reason, you may specify a default "cloud" driver here. This driver	このため、ここでデフォルトの「クラウド」ドライバーを指定できます。
+will be bound as the Cloud disk implementation in the container.	このドライバーはコンテナの中で、クラウドディスク実装として結合されます。
+Filesystem Disks	ファイルシステムディスク
+Here you may configure as many filesystem "disks" as you wish, and you	ここで好きなだけ、ファイルシステム「ディスク」を設定できます。
+may even configure multiple disks of the same driver. Defaults have	同じドライバーに複数のディスクを設定することも可能です。指定が必要な
+been setup for each driver as an example of the required options.	オプションの例として、各ドライバーのデフォルトが用意されています。
 
 読み込み:config/mail.php
-Mail Driver
-Laravel supports both SMTP and PHP's "mail" function as drivers for the
-sending of e-mail. You may specify which one you're using throughout
-your application here. By default, Laravel is setup for SMTP mail.
-Supported: "smtp", "mail", "sendmail", "mailgun", "mandrill", "log"
-SMTP Host Address
-Here you may provide the host address of the SMTP server used by your
-applications. A default option is provided that is compatible with
-the Mailgun mail service which will provide reliable deliveries.
-SMTP Host Port
-This is the SMTP port used by your application to deliver e-mails to
-users of the application. Like the host we have set this value to
-stay compatible with the Mailgun e-mail application by default.
-Global "From" Address
-You may wish for all e-mails sent by your application to be sent from
-the same address. Here, you may specify a name and address that is
-used globally for all e-mails that are sent by your application.
-E-Mail Encryption Protocol
-Here you may specify the encryption protocol that should be used when
-the application send e-mail messages. A sensible default using the
-transport layer security protocol should provide great security.
-SMTP Server Username
-If your SMTP server requires a username for authentication, you should
-set it here. This will get used to authenticate with your server on
-connection. You may also set the "password" value below this one.
-SMTP Server Password
-Here you may set the password required by your SMTP server to send out
-messages from your application. This will be given to the server on
-connection so that the application will be able to send messages.
-Sendmail System Path
-When using the "sendmail" driver to send e-mails, we will need to know
-the path to where Sendmail lives on this server. A default path has
-been provided here, which will work well on most of your systems.
-Mail "Pretend"
-When this option is enabled, e-mail will not actually be sent over the
-web and will instead be written to your application's logs files so
-you may inspect the message. This is great for local development.
+Mail Driver	メールドライバー
+Laravel supports both SMTP and PHP's "mail" function as drivers for the	メール送信のドライバーとしてSMTPとPHPの"mail"機能の二つをLaravelは
+sending of e-mail. You may specify which one you're using throughout	ポートしています。アプリケーション全体で使用する方法を選び指定して
+your application here. By default, Laravel is setup for SMTP mail.	ください。デフォルトではSMTPメールをセットしています。
+Supported:	サポートドライバー:
+SMTP Host Address	SMTPホストアドレス
+Here you may provide the host address of the SMTP server used by your	アプリケーションで使用するSMTPサーバーのホストアドレスを指定します。
+applications. A default option is provided that is compatible with	デフォルトでは確実な配信サービスを提供しているMailgunメールサービス
+the Mailgun mail service which will provide reliable deliveries.	を使用するオプションを設定しています。
+SMTP Host Port	SMTPホストポート
+This is the SMTP port used by your application to deliver e-mails to	これはアプリケーションのユーザーにメールを送信するために使用される
+users of the application. Like the host we have set this value to	SMTPポートです。デフォルトでは、ホストと同様に、Mailgunメール
+stay compatible with the Mailgun e-mail application by default.	アプリケーション向けに設定しています。
+Global "From" Address	グローバルな「送信元」アドレス
+You may wish for all e-mails sent by your application to be sent from	メールの送信元は全部同じメールアドレスに設定したいと思うはずです。
+the same address. Here, you may specify a name and address that is	アプリケーションから送信される全メールの送信元名とアドレスはここで
+used globally for all e-mails that are sent by your application.	設定します。
+E-Mail Encryption Protocol	 |
+メール暗号化プロトコル
+Here you may specify the encryption protocol that should be used when	アプリケーションがメールでメッセージを送信する時に使用されるべき
+the application send e-mail messages. A sensible default using the	暗号化プロトコルをここで指定します。とても安全なトランスポート層の
+transport layer security protocol should provide great security.	暗号化プロトコルがデフォルトとして設定されています。
+SMTP Server Username	SMTPサーバーユーザー名
+If your SMTP server requires a username for authentication, you should	もしSMTPサーバーが認証でユーザー名を必要としているのでしたら、
+set it here. This will get used to authenticate with your server on	ここで設定してください。サーバーに接続する時の認証に使用されます。
+connection. You may also set the "password" value below this one.	更に"password"も、次のオプションで設定できます。
+SMTP Server Password	SMTPサーバーパスワード
+Here you may set the password required by your SMTP server to send out	アプリケーションからSMTPサーバーにメッセージを送信する時に必要な
+messages from your application. This will be given to the server on	パスワードをここで設定します。これはサーバーとの接続時に使用され、
+connection so that the application will be able to send messages.	のアプリケーションからメッセージが送信できます。
+Sendmail System Path	 |
+Sendmailシステムパス
+When using the "sendmail" driver to send e-mails, we will need to know	メールの送信に"sendmail"ドライバーを使用する場合、このサーバーで
+the path to where Sendmail lives on this server. A default path has	どこにSendmailがあるのか知る必要があります。ここで指定している
+been provided here, which will work well on most of your systems.	デフォルトのパスはほとんどのシステムで上手く動作します。
+Mail "Pretend"	メール"Pretend"モード
+When this option is enabled, e-mail will not actually be sent over the	このオプションを有効にすると、Web上で本当に送信せず
+web and will instead be written to your application's logs files so	内容を確認できるよう、代わりにアプリケーションの
+you may inspect the message. This is great for local development.	ログファイルに書き込みます。これはローカル開発時に便利です。
 
 読み込み:config/queue.php
-Default Queue Driver
-The Laravel queue API supports a variety of back-ends via an unified
-API, giving you convenient access to each back-end using the same
-syntax for each one. Here you may set the default queue driver.
-Supported: "null", "sync", "database", "beanstalkd",
-"sqs", "iron", "redis"
-Queue Connections
-Here you may configure the connection information for each server that
-is used by your application. A default configuration has been added
-for each back-end shipped with Laravel. You are free to add more.
-Failed Queue Jobs
-These options configure the behavior of failed queue job logging so you
-can control which database and table are used to store the jobs that
-have failed. You may change them to any database / table you wish.
+Default Queue Driver	デフォルトキュードライバー
+The Laravel queue API supports a variety of back-ends via an unified	LaravelキューAPIは同じ文法を使用して様々なバックエンドが使用できるよう
+API, giving you convenient access to each back-end using the same	統一されたAPIをサポートしています。ここではデフォルトキュードライバーを
+syntax for each one. Here you may set the default queue driver.	設定します。
+Supported:	サポートドライバー：
+Queue Connections	キュー接続
+Here you may configure the connection information for each server that	ここでアプリケーションが使用するそれぞれのサーバーに対する接続情報を
+is used by your application. A default configuration has been added	設定します。それぞれのバックエンドのデフォルト接続はLaravelに最初から
+for each back-end shipped with Laravel. You are free to add more.	設定されています。自由に追加してください。
+Failed Queue Jobs	 |
+失敗したキュージョブ
+These options configure the behavior of failed queue job logging so you	このオプションでは失敗したキュージョブをログする振る舞いを設定します。
+can control which database and table are used to store the jobs that	どのデータベースとテーブルを保存に使用するかをコントロールできます。
+have failed. You may change them to any database / table you wish.	お好きなデータベース／テーブルに変更して下さい。
 
 読み込み:config/services.php
-Third Party Services
-This file is for storing the credentials for third party services such
-as Stripe, Mailgun, Mandrill, and others. This file provides a sane
-default location for this type of information, allowing packages
-to have a conventional place to find your various credentials.
+Third Party Services	サードパーティーサービス
+This file is for storing the credentials for third party services such	このファイルは、Stripe、Mailgun、Mandrillなどのサードパーティーサービスの
+as Stripe, Mailgun, Mandrill, and others. This file provides a sane	証情報を保存しておくためのものです。
+default location for this type of information, allowing packages	様々な認証情報をパッケージから簡単に見つけられるように、この主のタイプの
+to have a conventional place to find your various credentials.	情報をまとめておくデフォルトの場所を用意するのは、筋が通っているでしょう。
 
 読み込み:config/session.php
-Default Session Driver
-This option controls the default session "driver" that will be used on
-requests. By default, we will use the lightweight native driver but
-you may specify any of the other wonderful drivers provided here.
-Supported: "file", "cookie", "database", "apc",
-"memcached", "redis", "array"
-Session Lifetime
-Here you may specify the number of minutes that you wish the session
-to be allowed to remain idle before it expires. If you want them
-to immediately expire on the browser closing, set that option.
-Session Encryption
-This option allows you to easily specify that all of your session data
-hould be encrypted before it is stored. All encryption will be run
-automatically by Laravel and you can use the Session like normal.
-Session File Location
-When using the native session driver, we need a location where session
-files may be stored. A default has been set for you but a different
-location may be specified. This is only needed for file sessions.
-Session Database Connection
-When using the "database" or "redis" session drivers, you may specify a
-connection that should be used to manage these sessions. This should
-correspond to a connection in your database configuration options.
-Session Database Table
-When using the "database" session driver, you may specify the table we
-should use to manage the sessions. Of course, a sensible default is
-provided for you; however, you are free to change this as needed.
-Session Sweeping Lottery
-Some session drivers must manually sweep their storage location to get
-rid of old sessions from storage. Here are the chances that it will
-happen on a given request. By default, the odds are 2 out of 100.
-Session Cookie Name
-Here you may change the name of the cookie used to identify a session
-instance by ID. The name specified here will get used every time a
-new session cookie is created by the framework for every driver.
-Session Cookie Path
-The session cookie path determines the path for which the cookie will
-be regarded as available. Typically, this will be the root path of
-your application but you are free to change this when necessary.
-Session Cookie Domain
-Here you may change the domain of the cookie used to identify a session
-in your application. This will determine which domains the cookie is
-available to in your application. A sensible default has been set.
-HTTPS Only Cookies
-By setting this option to true, session cookies will only be sent back
-to the server if the browser has a HTTPS connection. This will keep
-the cookie from being sent to you if it can not be done securely.
+Default Session Driver	デフォルトセッションドライバー
+This option controls the default session "driver" that will be used on	このオプションはリクエストに対するデフォルトのセッションドライバーを
+requests. By default, we will use the lightweight native driver but	指定するためのものです。一番軽いネイティブドライバーを設定していますが
+you may specify any of the other wonderful drivers provided here.	用意されている他の素晴らしいドライバーも使用できます。
+Supported:サポートドライバー：
+Session Lifetime	セッション持続時間
+Here you may specify the number of minutes that you wish the session	ここでは何分間接続が無い場合にセッションを破棄するのかを
+to be allowed to remain idle before it expires. If you want them	指定します。もしブラウザを閉じるか、時間切れならすぐに破棄したい
+to immediately expire on the browser closing, set that option.	場合は、このオプションを設定してください。
+Session Encryption	セッション暗号化
+This option allows you to easily specify that all of your session data	このオプションは全セッションデーターを保存する前に、
+hould be encrypted before it is stored. All encryption will be run	暗号化することを簡単に指定できるように用意しています。Laravelにより
+automatically by Laravel and you can use the Session like normal.	全部自動に暗号化されますので、普通にセッションを使用できます。
+Session File Location	セッションファイルの場所
+When using the native session driver, we need a location where session	"file"セッションドライバーを使用する場合、そのセッションファイルを保存
+files may be stored. A default has been set for you but a different	する場所を指定する必要があります。デフォルトは設定していますが、
+location may be specified. This is only needed for file sessions.	他の場所を設定することもできます。ファイルセッションでのみ必要です。
+Session Database Connection	セッションデータベース接続
+When using the "database" or "redis" session drivers, you may specify a	"database"か"redis"セッションドライバーを使用する場合、セッションを
+connection that should be used to manage these sessions. This should	管理するために使用するデータベース接続を指定する必要があります。
+correspond to a connection in your database configuration options.	管理するために使用するデータベース接続を指定する必要があります。
+Session Database Table	セッションデータベーステーブル
+When using the "database" session driver, you may specify the table we	"database"セッションドライバーを使用する時には、セッションを管理する
+should use to manage the sessions. Of course, a sensible default is	テーブルを指定する必要があります。もちろん、分かりやすいデフォルトが
+provided for you; however, you are free to change this as needed.	指定されていますが、必要であればご自由に変更してください。
+Session Sweeping Lottery	 |
+セッションのガベージコレクション確率
+Some session drivers must manually sweep their storage location to get	いくつかのセッションドライバーは情報の保存場所から古いセッションを
+rid of old sessions from storage. Here are the chances that it will	クリーンアップする必要があります。ここでは一回のリクエストに対し
+happen on a given request. By default, the odds are 2 out of 100.	どのくらいの確率で行うかを指定します。デフォルトでは100回に2回です。
+Session Cookie Name	セッションクッキー名
+Here you may change the name of the cookie used to identify a session	ここではセッションインスタンスをIDで識別するために使用されるクッキーの
+instance by ID. The name specified here will get used every time a	名前を変更できます。ここで指定された名前はフレームワークにより新しい
+new session cookie is created by the framework for every driver.	セッションクッキーが生成されるたび、全てのドライバーに対し使用されます。
+Session Cookie Path	セッションクッキーパス
+The session cookie path determines the path for which the cookie will	セッションクッキーパスはクッキーが有効なパスを決定します。
+be regarded as available. Typically, this will be the root path of	典型的にはアプリケーションのルートパスを指定しますが
+your application but you are free to change this when necessary.	必要に合わせて自由に変更してください。
+Session Cookie Domain	セッションクッキードメイン
+Here you may change the domain of the cookie used to identify a session	ここでアプリケーションのセッションを認識するために使用されるクッキーの
+in your application. This will determine which domains the cookie is	ドメインを変更できます。これはクッキーが有効なドメインを決めるため
+available to in your application. A sensible default has been set.	使用されます。デフォルト値は未定義で、納得してもらえると思います。
+HTTPS Only Cookies	HTTPS専用クッキー
+By setting this option to true, session cookies will only be sent back	このオプションをtrueに設定することにより、セッションクッキーは
+to the server if the browser has a HTTPS connection. This will keep	ブラウザーがHTTPS接続されている場合のみ、送り返されてきます。
+the cookie from being sent to you if it can not be done securely.	これにより安全な送信が出来なければ、クッキー送信を防ぐことができます。
 
 読み込み:config/view.php
-View Storage Paths
-Most templating systems load templates from disk. Here you may specify
-an array of paths that should be checked for your views. Of course
-the usual Laravel view path has already been registered for you.
-Compiled View Path
-This option determines where all the compiled Blade templates will be
-stored for your application. Typically, this is within the storage
-directory. However, as usual, you are free to change this value.
+View Storage Paths	ビュー保存パス
+Most templating systems load templates from disk. Here you may specify	テンプレートシステムではディスクからテンプレートをロードします。
+an array of paths that should be checked for your views. Of course	この配列でビューを検索するパスを指定してください。もちろん
+the usual Laravel view path has already been registered for you.	Laravelが通常使用するパスは設定済みです。
+Compiled View Path	コンパイル済みビューパス
+This option determines where all the compiled Blade templates will be	このオプションにはアプリケーションのコンパイル済みBlade
+stored for your application. Typically, this is within the storage	テンプレートの保存場所を指定します。通常、この値はstorageディレクトリーの
+directory. However, as usual, you are free to change this value.	中になるでしょう。しかし、他と同様、お好きな値に変更してください。
 
 読み込み:database/migrations/2014_10_12_000000_create_users_table.php
-Run the migrations.
-Reverse the migrations.
+Run the migrations.	マイグレーション実行
+Reverse the migrations.	マイグレーションを戻す
 
 読み込み:database/migrations/2014_10_12_100000_create_password_resets_table.php
-Run the migrations.
-Reverse the migrations.
+Run the migrations.	マイグレーション実行
+Reverse the migrations.	マイグレーションを戻す
 
 読み込み:database/seeds/DatabaseSeeder.php
-Run the database seeds.
+Run the database seeds.	データベース初期値設定実行
 
 読み込み:public/index.php
-Register The Auto Loader
-Composer provides a convenient, automatically generated class loader for
-our application. We just need to utilize it! We'll simply require it
-into the script here so that we don't have to worry about manual
-Turn On The Lights
-We need to illuminate PHP development, so let us turn on the lights.
-This bootstraps the framework and gets it ready for use, then it
-will load up this application so that we can run it and send
-the responses back to the browser and delight our users.
-Run The Application
-Once we have the application, we can simply call the run method,
-which will execute the request and send the response back to
-the client's browser allowing them to enjoy the creative
-and wonderful application we have prepared for them.
+Register The Auto Loader	オートローダーの登録
+Composer provides a convenient, automatically generated class loader for	omposerは便利なクラスローダーをアプリケーションのために自動的に
+our application. We just need to utilize it! We'll simply require it	生成してくれます。使わない手はありません！ここでそのスクリプトを
+into the script here so that we don't have to worry about manual	読み込み、クラスを「手動で」読み込む手間から解放されましょう。
+Turn On The Lights	明かりを灯す
+We need to illuminate PHP development, so let us turn on the lights.	私達はPHP開発を照らす必要があります。ですから明かりを灯しましょう。
+This bootstraps the framework and gets it ready for use, then it	これはフレームワークのブートストラップで準備は整っています。
+will load up this application so that we can run it and send	ではこのアプリケーションをロードしましょう。これでユーザーを
+the responses back to the browser and delight our users.	喜ばせるために、実行し、レスポンスをブラウザに送り返せます。
+Run The Application	アプリケーションの実行
+Once we have the application, we can simply call the run method,	アプリケーションの用意が整えば、runメソッドを呼び出せます。
+which will execute the request and send the response back to	リクエストを実行し、クライアントのブラウザにレスポンスを
+the client's browser allowing them to enjoy the creative	送り返すことで、彼らを刺激する、私達の創造的で素晴らしい
+and wonderful application we have prepared for them.	アプリケーションを楽しんでもらいましょう。
 
 読み込み:resources/lang/en/pagination.php
-Pagination Language Lines
-The following language lines are used by the paginator library to build
-the simple pagination links. You are free to change them to anything
-you want to customize your views to better match your application.
+Pagination Language Lines	ペジネーション言語行
+The following language lines are used by the paginator library to build	以下の言語行はペジネーターライブラリーによりシンプルなペジネーション
+the simple pagination links. You are free to change them to anythingリンクを生成するために使用されます。アプリケーションに合うように、
+you want to customize your views to better match your application.	自由に変更してください。
 
 読み込み:resources/lang/en/passwords.php
-Password Reminder Language Lines
-The following language lines are the default lines which match reasons
-that are given by the password broker for a password update attempt
-has failed, such as for an invalid token or invalid new password.
+Password Reminder Language Lines	パスワードリマインダー言語行
+The following language lines are the default lines which match reasons	以下の言語行は既存のパスワードを無効にしたい場合に、無効なトークンや
+that are given by the password broker for a password update attempt	新しいパスワードが入力された場合のように、パスワードの更新に失敗した
+has failed, such as for an invalid token or invalid new password.	理由を示すデフォルトの文言です。
 
 読み込み:resources/lang/en/validation.php
-Validation Language Lines
-The following language lines contain the default error messages used by
-the validator class. Some of these rules have multiple versions such
-as the size rules. Feel free to tweak each of these messages here.
-Custom Validation Language Lines
-Here you may specify custom validation messages for attributes using the
-convention "attribute.rule" to name the lines. This makes it quick to
-specify a specific custom language line for a given attribute rule.
-Custom Validation Attributes
-The following language lines are used to swap attribute place-holders
-with something more reader friendly such as E-Mail Address instead
-of "email". This simply helps us make messages a little cleaner.
+Validation Language Lines	バリデーション言語行
+The following language lines contain the default error messages used by	以下の言語行はバリデタークラスにより使用されるデフォルトのエラー
+the validator class. Some of these rules have multiple versions such	メッセージです。サイズルールのようにいくつかのバリデーションを
+as the size rules. Feel free to tweak each of these messages here.	持っているものもあります。メッセージはご自由に調整してください。
+Custom Validation Language Lines	カスタムバリデーション言語行
+Here you may specify custom validation messages for attributes using the	"属性.ルール"の規約でキーを指定することでカスタムバリデーション
+convention "attribute.rule" to name the lines. This makes it quick to	メッセージを定義できます。指定した属性ルールに対する特定の
+specify a specific custom language line for a given attribute rule.	メッセージを定義できます。指定した属性ルールに対する特定の
+Custom Validation Attributes	カスタムバリデーション属性名
+The following language lines are used to swap attribute place-holders	以下の言語行は、例えば"email"の代わりに「メールアドレス」のように、
+with something more reader friendly such as E-Mail Address instead	読み手にフレンドリーな表現でプレースホルダーを置き換えるために指定する
+of "email". This simply helps us make messages a little cleaner.	言語行です。これはメッセージをよりきれいに表示するために役に立ちます。
 
 読み込み:server.php
-Laravel - A PHP Framework For Web Artisans
-This file allows us to emulate Apache's "mod_rewrite" functionality from the
-built-in PHP web server. This provides a convenient way to test a Laravel
-application without having installed a "real" web server software here.
+A PHP Framework For Web Artisans	Web職人のためのPHPフレームワーク
+This file allows us to emulate Apache's "mod_rewrite" functionality from the	このファイルはPHPの組み込みWebサーバーで、Apacheの"mod_rewrite"機能を
+built-in PHP web server. This provides a convenient way to test a Laravel	エミュレートするためのものです。これにより、Laravelアプリケーションをテストするために
+application without having installed a "real" web server software here.	「本当」のWebサーバーソフトウェアをインストールしなくても済むようにしてくれます。
 
 読み込み:artisan
-Register The Auto Loader
-Composer provides a convenient, automatically generated class loader
-for our application. We just need to utilize it! We'll require it
-into the script here so that we do not have to worry about the
-loading of any our classes "manually". Feels great to relax.
-Run The Artisan Application
-When we run the console application, the current CLI command will be
-executed in this console and the response sent back to a terminal
-or another output device for the developers. Here goes nothing!
-Shutdown The Application
-Once Artisan has finished running. We will fire off the shutdown events
-so that any final work may be done by the application before we shut
-down the process. This is the last thing to happen to the request.
+Register The Auto Loader	オートローダー登録
+Composer provides a convenient, automatically generated class loader	コンポーサーは自動的に生成する便利なクラスローダーをアプリケーションに
+for our application. We just need to utilize it! We'll require it	提供しています。私達はそれを利用するだけです！そのスクリプトを
+into the script here so that we do not have to worry about the	ここで読み込んでいるので、「手動」によりクラスをロードすることに
+loading of any our classes "manually". Feels great to relax.	心を煩わせる必要はありません。リラックスしていましょう。
+Run The Artisan Application	Artisanアプリケーション実行
+When we run the console application, the current CLI command will be	 | コンソールアプリケーションを実行する時には、コンソールの中で現在の
+executed in this console and the response sent back to a terminal	CLIコマンドが実行され、レスポンスが端末か開発者の他の出力装置に
+or another output device for the developers. Here goes nothing!	送られます。それだけです！
+Shutdown The Application	アプリケーションのシャットダウン
+Once Artisan has finished running. We will fire off the shutdown events	Artisanは一度実行終了しました。シャットダウンの手順を進める前に
+so that any final work may be done by the application before we shut	後片付けをしてもらうため、シャットダウンイベントを発行します。
+down the process. This is the last thing to happen to the request.	これはリクエストの一番最後に実行されます。
 
 読み込み:gulpfile.js
-Elixir Asset Management
-Elixir provides a clean, fluent API for defining some basic Gulp tasks
-for your Laravel application. By default, we are compiling the Less
-file for our application, as well as publishing vendor resources.
+Elixir Asset Management	Elixirアセット管理
+Elixir provides a clean, fluent API for defining some basic Gulp tasks	ElixirはLaravelアプリケーションなのための、基本的なGulpタスクを
+for your Laravel application. By default, we are compiling the Less	定義する、美しく流暢なAPIを提供します。デフォルトでも、アプリケーションの
+file for our application, as well as publishing vendor resources.	Lessファイルをコンパイルし、同時にベンダーのリソースを発行します。
 
 読み込み:tests/ExampleTest.php
-A basic functional test example.
+A basic functional test example.	基本的な機能テストの例
 
 読み込み:tests/TestCase.php
-Creates the application.
+Creates the application.	アプリケーションの生成
