@@ -284,8 +284,7 @@ SMTP Server Password	SMTPサーバーパスワード
 Here you may set the password required by your SMTP server to send out	アプリケーションからSMTPサーバーにメッセージを送信する時に必要な
 messages from your application. This will be given to the server on	パスワードをここで設定します。これはサーバーとの接続時に使用され、
 connection so that the application will be able to send messages.	のアプリケーションからメッセージが送信できます。
-Sendmail System Path	 |
-Sendmailシステムパス
+Sendmail System Path	Sendmailシステムパス
 When using the "sendmail" driver to send e-mails, we will need to know	メールの送信に"sendmail"ドライバーを使用する場合、このサーバーで
 the path to where Sendmail lives on this server. A default path has	どこにSendmailがあるのか知る必要があります。ここで指定している
 been provided here, which will work well on most of your systems.	デフォルトのパスはほとんどのシステムで上手く動作します。
