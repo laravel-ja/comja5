@@ -1,1 +1,1 @@
-php vendor/laravel-ja/comja5/main.php
+php vendor/laravel-ja/comja5/main.php %*
