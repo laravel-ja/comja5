@@ -13,7 +13,7 @@ class File
     public function globAll( $path, $pattern )
     {
         $paths = glob( rtrim( $path, '/' ).'/*', GLOB_MARK | GLOB_ONLYDIR | GLOB_NOSORT );
-        $files = glob( rtrim( $path, '/' ).'/'.$pattern );
+        $files = glob( rtrim( $path, '/' ).'/'.$pattern, GLOB_MARK  );
 
         foreach( $paths as $path )
         {

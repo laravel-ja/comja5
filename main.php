@@ -52,7 +52,7 @@ if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
         $file->globAll( __DIR__.'/../../../tests', '*' ) );
     $files[] = __DIR__.'/../../../artisan';
     $files[] = __DIR__.'/../../../server.php';
-    var_dump($files); die();
+
     $tabFormatter = new TabFormatter();
 
     foreach ($files as $targetFile)
