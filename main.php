@@ -40,7 +40,14 @@ if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
     print 'タブ変換開始…'.PHP_EOL;
 
     $file = new File();
-    $files = array_merge( $files, $file->globAll( __DIR__.'/../../../app', '*' ), $file->globAll( __DIR__.'/../../../bootstrap', '*' ), $file->globAll( __DIR__.'/../../../config', '*' ), $file->globAll( __DIR__.'/../../../database', '*' ), $file->globAll( __DIR__.'/../../../resources/lang', '*' ), $file->globAll( __DIR__.'/../../../resources/views', '*' ), $file->globAll( __DIR__.'/../../../tests', '*' ) );  // NetBeansの整形が馬鹿すぎる…
+    $files = array_merge( $files,
+        $file->globAll( __DIR__.'/../../../app', '*' ),
+        $file->globAll( __DIR__.'/../../../bootstrap', '*' ),
+        $file->globAll( __DIR__.'/../../../config', '*' ),
+        $file->globAll( __DIR__.'/../../../database', '*' ),
+        $file->globAll( __DIR__.'/../../../resources/lang', '*' ),
+        $file->globAll( __DIR__.'/../../../resources/views', '*' ),
+        $file->globAll( __DIR__.'/../../../tests', '*' ) );  
     $files[] = [ __DIR__.'/../../../artisan' ];
     $files[] = [ __DIR__.'/../../../server.php' ];
 
