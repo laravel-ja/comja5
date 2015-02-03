@@ -40,14 +40,14 @@ if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
 
     $file = new File();
     $files = $file->globAll( __DIR__.'/../../../app', '*' );
-    $files += $file->globAll( __DIR__.'/../../../bootstrap', '*' );
-    $files += $file->globAll( __DIR__.'/../../../config', '*' );
-    $files += $file->globAll( __DIR__.'/../../../database', '*' );
-    $files += $file->globAll( __DIR__.'/../../../resources/lang', '*' );
-    $files += $file->globAll( __DIR__.'/../../../resources/views', '*' );
-    $files += $file->globAll( __DIR__.'/../../../tests', '*' );
-    $files += [ __DIR__.'/../../../artisan'];
-    $files += [ __DIR__.'/../../../server.php'];
+    $files[] = $file->globAll( __DIR__.'/../../../bootstrap', '*' );
+    $files[] = $file->globAll( __DIR__.'/../../../config', '*' );
+    $files[] = $file->globAll( __DIR__.'/../../../database', '*' );
+    $files[] = $file->globAll( __DIR__.'/../../../resources/lang', '*' );
+    $files[] = $file->globAll( __DIR__.'/../../../resources/views', '*' );
+    $files[] = $file->globAll( __DIR__.'/../../../tests', '*' );
+    $files[] = [ __DIR__.'/../../../artisan' ];
+    $files[] = [ __DIR__.'/../../../server.php' ];
 
     var_dump( $files ); die();
 
