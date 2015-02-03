@@ -12,8 +12,8 @@ class File
 
     public function globAll( $path, $pattern )
     {
-        $paths = $this->file->glob( rtrim( $path, '/' ).'/*', GLOB_MARK | GLOB_ONLYDIR | GLOB_NOSORT );
-        $files = $this->file->glob( rtrim( $path, '/' ).'/'.$pattern );
+        $paths = glob( rtrim( $path, '/' ).'/*', GLOB_MARK | GLOB_ONLYDIR | GLOB_NOSORT );
+        $files = glob( rtrim( $path, '/' ).'/'.$pattern );
 
         foreach( $paths as $path )
         {
