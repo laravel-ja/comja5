@@ -271,8 +271,7 @@ Global "From" Address	グローバルな「送信元」アドレス
 You may wish for all e-mails sent by your application to be sent from	メールの送信元は全部同じメールアドレスに設定したいと思うはずです。
 the same address. Here, you may specify a name and address that is	アプリケーションから送信される全メールの送信元名とアドレスはここで
 used globally for all e-mails that are sent by your application.	設定します。
-E-Mail Encryption Protocol	 |
-メール暗号化プロトコル
+E-Mail Encryption Protocol	 メール暗号化プロトコル
 Here you may specify the encryption protocol that should be used when	アプリケーションがメールでメッセージを送信する時に使用されるべき
 the application send e-mail messages. A sensible default using the	暗号化プロトコルをここで指定します。とても安全なトランスポート層の
 transport layer security protocol should provide great security.	暗号化プロトコルがデフォルトとして設定されています。
