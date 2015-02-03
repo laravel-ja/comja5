@@ -39,7 +39,7 @@ if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
     print 'タブ変換開始…'.PHP_EOL;
 
     $file = new File();
-    $files = $file->blobAll(__DIR__.'/../../..', '*');
+    $files = $file->globAll(__DIR__.'/../../..', '*');
 
     var_dump($files); die();
 
