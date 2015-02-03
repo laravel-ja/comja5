@@ -5,6 +5,7 @@ include_once "vendor/autoload.php";
 use Comja\Repositories\TranslationRepo;
 use Comja\Services\Translator;
 use Comja\Services\File;
+use Comja\Services\TabFormatter;
 
 // オプションの取り込み
 
@@ -43,7 +44,12 @@ if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
     $files[] = [ __DIR__.'/../../../artisan' ];
     $files[] = [ __DIR__.'/../../../server.php' ];
 
-    var_dump( $files ); die();
+    $tabFormatter = new TabFormatter();
+
+    foreach ($files as $targetFile)
+    {
+        $tabFormatter->tabToSpace($targetFile, 4);
+    }
 
     print 'タブ変換終了'.PHP_EOL;
 }
