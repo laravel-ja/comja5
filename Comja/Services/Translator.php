@@ -27,7 +27,7 @@ class Translator
 
             // ファイル書き出し
             $ret = file_put_contents( $fileName, $translatedContent );
-            if( !$ret )
+            if( $ret === false )
             {
                 fputs( STDERR, 'ファイル:'.$fileName.'へ書き込めませんでした。'.PHP_EOL );
                 continue;

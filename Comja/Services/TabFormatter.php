@@ -20,11 +20,11 @@ class TabFormatter
         }
 
         $ret = file_put_contents( $fileName, str_replace( "\t", str_repeat( ' ', $spaceColum ), $content ) );
-        if( $ret === false )
-        {
-            fputs( STDERR, 'ファイル名:'.$fileName.'が書き込めません。'.PHP_EOL );
-            return;
-        }
+//        if( $ret === false )
+//        {
+//            fputs( STDERR, 'ファイル名:'.$fileName.'が書き込めません。'.PHP_EOL );
+//            return;
+//        }
     }
 
 }

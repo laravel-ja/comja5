@@ -20,6 +20,7 @@ if( $options === false || count( $options ) < 1 )
     print "-f --file：日本語言語ファイル生成".PHP_EOL;
     print "-a --all：上記の3アクションを行います".PHP_EOL;
 }
+
 if( array_key_exists( 'c', $options ) || array_key_exists( 'comment', $options ) ||
     array_key_exists( 'a', $options ) || array_key_exists( 'all', $options ) )
 {
