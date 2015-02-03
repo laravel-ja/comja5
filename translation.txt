@@ -67,18 +67,18 @@ It's a breeze. Simply tell Laravel the URIs it should respond to	簡単です。
 and give it the controller to call when that URI is requested.	されたときに呼び出されるコントローラーを指定してください。
 
 読み込み:app/Providers/AppServiceProvider.php
-Bootstrap any application services.	全アプリケーションサービスの初期化処理
-Register any application services.	全アプリケーションサービスの登録
+Bootstrap any application services.	アプリケーションサービスの初期化処理
+Register any application services.	アプリケーションサービスの登録
 This service provider is a great spot to register your various container	このサービスプロバイダーは、アプリケーションの様々な
 bindings with the application. As you can see, we are registering our	コンテナ結合を行うのに最適です。ご覧の通り、"Registrar"実装を
 "Registrar" implementation here. You can add your own bindings too!	ここで登録しています。皆さんの結合も追加できますよ！
 
 読み込み:app/Providers/BusServiceProvider.php
-Registration & Login Controller	登録／ログインコントローラー
-Register any application services.	全アプリケーションサービスの登録
+Bootstrap any application services.	アプリケーションサービスの初期化処理
+Register any application services.	アプリケーションサービスの登録
 
 読み込み:app/Providers/ConfigServiceProvider.php
-Registration & Login Controller	登録／ログインコントローラー
+Overwrite any vendor / package configuration.	ベンダー／パッケージ設定のオーバーライト
 This service provider is intended to provide a convenient location for you	このサービスプロバイダーは、アプリケーションが要求された
 to overwrite any "vendor" or package configuration that you may want to	リクエスト／コマンドを処理する前に変更したい、"vendor"やパッケージの
 modify before the application handles the incoming request / command.	設定をオーバーライトするため、便利な場所を提供することを意図しています。
@@ -98,16 +98,16 @@ Get a validator for an incoming registration request.	登録リクエストに�
 Create a new user instance after a valid registration.	登録内容の確認後、新しいユーザーインスタンスを生成
 
 読み込み:app/User.php
-Get a validator for an incoming registration request.	登録リクエストに対するvalidator取得
+The database table used by the model.	モデルで使用するデータベーステーブル
 The attributes that are mass assignable.	複数代入を行う属性
 The attributes excluded from the model's JSON form.	モデルのJSON形式に含めない属性
 
 読み込み:bootstrap/app.php
-Get a validator for an incoming registration request.	登録リクエストに対するvalidator取得
+Create The Application	アプリケーション生成
 The first thing we will do is create a new Laravel application instance	最初に行うことは、Laravelの全コンポーネントを「糊」のように
 which serves as the "glue" for all the components of Laravel, and is	まとめ、様々なパーツをシステムに全部結合させるIoCコンテナと
 the IoC container for the system binding all of the various parts.	して動作する、アプリケーションインスタンスを新規に作成します。
-Get a validator for an incoming registration request.	登録リクエストに対するvalidator取得
+Bind Important Interfaces	重要なインターフェイスの結合
 Next, we need to bind some important interfaces into the container so	次に、重要なインターフェイスを必要なときに依存解決できるように、
 we will be able to resolve them when needed. The kernels serve the	コンテナへ結合する必要があります。アプリケーションにやってきた、
 incoming requests to this application from both the web and CLI.	WebとCLIの両方からのリクエストに対し、カーネルは動作します。
@@ -304,8 +304,7 @@ Queue Connections	キュー接続
 Here you may configure the connection information for each server that	ここでアプリケーションが使用するそれぞれのサーバーに対する接続情報を
 is used by your application. A default configuration has been added	設定します。それぞれのバックエンドのデフォルト接続はLaravelに最初から
 for each back-end shipped with Laravel. You are free to add more.	設定されています。自由に追加してください。
-Failed Queue Jobs	 |
-失敗したキュージョブ
+Failed Queue Jobs	失敗したキュージョブ
 These options configure the behavior of failed queue job logging so you	このオプションでは失敗したキュージョブをログする振る舞いを設定します。
 can control which database and table are used to store the jobs that	どのデータベースとテーブルを保存に使用するかをコントロールできます。
 have failed. You may change them to any database / table you wish.	お好きなデータベース／テーブルに変更して下さい。
@@ -343,8 +342,7 @@ Session Database Table	セッションデータベーステーブル
 When using the "database" session driver, you may specify the table we	"database"セッションドライバーを使用する時には、セッションを管理する
 should use to manage the sessions. Of course, a sensible default is	テーブルを指定する必要があります。もちろん、分かりやすいデフォルトが
 provided for you; however, you are free to change this as needed.	指定されていますが、必要であればご自由に変更してください。
-Session Sweeping Lottery	 |
-セッションのガベージコレクション確率
+Session Sweeping Lottery	セッションのガベージコレクション確率
 Some session drivers must manually sweep their storage location to get	いくつかのセッションドライバーは情報の保存場所から古いセッションを
 rid of old sessions from storage. Here are the chances that it will	クリーンアップする必要があります。ここでは一回のリクエストに対し
 happen on a given request. By default, the odds are 2 out of 100.	どのくらいの確率で行うかを指定します。デフォルトでは100回に2回です。
@@ -387,10 +385,12 @@ Reverse the migrations.	マイグレーションを戻す
 Run the database seeds.	データベース初期値設定実行
 
 読み込み:public/index.php
+A PHP Framework For Web Artisans	Web職人のためのフレームワーク
 Register The Auto Loader	オートローダーの登録
 Composer provides a convenient, automatically generated class loader for	omposerは便利なクラスローダーをアプリケーションのために自動的に
 our application. We just need to utilize it! We'll simply require it	生成してくれます。使わない手はありません！ここでそのスクリプトを
-into the script here so that we don't have to worry about manual	読み込み、クラスを「手動で」読み込む手間から解放されましょう。
+into the script here so that we don't have to worry about manual	読み込み、これ以降、クラスを「手動で」読み込む手間から
+loading any of our classes later on. It feels nice to relax.	解放されましょう。リラックスできて、気分がいいですね。
 Turn On The Lights	明かりを灯す
 We need to illuminate PHP development, so let us turn on the lights.	私達はPHP開発を照らす必要があります。ですから明かりを灯しましょう。
 This bootstraps the framework and gets it ready for use, then it	これはフレームワークのブートストラップで準備は整っています。
@@ -405,7 +405,7 @@ and wonderful application we have prepared for them.	アプリケーションを
 読み込み:resources/lang/en/pagination.php
 Pagination Language Lines	ペジネーション言語行
 The following language lines are used by the paginator library to build	以下の言語行はペジネーターライブラリーによりシンプルなペジネーション
-the simple pagination links. You are free to change them to anythingリンクを生成するために使用されます。アプリケーションに合うように、
+the simple pagination links. You are free to change them to anything	リンクを生成するために使用されます。アプリケーションに合うように、
 you want to customize your views to better match your application.	自由に変更してください。
 
 読み込み:resources/lang/en/passwords.php
@@ -441,7 +441,7 @@ for our application. We just need to utilize it! We'll require it	提供して�
 into the script here so that we do not have to worry about the	ここで読み込んでいるので、「手動」によりクラスをロードすることに
 loading of any our classes "manually". Feels great to relax.	心を煩わせる必要はありません。リラックスしていましょう。
 Run The Artisan Application	Artisanアプリケーション実行
-When we run the console application, the current CLI command will be	 | コンソールアプリケーションを実行する時には、コンソールの中で現在の
+When we run the console application, the current CLI command will be	コンソールアプリケーションを実行する時には、コンソールの中で現在の
 executed in this console and the response sent back to a terminal	CLIコマンドが実行され、レスポンスが端末か開発者の他の出力装置に
 or another output device for the developers. Here goes nothing!	送られます。それだけです！
 Shutdown The Application	アプリケーションのシャットダウン
