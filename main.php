@@ -30,7 +30,7 @@ if( array_key_exists( 'c', $options ) || array_key_exists( 'comment', $options )
     $translationRepo = new TranslationRepo();
 
     // 本当はリポジトリの使用側が、保管場所を与えるのはよくないんだけど。
-    $translations = $translationRepo->get( __DIR__.'/../../translation.txt' );
+    $translations = $translationRepo->get( __DIR__.'/translation.txt' );
 
     $translator = new Translator;
 
@@ -75,7 +75,7 @@ if( array_key_exists( 'f', $options ) || array_key_exists( 'file', $options ) ||
     $translationRepo = new TranslationRepo();
 
     // ここで再利用。
-    $translations = $translationRepo->get( __DIR__.'/../../language_lines.txt' );
+    $translations = $translationRepo->get( __DIR__.'/language_lines.txt' );
 
     $translator = new Translator;
 
