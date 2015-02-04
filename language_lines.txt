@@ -69,3 +69,7 @@ The :attribute must contain :size items.	:attributeは:size個ご指定くださ
 The :attribute has already been taken.	:attributeの値は既に存在しています。
 The :attribute format is invalid.	:attributeに正しい形式をご指定ください。
 The :attribute must be a valid zone.	:attributeには、有効なゾーンをご指定ください。
+
+attribute-name	属性名
+rule-name	ルール名
+custom-message	カスタムメッセージ
