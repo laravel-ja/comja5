@@ -70,7 +70,7 @@ if( array_key_exists( 'f', $options ) || array_key_exists( 'file', $options ) ||
 
     $file = new File();
 
-    $file->copyDir( __DIR__.'/../../../resouces/lang/en', __DIR__.'/../../../resources/lang/ja' );
+    $file->copyDir( __DIR__.'/../../../resources/lang/en', __DIR__.'/../../../resources/lang/ja' );
 
     $translationRepo = new TranslationRepo();
 
