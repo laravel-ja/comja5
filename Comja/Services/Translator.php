@@ -10,28 +10,25 @@ namespace Comja\Services;
 class Translator
 {
 
-    public function trans( $translations )
+    public function trans( $fileName, $transArray )
     {
-        foreach( $translations as $fileName => $transArray )
+        // ファイル読み込み
+        $contents = file_get_contents( $fileName );
+        if( !$contents )
         {
-            // ファイル読み込み
-            $contents = file_get_contents( $fileName );
-            if( !$contents )
-            {
-                fputs( STDERR, 'ファイル:'.$fileName.'を読み込めませんでした。'.PHP_EOL );
-                continue;
-            }
+            fputs( STDERR, 'ファイル:'.$fileName.'を読み込めませんでした。'.PHP_EOL );
+            return;
+        }
 
-            // 英語 => 日本語変換
-            $translatedContent = str_replace( array_keys( $transArray ), array_values( $transArray ), $contents );
+        // 英語 => 日本語変換
+        $translatedContent = str_replace( array_keys( $transArray ), array_values( $transArray ), $contents );
 
-            // ファイル書き出し
-            $ret = file_put_contents( $fileName, $translatedContent );
-            if( $ret === false )
-            {
-                fputs( STDERR, 'ファイル:'.$fileName.'へ書き込めませんでした。'.PHP_EOL );
-                continue;
-            }
+        // ファイル書き出し
+        $ret = file_put_contents( $fileName, $translatedContent );
+        if( $ret === false )
+        {
+            fputs( STDERR, 'ファイル:'.$fileName.'へ書き込めませんでした。'.PHP_EOL );
+            return;
         }
     }
 

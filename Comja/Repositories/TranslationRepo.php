@@ -15,9 +15,9 @@ class TranslationRepo
      *
      * @return array キーがファイル名、翻訳内容が値の配列。翻訳内容も英文がキー、和文が値の配列。
      */
-    public function get()
+    public function get( $translationFile )
     {
-        $contents = explode( PHP_EOL, file_get_contents( __DIR__.'/../../translation.txt' ) );
+        $contents = explode( PHP_EOL, file_get_contents( $translationFile ) );
 
         $translations = [ ];
         $match = [ ];
@@ -28,7 +28,7 @@ class TranslationRepo
             {
                 $fileName = str_replace( '読み込み:', '', $line );
             }
-            elseif( preg_match( "/^(.+?)\t(.+?)$/", $line, $match ) )
+            elseif( preg_match( "/^([^\t]+)\t([^\t]+)$/", $line, $match ) )
             {
                 $translations[$fileName][$match[1]] = $match[2];
             }

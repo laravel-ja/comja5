@@ -28,10 +28,16 @@ if( array_key_exists( 'c', $options ) || array_key_exists( 'comment', $options )
     print '翻訳開始…'.PHP_EOL;
 
     $translationRepo = new TranslationRepo();
-    $translations = $translationRepo->get();
+
+    // 本当はリポジトリの使用側が、保管場所を与えるのはよくないんだけど。
+    $translations = $translationRepo->get( __DIR__.'/../../translation.txt' );
 
     $translator = new Translator;
-    $translator->trans( $translations );
+
+    foreach( $translations as $fileName => $transArray )
+    {
+        $translator->trans( $fileName, $transArray );
+    }
 
     print '翻訳終了'.PHP_EOL;
 }
@@ -43,21 +49,15 @@ if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
 
     $file = new File();
     $files = array_merge(
-        $file->globAll( __DIR__.'/../../../app', '*' ),
-        $file->globAll( __DIR__.'/../../../bootstrap', '*' ),
-        $file->globAll( __DIR__.'/../../../config', '*' ),
-        $file->globAll( __DIR__.'/../../../database', '*' ),
-        $file->globAll( __DIR__.'/../../../resources/lang', '*' ),
-        $file->globAll( __DIR__.'/../../../resources/views', '*' ),
-        $file->globAll( __DIR__.'/../../../tests', '*' ) );
+        $file->globAll( __DIR__.'/../../../app', '*' ), $file->globAll( __DIR__.'/../../../bootstrap', '*' ), $file->globAll( __DIR__.'/../../../config', '*' ), $file->globAll( __DIR__.'/../../../database', '*' ), $file->globAll( __DIR__.'/../../../resources/lang', '*' ), $file->globAll( __DIR__.'/../../../resources/views', '*' ), $file->globAll( __DIR__.'/../../../tests', '*' ) ); // NetBeansの整形が…
     $files[] = __DIR__.'/../../../artisan';
     $files[] = __DIR__.'/../../../server.php';
 
     $tabFormatter = new TabFormatter();
 
-    foreach ($files as $targetFile)
+    foreach( $files as $targetFile )
     {
-        $tabFormatter->tabToSpace($targetFile, 4);
+        $tabFormatter->tabToSpace( $targetFile, 4 );
     }
 
     print 'タブ変換終了'.PHP_EOL;
@@ -67,6 +67,22 @@ if( array_key_exists( 'f', $options ) || array_key_exists( 'file', $options ) ||
     array_key_exists( 'a', $options ) || array_key_exists( 'all', $options ) )
 {
     print '言語ファイル生成開始…'.PHP_EOL;
+
+    $file = new File();
+
+    $file->copyDir( __DIR__.'/../../../resouces/lang/en', __DIR__.'/../../../resources/lang/ja' );
+
+    $translationRepo = new TranslationRepo();
+
+    // ここで再利用。
+    $translations = $translationRepo->get( __DIR__.'/../../language_lines.txt' );
+
+    $translator = new Translator;
+
+    foreach( $translations as $fileName => $transArray )
+    {
+        $translator->trans( __DIR__.'/../../../resources/lang/ja/'.$fileName, $transArray );
+    }
 
     print '言語ファイル生成終了'.PHP_EOL;
 }
