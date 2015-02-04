@@ -4,7 +4,7 @@ A translator command for comments in files of laravel/laravel repository to Japa
 
 Laravel5のlaravel/laravelリポジトリーに含まれているファイルのコメントを日本語に翻訳します。
 
-本当はsedで十分なのですが、Windows環境も考慮し、PHPで変換しています。
+その他、おまけ機能として、タブの４空白変換とja言語ファイル生成ができます。
 
 ### インストール
 
@@ -18,7 +18,7 @@ composer.jsonのrequireセクションに以下の1行を加えてください�
 
 ### 実行
 
-vendor/binの中にcomjaコマンドが作成されます。プロジェクトのルートディレクトリーで、それを実行してください。
+vendor/binの中にcomjaコマンドが作成されます。プロジェクトのルートディレクトリーで、それを実行してください。オプションの説明が表示されます。
 
 **Linux/Mac:**
 
@@ -31,6 +31,24 @@ vendor/bin/comja
 ~~~
 vendor/bin/comja.bat
 ~~~
+
+### 実行時オプション
+
+#### -c もしくは --comment
+
+laravel/laravelリポジトリーに含まれている、コメントを翻訳します。
+
+#### -t もしくは --tab
+
+タブを空白４つに変換します。
+
+#### -f もしくは --file
+
+日本語の言語ファイルをresouces/lang/jaディレクトリー下に生成します。
+
+#### -a もしくは --all
+
+上記３機能をまとめて実行します。
 
 ### アンインストール
 

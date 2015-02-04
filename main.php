@@ -9,14 +9,14 @@ use Comja\Services\TabFormatter;
 
 // オプションの取り込み
 
-$options = getopt( "ctf", ["comment", "tab", "file" ] );
+$options = getopt( "ctfa", ["comment", "tab", "file", "all" ] );
 
 if( $options === false || count( $options ) < 1 )
 {
     fputs( STDERR, "オプション指定がありません。".PHP_EOL );
     print "使用法： comja [-c|--comment] [-t|--tab] [-f|--file] [-a|--all]".PHP_EOL;
     print "オプション：".PHP_EOL;
-    print "-c --cooment：コメント部分の翻訳".PHP_EOL;
+    print "-c --comment：コメント部分の翻訳".PHP_EOL;
     print "-t --tab：タブを4スペースへ変換".PHP_EOL;
     print "-f --file：日本語言語ファイル生成".PHP_EOL;
     print "-a --all：上記の3アクションを行います".PHP_EOL;
