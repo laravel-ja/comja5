@@ -9,7 +9,7 @@ use Comja\Services\TabFormatter;
 
 // オプションの取り込み
 
-$options = getopt( "ctfa", ["comment", "tab", "file", "all" ] );
+$options = getopt( "ctfar", ["comment", "tab", "file", "all" ] );
 
 if( $options === false || count( $options ) < 1 )
 {

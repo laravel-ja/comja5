@@ -1,6 +1,6 @@
 # comja5
 
-A translator command for comments in files of laravel/laravel repository to Japanese.
+A translation command for comments in files of laravel/laravel repository to Japanese. In addition
 
 Laravel5のlaravel/laravelリポジトリーに含まれているファイルのコメントを日本語に翻訳します。
 
@@ -57,4 +57,5 @@ laravel/laravelリポジトリーに含まれている、コメントを翻訳�
 ### Licence/Rights
 
 Copyright by Hirohisa Kawase
+
 Licensed by MIT License

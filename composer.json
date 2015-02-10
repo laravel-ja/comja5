@@ -3,7 +3,7 @@
     "description": "Translate comments in laravel/laravel version5 to Japanese",
     "license": "MIT",
     "keywords": [
-        "laravel", "japanese", "toranslator"
+        "laravel", "japanese", "resource"
     ],
     "authors": [
         {
@@ -24,5 +24,5 @@
         "comja",
         "comja.bat"
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
