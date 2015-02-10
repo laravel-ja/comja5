@@ -32,14 +32,14 @@ if( (array_key_exists( 'c', $options ) || array_key_exists( 'comment', $options 
     return 1;
 }
 
-if( (array_key_exists( 'a', $array ) || array_key_exists( 'all', $array )) &&
+if( (array_key_exists( 'a', $options ) || array_key_exists( 'all', $options )) &&
     count( $options ) != 1 )
 {
     fputs( STDERR, '-aまたは--allオプションは他のオプションと同時に指定できません。'.PHP_EOL );
     return 1;
 }
 
-if( array_key_exists( 'A', $array ) && count( $options ) != 1 )
+if( array_key_exists( 'A', $options ) && count( $options ) != 1 )
 {
     fputs( STDERR, '-Aオプションは他のオプションと同時に指定できません。'.PHP_EOL );
     return 1;
@@ -66,7 +66,8 @@ if( array_key_exists( 'c', $options ) || array_key_exists( 'comment', $options )
 }
 
 if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
-    array_key_exists( 'a', $options ) || array_key_exists( 'all', $options ) )
+    array_key_exists( 'a', $options ) || array_key_exists( 'all', $options ) ||
+    array_key_exists( 'A', $options ) )
 {
     print 'タブ変換開始…'.PHP_EOL;
 
@@ -87,7 +88,8 @@ if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
 }
 
 if( array_key_exists( 'f', $options ) || array_key_exists( 'file', $options ) ||
-    array_key_exists( 'a', $options ) || array_key_exists( 'all', $options ) )
+    array_key_exists( 'a', $options ) || array_key_exists( 'all', $options ) ||
+    array_key_exists( 'A', $options ) )
 {
     print '言語ファイル生成開始…'.PHP_EOL;
 
@@ -111,7 +113,7 @@ if( array_key_exists( 'f', $options ) || array_key_exists( 'file', $options ) ||
 }
 
 if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
-    array_key_exists( 'A', $options ) || array_key_exists( 'all', $options ) )
+    array_key_exists( 'A', $options ) )
 {
     print 'コメント削除開始…'.PHP_EOL;
 
