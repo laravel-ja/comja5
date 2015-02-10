@@ -10,7 +10,7 @@ use Comja\Services\CommentsFormatter;
 
 // オプションの取り込み
 
-$options = getopt( "ctfar", ["comment", "tab", "file", "remove", "all" ] );
+$options = getopt( "ctfarA", ["comment", "tab", "file", "remove", "all" ] );
 
 if( $options === false || count( $options ) < 1 )
 {

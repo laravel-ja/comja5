@@ -2,11 +2,6 @@
 
 namespace Comja\Services;
 
-/**
- * Description of TabFormater
- *
- * @author Hirohisa Kawase
- */
 class TabFormatter
 {
 
