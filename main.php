@@ -112,7 +112,7 @@ if( array_key_exists( 'f', $options ) || array_key_exists( 'file', $options ) ||
     print '言語ファイル生成終了'.PHP_EOL;
 }
 
-if( array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ||
+if( array_key_exists( 'r', $options ) || array_key_exists( 'remove', $options ) ||
     array_key_exists( 'A', $options ) )
 {
     print 'コメント削除開始…'.PHP_EOL;
