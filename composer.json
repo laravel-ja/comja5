@@ -23,6 +23,5 @@
     "bin": [
         "comja",
         "comja.bat"
-    ],
-    "minimum-stability": "stable"
+    ]
 }
