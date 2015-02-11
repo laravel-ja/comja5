@@ -52,8 +52,8 @@ if( array_key_exists( 't', $options ) && array_key_exists( 'tab', $options ) )
 }
 
 $sp = false;
-$sp = array_key_exists( 't', $options ) ? $options( 't' ) : $sp;
-$sp = array_key_exists( 'tab', $options ) ? $options( 'tab' ) : $sp;
+$sp = array_key_exists( 't', $options ) ? $options['t'] : $sp;
+$sp = array_key_exists( 'tab', $options ) ? $options['tab'] : $sp;
 
 if( (array_key_exists( 't', $options ) || array_key_exists( 'tab', $options ) ) &&
     $sp !== false && preg_match( "/^[0-9]+$/", $sp ) === 0 )
