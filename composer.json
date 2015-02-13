@@ -21,7 +21,7 @@
         "php": ">=5.4"
     },
     "bin": [
-        "comja",
-        "comja.bat"
+        "comja5",
+        "comja5.bat"
     ]
 }
