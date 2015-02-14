@@ -2,11 +2,6 @@
 
 namespace Comja\Services;
 
-/**
- * Description of File
- *
- * @author Hirohisa Kawase
- */
 class File
 {
 

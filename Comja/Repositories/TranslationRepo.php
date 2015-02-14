@@ -13,20 +13,20 @@ class TranslationRepo
     /**
      * 翻訳ファイル取得
      *
-     * @return array キーがファイル名、翻訳内容が値の配列。翻訳内容も英文がキー、和文が値の配列。
+     * @return array キーがファイル名、翻訳内容が値の配列。翻訳内容は英文がキー、和文が値の配列。
      */
     public function get( $translationFile )
     {
-        $contents = explode( PHP_EOL, file_get_contents( $translationFile ) );
+        $contents = explode( "\n", file_get_contents( $translationFile ) );
 
         $translations = [ ];
         $match = [ ];
 
         foreach( $contents as $line )
         {
-            if( strpos( $line, '読み込み:' ) === 0 )
+            if( strpos( $line, 'Read From:' ) === 0 )
             {
-                $fileName = str_replace( '読み込み:', '', $line );
+                $fileName = str_replace( 'Read From:', '', $line );
             }
             elseif( preg_match( "/^([^\t]+)\t([^\t]+)$/", $line, $match ) )
             {

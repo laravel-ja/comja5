@@ -1,15 +1,15 @@
-読み込み:pagination.php
+Read From::pagination.php
 &laquo; Previous	&laquo; 前
 Next &raquo;	次 &raquo
 
-読み込み:passwords.php
+Read From::passwords.php
 Passwords must be at least six characters and match the confirmation.	パスワードは最低６文字で、確認項目と一致している必要があります。
 We can't find a user with that e-mail address.	メールアドレスに一致するユーザーは存在していません。
 This password reset token is invalid.	このパスワードリセットトークンは無効です。
 We have e-mailed your password reset link!	パスワードリセットメールを送信しました。
 Your password has been reset!	パスワードをリセットしました。
 
-読み込み:validation.php
+Read From::validation.php
 The :attribute must be accepted.	:attributeを承認してください。
 The :attribute is not a valid URL.	:attributeが有効なURLではありません。
 The :attribute must be a date after :date.	:attributeには、:date以降の日付を指定してください。

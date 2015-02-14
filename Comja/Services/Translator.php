@@ -2,11 +2,6 @@
 
 namespace Comja\Services;
 
-/**
- * Description of Translator
- *
- * @author Hirohisa Kawase
- */
 class Translator
 {
 
@@ -16,7 +11,7 @@ class Translator
         $contents = file_get_contents( $fileName );
         if( !$contents )
         {
-            fputs( STDERR, 'ファイル:'.$fileName.'を読み込めませんでした。'.PHP_EOL );
+            fputs( STDERR, _('ファイル:'.$fileName.'を読み込めませんでした。').PHP_EOL );
             return;
         }
 
@@ -27,7 +22,7 @@ class Translator
         $ret = file_put_contents( $fileName, $translatedContent );
         if( $ret === false )
         {
-            fputs( STDERR, 'ファイル:'.$fileName.'へ書き込めませんでした。'.PHP_EOL );
+            fputs( STDERR, _('ファイル:'.$fileName.'へ書き込めませんでした。').PHP_EOL );
             return;
         }
     }

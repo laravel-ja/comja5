@@ -10,7 +10,7 @@ class CommentsFormatter
         $content = file_get_contents( $filePath );
         if( $content === false )
         {
-            fputs( STDERR, 'ファイル名:'.$fileName.'が読み込めません。'.PHP_EOL );
+            fputs( STDERR, _('ファイル名:'.$fileName.'が読み込めません。').PHP_EOL );
             return;
         }
 
@@ -29,7 +29,7 @@ class CommentsFormatter
         $ret = file_put_contents( $filePath, $addedEmptyLine );
 //        if( $ret === false )
 //        {
-//            fputs( STDERR, 'ファイル名:'.$fileName.'が書き込めません。'.PHP_EOL );
+//            fputs( STDERR, _('ファイル名:'.$fileName.'が書き込めません。').PHP_EOL );
 //            return;
 //        }
     }
