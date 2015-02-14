@@ -42,7 +42,7 @@ class File
     {
         $srcRealPath = realpath( $srcDir );
         $distRealPath = realpath( $distDir );
-
+print $distDir."<<>>".$distRealPath.PHP_EOL;
         @mkdir( $distRealPath );
 
         if( false === ($dirHandler = opendir( $srcRealPath )) )
