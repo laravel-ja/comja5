@@ -43,25 +43,29 @@ class File
         $srcRealPath = realpath( $srcDir );
         $distRealPath = realpath( $distDir );
 
-        $dirHandler = opendir( $srcRealPath );
         @mkdir( $distRealPath );
+
+        if( false === ($dirHandler = opendir( $srcRealPath )) )
+        {
+            fputs( STDERR, __( 'ディレクトリー:'.$srcRealPath.'が開けません。' ).PHP_EOL );
+            return;
+        }
 
         while( false !== ( $file = readdir( $dirHandler )) )
         {
             if( ( $file != '.' ) && ( $file != '..' ) )
             {
-                if( is_dir( $srcRealPath.DS.$file ) )
+                if( is_dir( realpath( $srcRealPath.DS.$file ) ) )
                 {
-                    copyDir( $srcRealPath.DS.$file, $distRealPath.DS.$file );
+                    $this->copyDir( realpath( $srcRealPath.DS.$file ), realpath( $distRealPath.DS.$file ) );
                 }
                 else
                 {
-                    print $srcRealPath."   ".$srcDir;
-                    copy( $srcRealPath.DS.$file, $distRealPath.DS.$file );
+                    copy( realpath( $srcRealPath.DS.$file ), realpath( $distRealPath.DS.$file ) );
                 }
             }
         }
-        closedir( $dir );
+        closedir( $dirHandler );
     }
 
 }
