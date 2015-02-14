@@ -43,9 +43,10 @@ class File
         $srcRealPath = realpath( $srcDir );
         $distRealPath = realpath( $distDir );
 
-        $dir = opendir( $srcRealPath );
+        $dirHandler = opendir( $srcRealPath );
         @mkdir( $distRealPath );
-        while( false !== ( $file = readdir( $dir )) )
+        
+        while( false !== ( $file = readdir( $dirHandler )) )
         {
             if( ( $file != '.' ) && ( $file != '..' ) )
             {
