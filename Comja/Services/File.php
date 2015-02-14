@@ -41,9 +41,10 @@ class File
     public function copyDir( $srcDir, $distDir )
     {
         $srcRealPath = realpath( $srcDir );
+
+        // realpathは実在しないリソースが存在しないとfalseになるので使えない。
+        @mkdir( $distDir );
         $distRealPath = realpath( $distDir );
-print $distDir."<<>>".$distRealPath.PHP_EOL;
-        @mkdir( $distRealPath );
 
         if( false === ($dirHandler = opendir( $srcRealPath )) )
         {
@@ -55,13 +56,13 @@ print $distDir."<<>>".$distRealPath.PHP_EOL;
         {
             if( ( $file != '.' ) && ( $file != '..' ) )
             {
-                if( is_dir( realpath( $srcRealPath.DS.$file ) ) )
+                if( is_dir( $srcRealPath.DS.$file ) )
                 {
-                    $this->copyDir( realpath( $srcRealPath.DS.$file ), realpath( $distRealPath.DS.$file ) );
+                    $this->copyDir( $srcRealPath.DS.$file, $distRealPath.DS.$file );
                 }
                 else
                 {
-                    copy( realpath( $srcRealPath.DS.$file ), realpath( $distRealPath.DS.$file ) );
+                    copy( $srcRealPath.DS.$file, $distRealPath.DS.$file );
                 }
             }
         }
