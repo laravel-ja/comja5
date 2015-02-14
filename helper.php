@@ -6,4 +6,6 @@ function __( $message )
     {
         return mb_convert_encoding( $message, 'SJIS', 'UTF-8' );
     }
+
+    return $message;
 }
