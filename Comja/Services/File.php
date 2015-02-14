@@ -45,7 +45,7 @@ class File
 
         $dirHandler = opendir( $srcRealPath );
         @mkdir( $distRealPath );
-        
+
         while( false !== ( $file = readdir( $dirHandler )) )
         {
             if( ( $file != '.' ) && ( $file != '..' ) )
@@ -56,6 +56,7 @@ class File
                 }
                 else
                 {
+                    print $srcRealPath."   ".$srcDir;
                     copy( $srcRealPath.DS.$file, $distRealPath.DS.$file );
                 }
             }
