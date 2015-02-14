@@ -1,6 +1,6 @@
 <?php
 
-function _( $message )
+function __( $message )
 {
     if( strtoupper( substr( PHP_OS, 0, 3 ) ) === 'WIN' )
     {

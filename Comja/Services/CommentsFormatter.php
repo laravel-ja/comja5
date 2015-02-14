@@ -7,10 +7,12 @@ class CommentsFormatter
 
     public function remove( $filePath )
     {
-        $content = file_get_contents( $filePath );
+        $realName = realpath( $filePath );
+
+        $content = file_get_contents( $realName );
         if( $content === false )
         {
-            fputs( STDERR, _('ファイル名:'.$fileName.'が読み込めません。').PHP_EOL );
+            fputs( STDERR, __( 'ファイル名:'.$realName.'が読み込めません。' ).PHP_EOL );
             return;
         }
 
@@ -26,10 +28,10 @@ class CommentsFormatter
         // 最終行に空行追加
         $addedEmptyLine = rtrim( $noSpaceLine, "\n" )."\n";
 
-        $ret = file_put_contents( $filePath, $addedEmptyLine );
+        $ret = file_put_contents( $realName, $addedEmptyLine );
 //        if( $ret === false )
 //        {
-//            fputs( STDERR, _('ファイル名:'.$fileName.'が書き込めません。').PHP_EOL );
+//            fputs( STDERR, __('ファイル名:'.$realName.'が書き込めません。').PHP_EOL );
 //            return;
 //        }
     }

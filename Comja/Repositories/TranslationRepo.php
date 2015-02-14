@@ -3,7 +3,7 @@
 namespace Comja\Repositories;
 
 /**
- * 翻訳ベースファイルリポジトリー
+ * 翻訳ベースファイルリポジトリー(
  *
  * @author Hirohisa Kawase
  */
@@ -17,7 +17,7 @@ class TranslationRepo
      */
     public function get( $translationFile )
     {
-        $contents = explode( "\n", file_get_contents( $translationFile ) );
+        $contents = explode( "\n", file_get_contents( realpath( $translationFile ) ) );
 
         $translations = [ ];
         $match = [ ];
