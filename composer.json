@@ -25,6 +25,5 @@
     },
     "bin": [
         "comja5",
-        "comja5.bat"
     ]
 }
