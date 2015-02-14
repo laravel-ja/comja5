@@ -23,7 +23,7 @@ class File
 
         foreach( $paths as $path )
         {
-            $files = array_merge( $files, $this->globAll( $path, $pattern ) );
+            $files = array_merge( $files, $this->globFiles( $path, $pattern ) );
         }
 
         return array_filter( $files, function ($value)
