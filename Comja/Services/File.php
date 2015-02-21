@@ -76,7 +76,7 @@ class File
         $srcRealPath = $this->getRealPath( $srcDir );
 
         // realpathは実在しないリソースが存在しないとfalseになるので使えない。
-        @mkdir( $this->getCurrentDir().DS.$distDir );
+        @mkdir( $distDir );
         $distRealPath = realpath( $distDir );
 
         if( false === ($dirHandler = opendir( $srcRealPath )) )
