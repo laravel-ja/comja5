@@ -25,7 +25,7 @@ if( count( $options ) < 1 )
     print __( "-A：コメント削除、タブ変換、言語ファイル追加を行います" ).PHP_EOL;
 }
 
-
+$opt = [ ];
 
 // オプションをチェックしやすいようにシンプルに
 if( isset( $options['c'] ) || isset( $options['comment'] ) )
