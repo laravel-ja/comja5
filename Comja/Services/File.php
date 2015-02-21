@@ -102,6 +102,12 @@ class File
         closedir( $dirHandler );
     }
 
+    public function getRelativePath( $path, $basePath )
+    {
+        // 簡易版
+        return trim( str_replace( $basePath, '', $path ), DS );
+    }
+
     /**
      * ユニットテストのためのラップメソッド
      *
