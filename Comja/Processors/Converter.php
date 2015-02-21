@@ -71,8 +71,8 @@ class Converter
             $this->box->push( new Translator() );
 
             // 言語ファイルenをjaへコピー
-            $this->file->copyDir( $this->file->getCurrentDir.'/resources/lang/en',
-                $this->file->getCurrentDir.'/resources/kang/ja' );
+            $this->file->copyDir( $this->file->getCurrentDir().'/resources/lang/en',
+                $this->file->getCurrentDir().'/resources/kang/ja' );
 
             // 新規生成したファイルの変換
             $this->formatNewFiles();
@@ -105,7 +105,7 @@ class Converter
 
                 if( $translation !== false )
                 {
-                    $this->box['翻訳']->setTranslations( $this->commentRepo->get( $targetFile ) );
+                    $this->box['翻訳']->setTranslations( $translation );
                 }
             }
             // 変換
