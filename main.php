@@ -40,12 +40,12 @@ if( isset( $options['f'] ) || isset( $options['file'] ) )
 
 if( isset( $options['t'] ) )
 {
-    $opts['tab'] = $options['t'];
+    $opts['tab'] = $options['t'] === false ? 4 : $options['t'];
 }
 
 if( isset( $options['tab'] ) )
 {
-    $opts['tab'] = $options['tab'];
+    $opts['tab'] = $options['tab'] === false ? 4 : $options['tab'];
 }
 
 if( isset( $options['f'] ) || isset( $options['file'] ) )
@@ -62,14 +62,14 @@ if( isset( $options['a'] ) || isset( $options['all'] ) )
 {
     $opts['all'] = true;
     $opts['comment'] = true;
-    $opts['tab'] = true;
+    $opts['tab'] = 4;
     $opts['file'] = true;
 }
 
 if( isset( $options['A'] ) )
 {
     $opts['A'] = true;
-    $opts['tab'] = true;
+    $opts['tab'] = 4;
     $opts['file'] = true;
     $opts['remove'] = true;
 }
