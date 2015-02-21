@@ -85,24 +85,24 @@ class Converter
      */
     public function formatExistedFiles()
     {
+        $cwd = $this->file->getCurrentDir();
         // 変換対象ファイル一覧取得
         $files = array_merge(
-            $this->file->globFiles( $this->file->getCurrentDir().'/app', '*' ),
-            $this->file->globFiles( $this->file->getCurrentDir().'/bootstrap', '*' ),
-            $this->file->globFiles( $this->file->getCurrentDir().'/config', '*' ),
-            $this->file->globFiles( $this->file->getCurrentDir().'/database', '*' ),
-            $this->file->globFiles( $this->file->getCurrentDir().'/resources', '*.php' ),
-            $this->file->globFiles( $this->file->getCurrentDir().'/tests', '*' ) );
-        $files[] = $this->file->getCurrentDir().'/artisan';
-        $files[] = $this->file->getCurrentDir().'/server.php';
+            $this->file->globFiles( $cwd.'/app', '*' ),
+            $this->file->globFiles( $cwd.'/bootstrap', '*' ),
+            $this->file->globFiles( $cwd.'/config', '*' ),
+            $this->file->globFiles( $cwd.'/database', '*' ),
+            $this->file->globFiles( $cwd.'/resources', '*.php' ),
+            $this->file->globFiles( $cwd.'/tests', '*' ) );
+        $files[] = $cwd.'/artisan';
+        $files[] = $cwd.'/server.php';
 
         foreach( $files as $targetFile )
         {
             // 翻訳データ（英和）セット
             if( isset( $this->box['翻訳'] ) )
             {
-                $relativePath = $this->file->getRelativePath( $targetFile,
-                    $this->file->getCurrentDir() );
+                $relativePath = $this->file->getRelativePath( $targetFile, $cwd );
                 $translation = $this->commentRepo->get( $relativePath );
 
                 if( $translation !== false )
@@ -123,13 +123,13 @@ class Converter
      */
     public function formatNewFiles()
     {
-        $files = $this->file->globFiles( $this->file->getCurrentDir().'/resources/lang/ja',
-            '*' );
+        $cwd = $this->file->getCurrentDir();
+        $files = $this->file->globFiles( $cwd.'/resources/lang/ja', '*' );
 
         foreach( $files as $targetFile )
         {
             $relativePath = $this->file->getRelativePath( $targetFile,
-                $this->file->getRealPath( getCurrentDir().'/resources/lang/ja' ) );
+                $this->file->getRealPath( $cwd.'/resources/lang/ja' ) );
 
             $translation = $this->langRepo->get( $relativePath );
 
