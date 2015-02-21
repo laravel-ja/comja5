@@ -26,7 +26,7 @@ if( count( $options ) < 1 )
 }
 
 $opts = [ ];
-var_dump($options); die();
+
 // オプションをチェックしやすいようにシンプルに
 if( isset( $options['c'] ) || isset( $options['comment'] ) )
 {
