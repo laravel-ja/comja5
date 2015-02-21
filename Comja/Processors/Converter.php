@@ -101,7 +101,12 @@ class Converter
             // 翻訳データ（英和）セット
             if( isset( $this->box['翻訳'] ) )
             {
-                $this->box['翻訳']->setTranslations( $this->commentRepo->get( $targetFile ) );
+                $translation = $this->commentRepo->get( $targetFile );
+
+                if( $translation !== false )
+                {
+                    $this->box['翻訳']->setTranslations( $this->commentRepo->get( $targetFile ) );
+                }
             }
             // 変換
             $contens = $this->file->getContents( $targetFile );
