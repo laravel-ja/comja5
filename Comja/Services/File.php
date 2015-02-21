@@ -23,8 +23,8 @@ class File
      */
     public function readJson( $path )
     {
-        $realPath = $this->getRealPath( $this->getCurrentDir().$path );
-echo "aaa:".$this->getCurrentDir().$path."  bbb:".$this->getRealPath( $this->getCurrentDir().$path );
+        $realPath = $this->getRealPath( $this->getCurrentDir().DS.'vendor'.DS.'laravel-ja'.DS.'comja5'.DS.$path );
+
         if( false === ( $contents = $this->getContents( $realPath )) )
         {
             throw new RuntimeException( __( $realPath.'ファイルが読み込めませんでした。' ) );
