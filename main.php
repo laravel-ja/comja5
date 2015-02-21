@@ -10,9 +10,9 @@ use Comja\Repositories\LangFilesTranslationsRepo;
 
 // オプションの取り込み
 
-$optsions = getopt( "ct::farA", ["comment", "tab::", "file", "remove", "all" ] );
+$options = getopt( "ct::farA", ["comment", "tab::", "file", "remove", "all" ] );
 
-if( count( $optsions ) < 1 )
+if( count( $options ) < 1 )
 {
     fputs( STDERR, __( "オプション指定がありません。" ).PHP_EOL );
     print __( "使用法： comja [-c|--comment] [-t|--tab[=スペース数] [-f|--file] [-r|--remove] [-a|--all] [-A]" ).PHP_EOL;
@@ -27,32 +27,32 @@ if( count( $optsions ) < 1 )
 
 
 // オプションをチェックしやすいようにシンプルに
-if( isset( $optsions['c'] ) || isset( $optsions['comment'] ) )
+if( isset( $options['c'] ) || isset( $options['comment'] ) )
 {
     $opts['comment'] = true;
 }
 
-if( isset( $optsions['f'] ) || isset( $optsions['file'] ) )
+if( isset( $options['f'] ) || isset( $options['file'] ) )
 {
     $opts['file'] = true;
 }
 
-if( isset( $optsions['t'] ) )
+if( isset( $options['t'] ) )
 {
-    $opts['tab'] = $optsions['t'];
+    $opts['tab'] = $options['t'];
 }
 
-if( isset( $optsions['tab'] ) )
+if( isset( $options['tab'] ) )
 {
-    $opts['tab'] = $optsions['tab'];
+    $opts['tab'] = $options['tab'];
 }
 
-if( isset( $optsions['f'] ) || isset( $optsions['file'] ) )
+if( isset( $options['f'] ) || isset( $options['file'] ) )
 {
     $opts['file'] = true;
 }
 
-if( isset( $optsion['r'] ) || isset( $optsions['remove'] ) )
+if( isset( $optsion['r'] ) || isset( $options['remove'] ) )
 {
     $opts['remove'] = true;
 }
@@ -72,8 +72,6 @@ if( isset( $optsion['A'] ) )
     $opts['file'] = true;
     $opts['remove'] = true;
 }
-
-var_dump( $opts ); die();
 
 // オプションのバリデーション
 // 変換処理
