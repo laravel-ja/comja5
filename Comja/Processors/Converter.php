@@ -17,7 +17,7 @@ use Comja\Services\Transformers\Transformers\BlockCommentRemover;
 use Comja\Services\Transformers\Transformers\EmptyLineInserter;
 use Comja\Services\Transformers\Transformers\EmptyLinesRemover;
 use Comja\Services\Transformers\Transformers\LineCommentsRemover;
-use Comja\Services\Transformers\Transformers\TabToSapces;
+use Comja\Services\Transformers\Transformers\TabToSpaces;
 use Comja\Services\Transformers\Transformers\Translator;
 use Comja\Repositories\CommentTranslationsRepo;
 use Comja\Repositories\LangFilesTranslationsRepo;
@@ -143,7 +143,7 @@ class Converter
     {
         if( isset( $options['tab'] ) )
         {
-            $tabToSpace = new TabToSapces();
+            $tabToSpace = new TabToSpaces();
             $tabToSpace->setSpace( $options['tab'] );
             $this->box->push( $tabToSpace );
         }
