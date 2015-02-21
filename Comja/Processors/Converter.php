@@ -102,8 +102,8 @@ class Converter
             // 翻訳データ（英和）セット
             if( isset( $this->box['翻訳'] ) )
             {
-                $relativePath = $this->file->getRelativePath( $targetFile, $cwd );
-                $translation = $this->commentRepo->get( $relativePath );
+                // $targetFileは絶対パス
+                $translation = $this->commentRepo->get( $targetFile );
 
                 if( $translation !== false )
                 {
@@ -128,10 +128,8 @@ class Converter
 
         foreach( $files as $targetFile )
         {
-            $relativePath = $this->file->getRelativePath( $targetFile,
-                $this->file->getRealPath( $cwd.'/resources/lang/ja' ) );
-
-            $translation = $this->langRepo->get( $relativePath );
+            // $targetFileは絶対パス
+            $translation = $this->langRepo->get( $targetFile );
 
             if( $translation !== false )
             {

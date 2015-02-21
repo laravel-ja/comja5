@@ -55,7 +55,6 @@ class TranslationsJsonRepo
      */
     public function get( $fileName, $enString = null )
     {
-// ファイル名を相対絶対、Windows対応 ヘルパーを作るか。
         $this->feachAll();
 
         if( is_null( $enString ) )
@@ -74,11 +73,28 @@ class TranslationsJsonRepo
     /**
      * 全データをストレージから取得
      *
+     * データはインストールディレクトリーからの相対パスで構築されている。
+     * Windows対応でrealpathを通すため、絶対パスに変換して返す。
+     *
      * @return array key:ファイル名、value:英文をキー、和文を値とした配列
      */
     public function readAllLine()
     {
-        return $this->file->readJson( $this->translationFileName );
+        $cwd = $this->file->getCurrentDir();
+        $translations = $this->file->readJson( $cwd.'/vendor/laravel-ja/comja5/'.$this->translationFileName );
+
+        $absKeyTranslation = [ ];
+        foreach( $translations as $filePath => $translation )
+        {
+            $absolutePath = $this->file->getRealPath( $cwd.'/'.$filePath );
+
+            if( !is_null( $absolutePath ) )
+            {
+                $absKeyTranslation[$absolutePath] = $translation;
+            }
+        }
+
+        return $absKeyTranslation;
     }
 
 }

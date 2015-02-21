@@ -23,7 +23,7 @@ class File
      */
     public function readJson( $path )
     {
-        $realPath = $this->getRealPath( $this->getCurrentDir().DS.'vendor'.DS.'laravel-ja'.DS.'comja5'.DS.$path );
+        $realPath = $this->getRealPath( $path );
 
         if( false === ( $contents = $this->getContents( $realPath )) )
         {
