@@ -2,11 +2,11 @@
 
 include_once "vendor/autoload.php";
 
-use Comja\Repositories\TranslationRepo;
-use Comja\Services\Translator;
 use Comja\Services\File;
-use Comja\Services\TabFormatter;
-use Comja\Services\CommentsFormatter;
+use Comja\Processors\Converter;
+use Comja\Services\Transformers\ToyBox;
+use Comja\Repositories\CommentTranslationsRepo;
+use Comja\Repositories\LangFilesTranslationsRepo;
 
 // オプションの取り込み
 
@@ -130,7 +130,8 @@ if( array_key_exists( 'f', $options ) || array_key_exists( 'file', $options ) ||
 
     $file = new File();
 
-    $file->copyDir( __DIR__.'/../../../resources/lang/en', __DIR__.'/../../../resources/lang/ja' );
+    $file->copyDir( __DIR__.'/../../../resources/lang/en',
+        __DIR__.'/../../../resources/lang/ja' );
 
     $translationRepo = new TranslationRepo();
 
@@ -160,8 +161,7 @@ if( array_key_exists( 'r', $options ) || array_key_exists( 'remove', $options ) 
         $file->globFiles( __DIR__.'/../../../bootstrap', '*' ),
         $file->globFiles( __DIR__.'/../../../config', '*' ),
         $file->globFiles( __DIR__.'/../../../database', '*' ),
-        $file->globFiles( __DIR__.'/../../../resources/lang', '*' ),
-        $file->globFiles( __DIR__.'/../../../resources/views', '*' ),
+        $file->globFiles( __DIR__.'/../../../resources', '*.php' ),
         $file->globFiles( __DIR__.'/../../../tests', '*' ) );
     $files[] = __DIR__.'/../../../artisan';
     $files[] = __DIR__.'/../../../server.php';
@@ -175,5 +175,67 @@ if( array_key_exists( 'r', $options ) || array_key_exists( 'remove', $options ) 
 
     print __( 'コメント削除終了' ).PHP_EOL;
 }
+
+
+
+// オプションをチェックしやすいようにシンプルに
+if( isset( $options['c'] ) || isset( $options['comment'] ) )
+{
+    $opt['comment'] = true;
+}
+
+if( isset( $options['f'] ) || isset( $options['file'] ) )
+{
+    $opt['file'] = true;
+}
+
+if( isset( $options['t'] ) )
+{
+    $opt['tab'] = $options['t'];
+}
+
+if( isset( $options['tab'] ) )
+{
+    $opt['tab'] = $options['tab'];
+}
+
+if( isset( $options['f'] ) || isset( $options['file'] ) )
+{
+    $opt['file'] = true;
+}
+
+if( isset( $option['r'] ) || isset( $options['remove'] ) )
+{
+    $opt['remove'] = true;
+}
+
+if( isset( $option['a'] ) || isset( $option['all'] ) )
+{
+    $opt['all'] = true;
+    $opt['comment'] =true;
+    $opt['tab'] = true;
+    $opt['file'] = true;
+}
+
+if( isset( $option['A'] ) )
+{
+    $opt['A'] = true;
+    $opt['tab'] = true;
+    $opt['file'] = true;
+    $opt['remove'] =true;
+}
+
+
+// オプションのバリデーション
+
+
+
+// 変換処理
+
+$file = new File();
+$converter = new Converter( $file, new ToyBox(), new CommentTranslationsRepo( $file ),
+    new LangFilesTranslationsRepo( $file ) );
+
+$converter->format( $opt );
 
 return 0;
