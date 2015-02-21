@@ -10,6 +10,6 @@ namespace Comja\Repositories;
 class LangFilesTranslationsRepo extends TranslationsJsonRepo
 {
 
-    protected $translationFileName = '/trans_lang_lines';
+    protected $translationFileName = '/trans_lang_lines.json';
 
 }
