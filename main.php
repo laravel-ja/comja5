@@ -10,9 +10,9 @@ use Comja\Repositories\LangFilesTranslationsRepo;
 
 // オプションの取り込み
 
-$options = getopt( "ct::farA", ["comment", "tab::", "file", "remove", "all" ] );
+$optsions = getopt( "ct::farA", ["comment", "tab::", "file", "remove", "all" ] );
 
-if( count( $options ) < 1 )
+if( count( $optsions ) < 1 )
 {
     fputs( STDERR, __( "オプション指定がありません。" ).PHP_EOL );
     print __( "使用法： comja [-c|--comment] [-t|--tab[=スペース数] [-f|--file] [-r|--remove] [-a|--all] [-A]" ).PHP_EOL;
@@ -25,53 +25,53 @@ if( count( $options ) < 1 )
     print __( "-A：コメント削除、タブ変換、言語ファイル追加を行います" ).PHP_EOL;
 }
 
-$opt = [ ];
+$opts = [ ];
 
 // オプションをチェックしやすいようにシンプルに
-if( isset( $options['c'] ) || isset( $options['comment'] ) )
+if( isset( $optsions['c'] ) || isset( $optsions['comment'] ) )
 {
-    $opt['comment'] = true;
+    $opts['comment'] = true;
 }
 
-if( isset( $options['f'] ) || isset( $options['file'] ) )
+if( isset( $optsions['f'] ) || isset( $optsions['file'] ) )
 {
-    $opt['file'] = true;
+    $opts['file'] = true;
 }
 
-if( isset( $options['t'] ) )
+if( isset( $optsions['t'] ) )
 {
-    $opt['tab'] = $options['t'];
+    $opts['tab'] = $optsions['t'];
 }
 
-if( isset( $options['tab'] ) )
+if( isset( $optsions['tab'] ) )
 {
-    $opt['tab'] = $options['tab'];
+    $opts['tab'] = $optsions['tab'];
 }
 
-if( isset( $options['f'] ) || isset( $options['file'] ) )
+if( isset( $optsions['f'] ) || isset( $optsions['file'] ) )
 {
-    $opt['file'] = true;
+    $opts['file'] = true;
 }
 
-if( isset( $option['r'] ) || isset( $options['remove'] ) )
+if( isset( $optsion['r'] ) || isset( $optsions['remove'] ) )
 {
-    $opt['remove'] = true;
+    $opts['remove'] = true;
 }
 
-if( isset( $option['a'] ) || isset( $option['all'] ) )
+if( isset( $optsion['a'] ) || isset( $optsion['all'] ) )
 {
-    $opt['all'] = true;
-    $opt['comment'] = true;
-    $opt['tab'] = true;
-    $opt['file'] = true;
+    $opts['all'] = true;
+    $opts['comment'] = true;
+    $opts['tab'] = true;
+    $opts['file'] = true;
 }
 
-if( isset( $option['A'] ) )
+if( isset( $optsion['A'] ) )
 {
-    $opt['A'] = true;
-    $opt['tab'] = true;
-    $opt['file'] = true;
-    $opt['remove'] = true;
+    $opts['A'] = true;
+    $opts['tab'] = true;
+    $opts['file'] = true;
+    $opts['remove'] = true;
 }
 
 
@@ -81,7 +81,7 @@ if( isset( $option['A'] ) )
 $file = new File();
 $converter = new Converter( $file, new ToyBox(), new CommentTranslationsRepo( $file ),
     new LangFilesTranslationsRepo( $file ) );
-dd( $opt );
-$converter->format( $opt );
+dd( $opts );
+$converter->format( $opts );
 
 return 0;
