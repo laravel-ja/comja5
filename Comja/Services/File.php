@@ -24,7 +24,7 @@ class File
     public function readJson( $path )
     {
         $realPath = $this->getRealPath( $this->getCurrentDir().$path );
-
+echo "aaa:".$this->getCurrentDir().$path."  bbb:".$this->getRealPath( $this->getCurrentDir().$path );
         if( false === ( $contents = $this->getContents( $realPath )) )
         {
             throw new RuntimeException( __( $realPath.'ファイルが読み込めませんでした。' ) );
