@@ -25,7 +25,6 @@ if( count( $optsions ) < 1 )
     print __( "-A：コメント削除、タブ変換、言語ファイル追加を行います" ).PHP_EOL;
 }
 
-$opts = [ ];
 
 // オプションをチェックしやすいようにシンプルに
 if( isset( $optsions['c'] ) || isset( $optsions['comment'] ) )
@@ -74,6 +73,7 @@ if( isset( $optsion['A'] ) )
     $opts['remove'] = true;
 }
 
+var_dump( $opts ); die();
 
 // オプションのバリデーション
 // 変換処理
@@ -81,7 +81,6 @@ if( isset( $optsion['A'] ) )
 $file = new File();
 $converter = new Converter( $file, new ToyBox(), new CommentTranslationsRepo( $file ),
     new LangFilesTranslationsRepo( $file ) );
-dd( $opts );
 $converter->format( $opts );
 
 return 0;
