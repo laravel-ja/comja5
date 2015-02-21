@@ -95,7 +95,7 @@ class Converter
             $this->file->globFiles( $this->file->getCurrentDir().'/tests', '*' ) );
         $files[] = $this->file->getCurrentDir().'/artisan';
         $files[] = $this->file->getCurrentDir().'/server.php';
-
+        dd( $files );
         foreach( $files as $targetFile )
         {
             // 翻訳データ（英和）セット
