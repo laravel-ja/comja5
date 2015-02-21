@@ -81,7 +81,7 @@ if( isset( $option['A'] ) )
 $file = new File();
 $converter = new Converter( $file, new ToyBox(), new CommentTranslationsRepo( $file ),
     new LangFilesTranslationsRepo( $file ) );
-
+dd( $opt );
 $converter->format( $opt );
 
 return 0;
