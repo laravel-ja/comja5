@@ -76,7 +76,7 @@ class File
         // realpathは実在しないリソースが存在しないとfalseになるので使えない。
         @mkdir( $distDir );
         $distRealPath = realpath( $distDir );
-var_dump($srcRealPath, $distDir); die();
+
         if( false === ($dirHandler = opendir( $srcRealPath )) )
         {
             fputs( STDERR, __( 'ディレクトリー:'.$srcRealPath.'が開けません。' ).PHP_EOL );
@@ -93,6 +93,7 @@ var_dump($srcRealPath, $distDir); die();
                 }
                 else
                 {
+                    var_dump($srcRealPath, $distRealPath); die();
                     copy( $srcRealPath.DS.$file, $distRealPath.DS.$file );
                 }
             }
