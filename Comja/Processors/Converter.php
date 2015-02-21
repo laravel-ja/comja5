@@ -121,13 +121,17 @@ class Converter
      */
     public function formatNewFiles()
     {
-        $files = $this->file->globFiles( $this->file->getCurrentDir.'/resources/lang/ja',
+        $files = $this->file->globFiles( $this->file->getCurrentDir().'/resources/lang/ja',
             '*' );
 
         foreach( $files as $targetFile )
         {
-            // 翻訳データ（英和）セット
-            $this->box['翻訳']->setTranslations( $this->langRepo->get( $targetFile ) );
+            $translation = $this->langRepo->get( $targetFile );
+
+            if( $translation !== false )
+            {
+                $this->box['翻訳']->setTranslations( $translation );
+            }
 
             // 変換
             $contens = $this->file->getContents( $targetFile );
