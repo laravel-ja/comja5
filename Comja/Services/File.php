@@ -72,9 +72,9 @@ class File
     public function copyDir( $srcDir, $distDir )
     {
         $srcRealPath = $this->getRealPath( $srcDir );
-
+        var_dump($srcDir, $distDir);
         // realpathは実在しないリソースが存在しないとfalseになるので使えない。
-        @mkdir( $distDir );
+        @mkdir( $this->getCurrentDir().DS.$distDir );
         $distRealPath = realpath( $distDir );
 var_dump($srcRealPath, $distRealPath); die();
         if( false === ($dirHandler = opendir( $srcRealPath )) )
