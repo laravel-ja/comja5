@@ -33,6 +33,6 @@
         "mockery/mockery": "dev-master"
     },
     "bin": [
-        "comja5"
+        "bin/comja5"
     ]
 }
