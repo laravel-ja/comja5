@@ -48,7 +48,8 @@ class File
     {
         $realPath = $this->getRealPath( $path );
 
-        $paths = glob( rtrim( $realPath, DS ).DS.'*', GLOB_MARK | GLOB_ONLYDIR | GLOB_NOSORT );
+        $paths = glob( rtrim( $realPath, DS ).DS.'*',
+            GLOB_MARK | GLOB_ONLYDIR | GLOB_NOSORT );
         $files = glob( rtrim( $realPath, DS ).DS.$pattern, GLOB_MARK );
 
         foreach( $paths as $path )
@@ -57,7 +58,8 @@ class File
         }
 
         // ディレクトリー名は除外する
-        return array_filter( $files, function ($value)
+        return array_filter( $files,
+            function ($value)
         {
             return substr( $value, -1, 1 ) != DS;
         } );
@@ -72,11 +74,11 @@ class File
     public function copyDir( $srcDir, $distDir )
     {
         $srcRealPath = $this->getRealPath( $srcDir );
-        var_dump($srcDir, $distDir);
+
         // realpathは実在しないリソースが存在しないとfalseになるので使えない。
         @mkdir( $this->getCurrentDir().DS.$distDir );
         $distRealPath = realpath( $distDir );
-var_dump($srcRealPath, $distRealPath); die();
+
         if( false === ($dirHandler = opendir( $srcRealPath )) )
         {
             fputs( STDERR, __( 'ディレクトリー:'.$srcRealPath.'が開けません。' ).PHP_EOL );
@@ -93,7 +95,6 @@ var_dump($srcRealPath, $distRealPath); die();
                 }
                 else
                 {
-                    var_dump($srcRealPath, $distRealPath); die();
                     copy( $srcRealPath.DS.$file, $distRealPath.DS.$file );
                 }
             }

@@ -72,7 +72,7 @@ class Converter
 
             // 言語ファイルenをjaへコピー
             $this->file->copyDir( $this->file->getCurrentDir().'/resources/lang/en',
-                $this->file->getCurrentDir().'/resources/kang/ja' );
+                $this->file->getCurrentDir().'/resources/lang/ja' );
 
             // 新規生成したファイルの変換
             $this->formatNewFiles();
