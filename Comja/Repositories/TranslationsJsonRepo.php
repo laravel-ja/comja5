@@ -58,7 +58,7 @@ class TranslationsJsonRepo
 // ファイル名を相対絶対、Windows対応 ヘルパーを作るか。
         $this->feachAll();
 
-        $relativePath = $this->file->getRelativePath( $filename,
+        $relativePath = $this->file->getRelativePath( $fileName,
             $this->file->getCurrentDir() );
 
         if( is_null( $enString ) )
