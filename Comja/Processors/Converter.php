@@ -101,7 +101,9 @@ class Converter
             // 翻訳データ（英和）セット
             if( isset( $this->box['翻訳'] ) )
             {
-                $translation = $this->commentRepo->get( $targetFile );
+                $relativePath = $this->file->getRelativePath( $targetFile,
+                    $this->file->getCurrentDir() );
+                $translation = $this->commentRepo->get( $relativePath );
 
                 if( $translation !== false )
                 {
@@ -126,7 +128,10 @@ class Converter
 
         foreach( $files as $targetFile )
         {
-            $translation = $this->langRepo->get( $targetFile );
+            $relativePath = $this->file->getRelativePath( $targetFile,
+                $this->file->getRealPath( getCurrentDir().'/resources/lang/ja' ) );
+
+            $translation = $this->langRepo->get( $relativePath );
 
             if( $translation !== false )
             {
