@@ -25,6 +25,7 @@ if( count( $options ) < 1 )
     print __( "-A：コメント削除、タブ変換、言語ファイル追加を行います" ).PHP_EOL;
 }
 
+$opts = [ ];
 
 // オプションをチェックしやすいようにシンプルに
 if( isset( $options['c'] ) || isset( $options['comment'] ) )
@@ -52,12 +53,12 @@ if( isset( $options['f'] ) || isset( $options['file'] ) )
     $opts['file'] = true;
 }
 
-if( isset( $optsion['r'] ) || isset( $options['remove'] ) )
+if( isset( $options['r'] ) || isset( $options['remove'] ) )
 {
     $opts['remove'] = true;
 }
 
-if( isset( $optsion['a'] ) || isset( $optsion['all'] ) )
+if( isset( $options['a'] ) || isset( $options['all'] ) )
 {
     $opts['all'] = true;
     $opts['comment'] = true;
@@ -65,7 +66,7 @@ if( isset( $optsion['a'] ) || isset( $optsion['all'] ) )
     $opts['file'] = true;
 }
 
-if( isset( $optsion['A'] ) )
+if( isset( $options['A'] ) )
 {
     $opts['A'] = true;
     $opts['tab'] = true;
