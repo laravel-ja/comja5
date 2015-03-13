@@ -19,10 +19,9 @@ class Validator
      */
     private $errorMessage = '';
 
-    public function __construct( $validators )
+    public function __construct( $validatorRegistrar )
     {
-                var_dump($validators);
-        $this->validators = $validators;
+        $this->validators = $validatorRegistrar->get();
     }
 
     public function validateArguments( $arguments )

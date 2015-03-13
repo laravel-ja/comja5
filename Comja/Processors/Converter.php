@@ -65,7 +65,7 @@ class Converter
         // 既存ファイルの変換
         $this->formatExistedFiles();
 
-        if( isset( $options['file'] ) )
+        if( $options['file'] )
         {
             // コメント翻訳しない場合、翻訳クラスが未登録のため登録
             $this->box->push( new Translator() );
@@ -145,7 +145,7 @@ class Converter
 
     function registerCommentTranslator( $options )
     {
-        if( isset( $options['comment'] ) )
+        if( $options['comment'] )
         {
             $this->box->push( new Translator() );
         }
@@ -153,7 +153,7 @@ class Converter
 
     function registerTabToSpace( $options )
     {
-        if( isset( $options['tab'] ) )
+        if( $options['tab'] )
         {
             $tabToSpace = new TabToSpaces();
             $tabToSpace->setSpace( $options['tab'] );
@@ -163,7 +163,7 @@ class Converter
 
     function registerCommentRemover( $options )
     {
-        if( isset( $options['remove'] ) )
+        if( $options['remove'] )
         {
             $this->box->push( new LineCommentsRemover() );
             $this->box->push( new BlockCommentRemover() );
