@@ -17,11 +17,22 @@ class TranslationJsonRepoTest extends TestBase
 
     public function testReadAllLines()
     {
-        $returnData = ['file5i583' => ['key9d8d0' => 'value7j8398' ] ];
+        $data = ['file5i583' => ['key9d8d0' => 'value7j8398' ] ];
+        $returnData = ['/AAAA/file5i583' => ['key9d8d0' => 'value7j8398' ] ];
+
+        $this->fileMock->shouldReceive( 'getCurrentDir' )
+            ->once()
+            ->andReturn( '/AAAA' );
+        $this->fileMock->shouldReceive( 'readJson' )
+            ->once()
+            ->with( '/AAAA/vendor/laravel-ja/comja5/' )
+            ->andReturn( $data );
+        $this->fileMock->shouldReceive( 'getRealPath' )
+            ->once()
+            ->with( '/AAAA/file5i583' )
+            ->andReturn( '/AAAA/file5i583' );
 
         $repo = new Repo( $this->fileMock );
-
-        $this->fileMock->shouldReceive( 'readJson' )->once()->andReturn( $returnData );
 
         $this->assertEquals( $returnData, $repo->readAllLine() );
     }

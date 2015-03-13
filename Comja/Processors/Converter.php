@@ -55,7 +55,7 @@ class Converter
      */
     function format( $options )
     {
-        // 指定されたオプションに従い変換ロジッククラスの準備
+        // 指定されたオプションに従い変換ロジッククラス登録
         $this->registerCommentTranslator( $options );
         $this->registerTabToSpace( $options );
         $this->registerCommentRemover( $options );
@@ -66,10 +66,11 @@ class Converter
 
         if( $options['file'] )
         {
-            // コメント翻訳しない場合、翻訳クラスが未登録のため登録
+            // コメント翻訳が指定されていない場合、翻訳クラスが未登録のため
+            // 改めて翻訳クラスを登録
             $this->box->push( new Translator() );
 
-            // 言語ファイルenをjaへコピー
+            // 言語ディレクトリーenをjaへコピー
             $this->file->copyDir( $this->file->getCurrentDir().'/resources/lang/en',
                 $this->file->getCurrentDir().'/resources/lang/ja' );
 
@@ -85,6 +86,7 @@ class Converter
     public function formatExistedFiles()
     {
         $cwd = $this->file->getCurrentDir();
+
         // 変換対象ファイル一覧取得
         $files = array_merge(
             $this->file->globFiles( $cwd.'/app', '*' ),
