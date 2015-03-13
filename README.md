@@ -14,7 +14,9 @@ composer.jsonのrequireセクションに以下の1行を加えてください�
 "laravel-ja/comja5": "~1"
 ~~~
 
-修正後、composer updateを行います。
+修正後、composer updateを実行してください。
+
+> 注意："dev-master"は開発/デバッグ中のリポジトリのため、動作しないことがあります。
 
 ### 実行
 
@@ -22,7 +24,7 @@ composer.jsonのrequireセクションに以下の1行を加えてください�
 
 **Linux/Mac:**
 
-vendor/binの中にcomjaコマンドが作成されています。プロジェクトのルートディレクトリーで、それを実行してください。オプションの説明が表示されます。
+vendor/binの中にcomja5コマンドが作成されています。プロジェクトのルートディレクトリー(composer.jsonファイルがある場所)で、実行してください。オプションの説明が表示されます。
 
 ~~~
 vendor/bin/comja5
@@ -35,10 +37,6 @@ vendor/bin/comja5
 コマンドプロンプトか、パワーシェルで以下のコマンドを実行してください。
 
 ~~~
-vendor/bin/comja5
-# もしくは
-vendor/bin/comja5.bat
-# 上記２つのどちらも動作しない場合は、直接起動してください。
 php vendor\laravel-ja\comja5\main.php
 ~~~
 
