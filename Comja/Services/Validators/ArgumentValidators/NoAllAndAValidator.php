@@ -11,7 +11,7 @@ class NoAllAndAValidator implements ArgumentsValidatorInterface
 {
 
     public function validate( $param )
-    {
+    {dd($param);
         if( $param['all'] && $param['A'] ) return false;
     }
 
