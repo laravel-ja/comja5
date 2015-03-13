@@ -1,6 +1,6 @@
 <?php
 
-namespace Comja\Services\Validators\ArgumentsValidators;
+namespace Comja\Services\Validators\ArgumentValidators;
 
 interface ArgumentsValidatorInterface
 {

@@ -5,8 +5,8 @@ include_once "vendor/autoload.php";
 use Comja\Services\File;
 use Comja\Processors\Converter;
 use Comja\Services\Transformers\ToyBox;
-use Comja\Services\Validators\ArgumentsValidators\Validator;
-use Comja\Services\Validators\ArgumentsValidators\ValidatorsRegistrar;
+use Comja\Services\Validators\ArgumentValidators\Validator;
+use Comja\Services\Validators\ArgumentValidators\ValidatorsRegistrar;
 use Comja\Repositories\CommentTranslationsRepo;
 use Comja\Repositories\LangFilesTranslationsRepo;
 
@@ -25,6 +25,8 @@ if( count( $options ) < 1 )
     print __( "-r --remove：コメント／空行削除" ).PHP_EOL;
     print __( "-a --all：翻訳、タブ変換、言語ファイル追加を行います" ).PHP_EOL;
     print __( "-A：コメント削除、タブ変換、言語ファイル追加を行います" ).PHP_EOL;
+
+    return 1;
 }
 
 // オプションをチェックしやすいようにシンプルに変換
