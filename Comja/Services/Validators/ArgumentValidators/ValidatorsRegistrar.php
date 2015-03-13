@@ -12,6 +12,7 @@ class ValidatorsRegistrar
     {
         // 登録順が実行順
         return [
+            new NoAllAndAValidator(),
             new NoCommentRemoveWithAllValidator(),
             new NoCommentTranslationWithAValidator(),
             new TranslateOrRemoveValidator(),
