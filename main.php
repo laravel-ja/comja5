@@ -26,7 +26,7 @@ if( count( $options ) < 1 )
     print __( "-a --all：翻訳、タブ変換、言語ファイル追加を行います" ).PHP_EOL;
     print __( "-A：コメント削除、タブ変換、言語ファイル追加を行います" ).PHP_EOL;
 }
-
+var_dump( $options );
 // オプションをチェックしやすいようにシンプルに変換
 
 $opts['comment'] = false;
@@ -76,6 +76,7 @@ if( isset( $options['r'] ) || isset( $options['remove'] ) )
 {
     $opts['remove'] = true;
 }
+var_dump( $opts );
 
 // オプションのバリデーション
 $validator = new Validator( new ValidatorsRegistrar() );
