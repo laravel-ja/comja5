@@ -17,7 +17,7 @@ class NoAllAndAValidator implements ArgumentsValidatorInterface
 
     public function getErrorMessage()
     {
-        return '-aまたは--allオプションと-Aオプションは同時に指定できません。';
+        return '-aまたは--allオプションと、-Aオプションは同時に指定できません。';
     }
 
 }

@@ -25,11 +25,11 @@ class Validator
     }
 
     public function validateArguments( $arguments )
-    {echo 'pass1';
+    {
         foreach( $this->validators as $validator )
-        {echo 'pass2';
+        {
             if( !$validator->validate( $arguments ) )
-            {echo 'pass3';
+            {
                 $this->errorMessage = $validator->getErrorMessage();
                 return false;
             }
