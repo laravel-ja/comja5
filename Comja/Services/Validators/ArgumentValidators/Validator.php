@@ -21,6 +21,7 @@ class Validator
 
     public function __construct( $validators )
     {
+                var_dump($validators);
         $this->validators = $validators;
     }
 
