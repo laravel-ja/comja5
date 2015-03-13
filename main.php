@@ -84,7 +84,7 @@ if( isset( $options['r'] ) || isset( $options['remove'] ) )
 $file = new File();
 
 // オプションのバリデーション
-$validator = new Validator( new ValidatorsRegistrar( $file ) );
+$validator = new Validator( new ValidatorsRegistrar() );
 if( !$validator->validateArguments( $opts ) )
 {
     print __( $validator->getErrorMessage() );
