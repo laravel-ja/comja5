@@ -2,12 +2,13 @@
 
 namespace Comja\Services\Validators\ArgumentValidators;
 
+use Comja\Services\Validators\ValidatorInterface;
 /**
  * バリデーション
  *
  * Aとコメント翻訳オブションは同時に指定できない
  */
-class NoCommentTranslationWithAValidator implements ArgumentsValidatorInterface
+class NoCommentTranslationWithAValidator implements ValidatorInterface
 {
 
     public function validate( $param )

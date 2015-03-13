@@ -1,6 +1,6 @@
 <?php
 
-namespace Comja\Services\Validators\ArgumentValidators;
+namespace Comja\Services\Validators;
 
 class Validator
 {
@@ -19,11 +19,22 @@ class Validator
      */
     private $errorMessage = '';
 
-    public function __construct( $validatorRegistrar )
+    /**
+     * コンストラクター
+     *
+     * @param ValidatorsRegistrar $validatorRegistrar
+     */
+    public function __construct( ValidatorsRegistrar $validatorRegistrar )
     {
         $this->validators = $validatorRegistrar->get();
     }
 
+    /**
+     * コマンドラインバリデーション実行
+     *
+     * @param array $arguments コマンドラインオプション
+     * @return boolean 結果
+     */
     public function validateArguments( $arguments )
     {
         foreach( $this->validators as $validator )
@@ -38,6 +49,11 @@ class Validator
         return true;
     }
 
+    /**
+     * エラー時メッセージ取得
+     *
+     * @return string エラーメッセージ
+     */
     public function getErrorMessage()
     {
         return $this->errorMessage;

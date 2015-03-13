@@ -2,12 +2,14 @@
 
 namespace Comja\Services\Validators\ArgumentValidators;
 
+use Comja\Services\Validators\ValidatorInterface;
+
 /**
  * バリデーション
  *
  * Allオプションとコメント削除オブションは同時に指定できない
  */
-class NoCommentRemoveWithAllValidator implements ArgumentsValidatorInterface
+class NoCommentRemoveWithAllValidator implements ValidatorInterface
 {
 
     public function validate( $param )

@@ -2,15 +2,6 @@
 
 namespace Comja\Processors;
 
-/**
- * 指定されたオプションに基づき
- * ルートディレクトリー下のファイルを
- * 変換する
- *
- * 変換作業のメインロジック
- *
- * @author Hirohisa Kawase
- */
 use Comja\Services\File;
 use Comja\Services\Transformers\ToyBox;
 use Comja\Services\Transformers\Transformers\BlockCommentsRemover;
@@ -22,11 +13,19 @@ use Comja\Services\Transformers\Transformers\Translator;
 use Comja\Repositories\CommentTranslationsRepo;
 use Comja\Repositories\LangFilesTranslationsRepo;
 
+/**
+ * 指定されたオプションに基づき
+ * ルートディレクトリー下のファイルを
+ * 変換する
+ *
+ * 変換作業のメインロジック
+ */
 class Converter
 {
 
     /**
      * 整形クラスマネージャー
+     * 
      * @var ToyBox
      */
     private $box;

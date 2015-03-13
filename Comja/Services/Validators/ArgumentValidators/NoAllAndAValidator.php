@@ -2,12 +2,14 @@
 
 namespace Comja\Services\Validators\ArgumentValidators;
 
+use Comja\Services\Validators\ValidatorInterface;
+
 /**
  * バリデーション
  *
  * Allオプションと-Aは同時に指定できない
  */
-class NoAllAndAValidator implements ArgumentsValidatorInterface
+class NoAllAndAValidator implements ValidatorInterface
 {
 
     public function validate( $param )

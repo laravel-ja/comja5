@@ -2,12 +2,14 @@
 
 namespace Comja\Services\Validators\ArgumentValidators;
 
+use Comja\Services\Validators\ValidatorInterface;
+
 /**
  * バリデーション
  *
  * タブの指定値は整数
  */
-class TabIntegerValidator implements ArgumentsValidatorInterface
+class TabIntegerValidator implements ValidatorInterface
 {
 
     public function validate( $param )

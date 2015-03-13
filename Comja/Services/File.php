@@ -2,7 +2,7 @@
 
 namespace Comja\Services;
 
-use \RuntimeException;
+use RuntimeException;
 
 defined( "DS" ) || define( "DS", DIRECTORY_SEPARATOR );
 
@@ -18,7 +18,7 @@ class File
      * JSONテキストの読み込み
      *
      * @param string $path ファイルパス
-     * @throws \RuntimeException ファイル読み込み失敗時
+     * @throws RuntimeException ファイル読み込み失敗時
      * @return array 読み込み内容の配列
      */
     public function readJson( $path )
@@ -34,6 +34,7 @@ class File
         {
             throw new RuntimeException( __( $realPath.'ファイルの形式が不正です。('.$this->getJsonLastError().')' ) );
         }
+
         return $arr;
     }
 
@@ -75,9 +76,9 @@ class File
     {
         $srcRealPath = $this->getRealPath( $srcDir );
 
-        // realpathは実在しないリソースが存在しないとfalseになるので使えない。
+        // realpathはディレクトリーが存在しないとfalseになるので使えない。
         @mkdir( $distDir );
-        $distRealPath = realpath( $distDir );
+        $distRealPath = $this->getRealPath( $distDir );
 
         if( false === ($dirHandler = opendir( $srcRealPath )) )
         {
