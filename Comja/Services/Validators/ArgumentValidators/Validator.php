@@ -27,7 +27,7 @@ class Validator
     public function validateArguments( $arguments )
     {
         foreach( $this->validators as $validator )
-        {
+        {dd($validator, $validator->validate($arguments));
             if( !$validator->validate( $arguments ) )
             {
                 $this->errorMessage = $validator->getErrorMessage();
