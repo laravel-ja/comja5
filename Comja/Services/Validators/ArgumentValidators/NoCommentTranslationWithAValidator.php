@@ -13,6 +13,8 @@ class NoCommentTranslationWithAValidator implements ArgumentsValidatorInterface
     public function validate( $param )
     {
         if( $param['A'] && $param['comment'] ) return false;
+
+        return true;
     }
 
     public function getErrorMessage()

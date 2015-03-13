@@ -13,6 +13,8 @@ class TabIntegerValidator implements ArgumentsValidatorInterface
     public function validate( $param )
     {
         if( $param['tab'] && preg_match( "/^[0-9]+$/", $param['tab'] ) === 0 ) return false;
+
+        return true;
     }
 
     public function getErrorMessage()

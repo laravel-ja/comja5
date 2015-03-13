@@ -13,6 +13,8 @@ class TabOrTValidator implements ArgumentsValidatorInterface
     public function validate( $param )
     {
         if( $param['comment'] && $param['remove'] ) return false;
+
+        return true;
     }
 
     public function getErrorMessage()

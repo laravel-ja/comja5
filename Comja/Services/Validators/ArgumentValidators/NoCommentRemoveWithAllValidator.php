@@ -13,6 +13,8 @@ class NoCommentRemoveWithAllValidator implements ArgumentsValidatorInterface
     public function validate( $param )
     {
         if( $param['all'] && $param['remove'] ) return false;
+
+        return true;
     }
 
     public function getErrorMessage()
