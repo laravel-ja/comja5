@@ -13,7 +13,7 @@ namespace Comja\Processors;
  */
 use Comja\Services\File;
 use Comja\Services\Transformers\ToyBox;
-use Comja\Services\Transformers\Transformers\BlockCommentRemover;
+use Comja\Services\Transformers\Transformers\BlockCommentsRemover;
 use Comja\Services\Transformers\Transformers\EmptyLineInserter;
 use Comja\Services\Transformers\Transformers\EmptyLinesRemover;
 use Comja\Services\Transformers\Transformers\LineCommentsRemover;
