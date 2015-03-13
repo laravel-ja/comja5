@@ -166,7 +166,7 @@ class Converter
         if( $options['remove'] )
         {
             $this->box->push( new LineCommentsRemover() );
-            $this->box->push( new BlockCommentRemover() );
+            $this->box->push( new BlockCommentsRemover() );
             $this->box->push( new EmptyLinesRemover() );
         }
     }
