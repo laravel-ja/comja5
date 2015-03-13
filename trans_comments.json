@@ -257,7 +257,7 @@
     "config/mail.php": {
         "Mail Driver": "メールドライバー",
         "Laravel supports both SMTP and PHP's \"mail\" function as drivers for the": "メール送信のドライバーとしてSMTPとPHPの\"mail\"機能の二つをLaravelは",
-        "sending of e-mail. You may specify which one you're using throughout": "ポートしています。アプリケーション全体で使用する方法を選び指定して",
+        "sending of e-mail. You may specify which one you're using throughout": "サポートしています。アプリケーション全体で使用する方法を選び指定して",
         "your application here. By default, Laravel is setup for SMTP mail.": "ください。デフォルトではSMTPメールをセットしています。",
         "Supported:": "サポートドライバー:",
         "SMTP Host Address": "SMTPホストアドレス",

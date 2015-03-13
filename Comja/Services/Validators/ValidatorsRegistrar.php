@@ -2,7 +2,6 @@
 
 namespace Comja\Services\Validators;
 
-use Comja\Services\File;
 use Comja\Services\Validators\ArgumentValidators\NoAllAndAValidator;
 use Comja\Services\Validators\ArgumentValidators\NoCommentRemoveWithAllValidator;
 use Comja\Services\Validators\ArgumentValidators\NoCommentTranslationWithAValidator;

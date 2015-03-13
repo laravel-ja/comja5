@@ -25,7 +25,7 @@ class Converter
 
     /**
      * 整形クラスマネージャー
-     * 
+     *
      * @var ToyBox
      */
     private $box;
@@ -93,6 +93,7 @@ class Converter
             $this->file->globFiles( $cwd.'/database', '*' ),
             $this->file->globFiles( $cwd.'/resources', '*.php' ),
             $this->file->globFiles( $cwd.'/tests', '*' ) );
+        $files[] = $cwd.'/public/index.php';
         $files[] = $cwd.'/artisan';
         $files[] = $cwd.'/server.php';
 

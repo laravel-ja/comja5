@@ -79,10 +79,6 @@ if( isset( $options['r'] ) || isset( $options['remove'] ) )
     $opts['remove'] = true;
 }
 
-// ファイル操作取得インスタンス取得
-
-$file = new File();
-
 // オプションのバリデーション
 $validator = new Validator( new ValidatorsRegistrar() );
 if( !$validator->validateArguments( $opts ) )
@@ -92,6 +88,8 @@ if( !$validator->validateArguments( $opts ) )
 }
 
 // 変換処理
+
+$file = new File();
 
 $converter = new Converter( $file, new ToyBox(), new CommentTranslationsRepo( $file ),
     new LangFilesTranslationsRepo( $file ) );
