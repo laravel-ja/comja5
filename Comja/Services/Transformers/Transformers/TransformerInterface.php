@@ -2,9 +2,6 @@
 
 namespace Comja\Services\Transformers\Transformers;
 
-/**
- * 
- */
 interface TransformerInterface
 {
 
@@ -14,6 +11,6 @@ interface TransformerInterface
 
     public function getAccessName();
 
-    public function setAccessName($accessName);
+    public function setAccessName( $accessName );
 
 }

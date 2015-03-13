@@ -5,6 +5,8 @@ include_once "vendor/autoload.php";
 use Comja\Services\File;
 use Comja\Processors\Converter;
 use Comja\Services\Transformers\ToyBox;
+use Comja\Services\Validators\ArgumentsValidators\Validator;
+use Comja\Services\Validators\ArgumentsValidators\ValidatorsRegistrar;
 use Comja\Repositories\CommentTranslationsRepo;
 use Comja\Repositories\LangFilesTranslationsRepo;
 
@@ -25,9 +27,31 @@ if( count( $options ) < 1 )
     print __( "-A：コメント削除、タブ変換、言語ファイル追加を行います" ).PHP_EOL;
 }
 
-$opts = [ ];
+// オプションをチェックしやすいようにシンプルに変換
 
-// オプションをチェックしやすいようにシンプルに
+$opts['comment'] = false;
+$opts['file'] = false;
+$opts['tab'] = false;
+$opts['remove'] = false;
+$opts['all'] = false;
+$opts['A'] = false;
+
+if( isset( $options['a'] ) || isset( $options['all'] ) )
+{
+    $opts['all'] = true;
+    $opts['comment'] = true;
+    $opts['tab'] = 4;
+    $opts['file'] = true;
+}
+
+if( isset( $options['A'] ) )
+{
+    $opts['A'] = true;
+    $opts['tab'] = 4;
+    $opts['file'] = true;
+    $opts['remove'] = true;
+}
+
 if( isset( $options['c'] ) || isset( $options['comment'] ) )
 {
     $opts['comment'] = true;
@@ -48,33 +72,19 @@ if( isset( $options['tab'] ) )
     $opts['tab'] = $options['tab'] === false ? 4 : $options['tab'];
 }
 
-if( isset( $options['f'] ) || isset( $options['file'] ) )
-{
-    $opts['file'] = true;
-}
-
 if( isset( $options['r'] ) || isset( $options['remove'] ) )
 {
     $opts['remove'] = true;
 }
 
-if( isset( $options['a'] ) || isset( $options['all'] ) )
-{
-    $opts['all'] = true;
-    $opts['comment'] = true;
-    $opts['tab'] = 4;
-    $opts['file'] = true;
-}
-
-if( isset( $options['A'] ) )
-{
-    $opts['A'] = true;
-    $opts['tab'] = 4;
-    $opts['file'] = true;
-    $opts['remove'] = true;
-}
-
 // オプションのバリデーション
+$validator = new Validator( new ValidatorsRegistrar() );
+if( $validator->validateArguments( $opts ) )
+{
+    print __( $validator->getErrorMessage() );
+    return 1;
+}
+
 // 変換処理
 
 $file = new File();
@@ -83,3 +93,4 @@ $converter = new Converter( $file, new ToyBox(), new CommentTranslationsRepo( $f
 $converter->format( $opts );
 
 return 0;
+
