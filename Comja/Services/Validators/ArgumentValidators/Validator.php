@@ -22,6 +22,7 @@ class Validator
     public function __construct( $validatorRegistrar )
     {
         $this->validators = $validatorRegistrar->get();
+        dd($this->validators);
     }
 
     public function validateArguments( $arguments )
