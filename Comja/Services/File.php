@@ -23,7 +23,10 @@ class File
      */
     public function readJson( $path )
     {
-        $realPath = $this->getRealPath( $path );
+        if( false == ( $realPath = $this->getRealPath( $path )) )
+        {
+            throw new RuntimeException( __( $realPath.'ファイルが存在していません。' ) );
+        }
 
         if( false === ( $contents = $this->getContents( $realPath )) )
         {

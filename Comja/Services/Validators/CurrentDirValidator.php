@@ -41,7 +41,7 @@ class CurrentDirValidator implements ValidatorInterface
     {
         try
         {
-            $composerJson = $this->file->readJson( $this->file->getCurrentDir().'composer.json' );
+            $composerJson = $this->file->readJson( $this->file->getCurrentDir().'/composer.json' );
         }
         catch( RuntimeException $e )
         {
