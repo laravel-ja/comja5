@@ -28,7 +28,7 @@ class Validator
     {
         foreach( $this->validators as $validator )
         {
-            if( $validator->validate( $arguments ) === false )
+            if( !$validator->validate( $arguments ) )
             {
                 $this->errorMessage = $validator->getErrorMessage();
                 return false;
