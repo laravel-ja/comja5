@@ -78,6 +78,7 @@ if( isset( $options['r'] ) || isset( $options['remove'] ) )
 {
     $opts['remove'] = true;
 }
+var_dump($options, $opts);die();
 
 // オプションのバリデーション
 $validator = new Validator( new ValidatorsRegistrar() );

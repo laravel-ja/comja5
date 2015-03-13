@@ -16,7 +16,6 @@ class ValidatorsRegistrar
             new NoCommentRemoveWithAllValidator(),
             new NoCommentTranslationWithAValidator(),
             new TranslateOrRemoveValidator(),
-            new TabOrTValidator(),
             new TabIntegerValidator(),
         ];
     }
