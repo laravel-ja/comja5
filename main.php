@@ -5,8 +5,8 @@ include_once "vendor/autoload.php";
 use Comja\Services\File;
 use Comja\Processors\Converter;
 use Comja\Services\Transformers\ToyBox;
-use Comja\Services\Validators\ArgumentValidators\Validator;
-use Comja\Services\Validators\ArgumentValidators\ValidatorsRegistrar;
+use Comja\Services\Validators\Validator;
+use Comja\Services\Validators\ValidatorsRegistrar;
 use Comja\Repositories\CommentTranslationsRepo;
 use Comja\Repositories\LangFilesTranslationsRepo;
 
@@ -84,7 +84,7 @@ if( isset( $options['r'] ) || isset( $options['remove'] ) )
 $file = new File();
 
 // オプションのバリデーション
-$validator = new Validator( new ValidatorsRegistrar(), $file );
+$validator = new Validator( new ValidatorsRegistrar( $file ) );
 if( !$validator->validateArguments( $opts ) )
 {
     print __( $validator->getErrorMessage() );
@@ -92,7 +92,6 @@ if( !$validator->validateArguments( $opts ) )
 }
 
 // 変換処理
-
 
 $converter = new Converter( $file, new ToyBox(), new CommentTranslationsRepo( $file ),
     new LangFilesTranslationsRepo( $file ) );
