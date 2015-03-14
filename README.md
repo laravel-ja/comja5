@@ -74,6 +74,10 @@ laravel/laravelリポジトリーに含まれている、コメントを翻訳�
 
 翻訳すれば、後は用済みです。インストール時にrequireセクションに付け加えたパッケージ指定を削除し、再度composer.jsonを実行します。
 
+### 不具合の報告
+
+GitHubでも良いですが、Twitterの@HiroKwsでも、Laravelに関するチャットを行っているlarachat-jp.slack.com（招待制：招待状はlarachat.jp@gmail.comまで）でも結構です。今のところ、一番多いレポートは、インストールディレクトリ以外で実行してエラーになったというものです。composer.jsonの存在するLaravelをインストールしたディレクトリー以外では、正しく動きません。
+
 ### Licence/Rights
 
 Copyright by Hirohisa Kawase
