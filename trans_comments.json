@@ -487,6 +487,6 @@
     },
     "tests/TestCase.php": {
         "Creates the application.": "アプリケーションの生成",
-        "The base URL to use while testing the application": "アプリケーションをテストするときのベースURL"
+        "The base URL to use while testing the application.": "アプリケーションをテストするときのベースURL"
     }
 }
