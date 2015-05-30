@@ -98,6 +98,7 @@ class Converter
         $files[] = $cwd.'/public/index.php';
         $files[] = $cwd.'/artisan';
         $files[] = $cwd.'/server.php';
+        $files[] = $cwd.'/gulpfile.js';
 
         foreach( $files as $targetFile )
         {

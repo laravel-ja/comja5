@@ -1,6 +1,7 @@
 {
     "app/Console/Commands/Inspire.php": {
         "The console command name.": "コンソールコマンド名",
+        "The name and signature of the console command.": "コンソールコマンドの識別名",
         "The console command description.": "コンソールコマンドの説明",
         "Execute the console command.": "コンソールコマンドの実行"
     },
@@ -12,14 +13,16 @@
         "A list of the exception types that should not be reported.": "レポートしない例外タイプのリスト",
         "Report or log an exception.": "例外をレポート、もしくはログ",
         "This is a great spot to send exceptions to Sentry, Bugsnag, etc.": "ここはSentryやBugsnagなどに例外を送るために良い場所",
-        "Render an exception into an HTTP response.": "HTTPレスポンスに設置する例外をレンダー"
+        "Render an exception into an HTTP response.": "HTTPレスポンスに対応する例外をレンダー"
     },
     "app/Http/Controllers/Auth/AuthController.php": {
         "Registration & Login Controller": "登録／ログインコントローラー",
         "This controller handles the registration of new users, as well as the": "このコントローラハンドラーは新ユーザーを登録し、同時に既存の",
         "authentication of existing users. By default, this controller uses": "ユーザーを認証します。デフォルトでこのコントローラーは振る舞いを",
         "a simple trait to add these behaviors. Why don't you explore it?": "追加するためにシンプルなトレイトを使用します。試してみませんか？",
-        "Create a new authentication controller instance.": "新しい認証コントローラインスタンスの生成"
+        "Create a new authentication controller instance.": "新しい認証コントローラインスタンスの生成",
+        "Get a validator for an incoming registration request.": "やって来た登録リクエストに対するバリデターを取得",
+        "Create a new user instance after a valid registration.": "登録内容を確認後、新しいユーザーインスタンスを生成"
     },
     "app/Http/Controllers/Auth/PasswordController.php": {
         "Password Reset Controller": "パスワードリセットコントローラー",
@@ -59,13 +62,20 @@
         "Handle an incoming request.": "送られてきたリクエストの処理"
     },
     "app/Http/Middleware/VerifyCsrfToken.php": {
-        "Handle an incoming request.": "送られてきたリクエストの処理"
+        "Handle an incoming request.": "送られてきたリクエストの処理",
+        "The URIs that should be excluded from CSRF verification.": "CSRFの確認を除外するURI"
     },
     "app/Http/routes.php": {
         "Application Routes": "アプリケーションのルート",
         "Here is where you can register all of the routes for an application.": "ここでアプリケーションのルートを全て登録することが可能です。",
         "It's a breeze. Simply tell Laravel the URIs it should respond to": "簡単です。ただ、Laravelへ対応するURIと、そのURIがリクエスト",
         "and give it the controller to call when that URI is requested.": "されたときに呼び出されるコントローラーを指定してください。"
+    },
+    "app/Jobs/Job.php": {
+        "Queueable Jobs": "キューイング可能なジョブ",
+        "This job base class provides a central location to place any logic that": "このジョブ基底クラスは全ジョブから共通に呼び出されるロジックを",
+        "is shared across all of your jobs. The trait included with the class": "設置する場所を提供しています。このクラスに含まれるトレイトは、",
+        "provides access to the \"queueOn\" and \"delay\" queue helper methods.": "\"queueOn\"と\"delay\"キューヘルパーメソッドへのアクセスを提供します。"
     },
     "app/Providers/AppServiceProvider.php": {
         "Bootstrap any application services.": "アプリケーションサービスの初期化処理",
@@ -86,6 +96,7 @@
     },
     "app/Providers/EventServiceProvider.php": {
         "The event handler mappings for the application.": "アプリケーションのイベントハンドラーのマップ",
+        "The event listener mappings for the application.": "アプリケーションのイベントリスナーのマップ",
         "Register any other events for your application.": "アプリケーションのその他のイベントの登録"
     },
     "app/Providers/RouteServiceProvider.php": {
@@ -189,6 +200,16 @@
         "The expire time is the number of minutes that the reset token should be": "有効時間の\"expire\"に指定する分数は、良く考えてください。",
         "considered valid. This security feature keeps tokens short-lived so": "このトークン保存時間はセキュリティー機能で、短い時間ほど",
         "they have less time to be guessed. You may change this as needed.": "安全になります。ですが、必要に応じ変更可能です。"
+    },
+    "config/broadcasting.php": {
+        "Default Broadcaster": "デフォルトブロードキャスター",
+        "This option controls the default broadcaster that will be used by the": "このオプションはイベントをブロードキャストする必要がある場合に",
+        "framework when an event needs to be broadcast. You may set this to": "使用されるデフォルトをコントロールします。下の\"connections\"",
+        "any of the connections defined in the \"connections\" array below.": "配列で定義されている接続から選択してください。",
+        "Broadcast Connections": "ブロードキャスト接続",
+        "Here you may define all of the broadcast connections that will be used": "他のシステムやWebsocketを利用しブロードキャストイベントを",
+        "to broadcast events to other systems or over websockets. Samples of": "使用する場合の全ブロードキャスト接続をここで定義します。",
+        "each available type of connection are provided inside this array.": "使用可能な接続タイプのサンプルをこの配列の中に用意してあります。"
     },
     "config/cache.php": {
         "Default Cache Store": "デフォルトキャッシュ保存場所",
@@ -371,6 +392,12 @@
         "stored for your application. Typically, this is within the storage": "テンプレートの保存場所を指定します。通常、この値はstorageディレクトリーの",
         "directory. However, as usual, you are free to change this value.": "中になるでしょう。しかし、他と同様、お好きな値に変更してください。"
     },
+    "database/factories/ModelFactory.php": {
+        "Model Factories": "モデルファクトリー",
+        "Here you may define all of your model factories. Model factories give": "ここに全部のモデルファクトリーを定義してください。モデルファクトリーは",
+        "you a convenient way to create models for testing and seeding your": "テストのためにデータベースの初期値を用意したモデルを作成する便利な方法です。",
+        "database. Just tell the factory how a default model should look.": "モデルがどのように見えれば良いのかをファクトリーに指示するだけです。"
+    },
     "database/migrations/2014_10_12_000000_create_users_table.php": {
         "Run the migrations.": "マイグレーション実行",
         "Reverse the migrations.": "マイグレーションを戻す"
@@ -397,6 +424,8 @@
         "Run The Application": "アプリケーションの実行",
         "Once we have the application, we can simply call the run method,": "アプリケーションの用意が整えば、runメソッドを呼び出せます。",
         "which will execute the request and send the response back to": "リクエストを実行し、クライアントのブラウザにレスポンスを",
+        "Once we have the application, we can handle the incoming request": "アプリケーションの用意が整えば、カーネルを通じやってきた",
+        "through the kernel, and send the associated response back to": "リクエストを処理し、関連するレスポンスをユーザーのブラウザへ",
         "the client's browser allowing them to enjoy the creative": "送り返すことで、彼らを刺激する、私達の創造的で素晴らしい",
         "and wonderful application we have prepared for them.": "アプリケーションを楽しんでもらいましょう。"
     },
@@ -457,6 +486,7 @@
         "A basic functional test example.": "基本的な機能テストの例"
     },
     "tests/TestCase.php": {
-        "Creates the application.": "アプリケーションの生成"
+        "Creates the application.": "アプリケーションの生成",
+        "The base URL to use while testing the application": "アプリケーションをテストするときのベースURL"
     }
 }
