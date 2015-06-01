@@ -455,6 +455,57 @@
         "with something more reader friendly such as E-Mail Address instead": "読み手にフレンドリーな表現でプレースホルダーを置き換えるために指定する",
         "of \"email\". This simply helps us make messages a little cleaner.": "言語行です。これはメッセージをよりきれいに表示するために役に立ちます。"
     },
+    "resources/views/app.blade.php": {
+        "Toggle Navigation": "ナビゲーション切り替え",
+        "Login": "ログイン",
+        "Register": "登録",
+        "Logout": "ログアウト"
+    },
+    "resources/views/home.blade.php": {
+        "You are logged in!": "あなたはログイン済みです！"
+    },
+    "resources/views/auth/login.blade.php": {
+        "Whoops!": "あれっ！",
+        "There were some problems with your input.": "どうやら入力がおかしいようです。",
+        "E-Mail Address": "メールアドレス",
+        "Password": "パスワード",
+        "Remember Me": "ログインを継続する",
+        "Login": "ログイン",
+        "Forgot Your Password?": "パスワードを忘れた時"
+    },
+    "resources/views/auth/password.blade.php": {
+        "Reset Password": "パスワードリセット",
+        "Whoops!": "あれっ！",
+        "There were some problems with your input.": "どうやら入力がおかしいようです。",
+        "E-Mail Address": "メールアドレス",
+        "Send Password Reset Link": "パスワードリセットリンクを送信する"
+    },
+    "resources/views/auth/register.blade.php": {
+        "Register": "登録",
+        "Whoops!": "あれっ！",
+        "There were some problems with your input.": "どうやら入力がおかしいようです。",
+        "Name": "名前",
+        "E-Mail Address": "メールアドレス",
+        "Confirm Password": "パスワード確認",
+        "Password": "パスワード",
+        "Register": "登録"
+    },
+    "resources/views/auth/reset.blade.php": {
+        "Reset Password": "",
+        "Whoops!": "あれっ！",
+        "There were some problems with your input.": "どうやら入力がおかしいようです。",
+        "Name": "名前",
+        "E-Mail Address": "メールアドレス",
+        "Confirm Password": "パスワード確認",
+        "Password": "パスワード",
+        "Reset Password": "パスワードリセット"
+    },
+    "resources/views/emails/password.blade.php": {
+        "Click here to reset your password:": "パスワードをリセットするには、次のリンクをクリックしてください。"
+    },
+    "resources/views/errors/503.blade.php": {
+        "Be right back.": "正常な状態に戻しましょう。"
+    },
     "server.php": {
         "A PHP Framework For Web Artisans": "Web職人のためのPHPフレームワーク",
         "This file allows us to emulate Apache's \"mod_rewrite\" functionality from the": "このファイルはPHPの組み込みWebサーバーで、Apacheの\"mod_rewrite\"機能を",
