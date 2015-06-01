@@ -468,10 +468,10 @@
         "Whoops!": "あれっ！",
         "There were some problems with your input.": "どうやら入力がおかしいようです。",
         "E-Mail Address": "メールアドレス",
-        "Password": "パスワード",
         "Remember Me": "ログインを継続する",
         "Login": "ログイン",
-        "Forgot Your Password?": "パスワードを忘れた時"
+        "Forgot Your Password?": "パスワードを忘れた時",
+        "Password": "パスワード"
     },
     "resources/views/auth/password.blade.php": {
         "Reset Password": "パスワードリセット",
