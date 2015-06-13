@@ -2,9 +2,11 @@
 <?php
 
 if (is_file('vendor/autoload.php')) {
-     require 'vendor/autoload.php';
-} else {
+    require 'vendor/autoload.php';
+} elseif(is_file(__DIR__.'/../../../autoload.php')) {
     require __DIR__.'/../../../autoload.php';
+} else {
+    print "Can't read autoloader";
 }
 
 
