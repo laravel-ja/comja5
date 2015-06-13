@@ -3,7 +3,7 @@
 namespace Comja\Repositories;
 
 /**
- * FileRepositoryTrait
+ * FileRepositoryTrait.
  *
  * ファイル読み込みリポの基本機能
  *
@@ -11,47 +11,46 @@ namespace Comja\Repositories;
  */
 trait FileRepositoryTrait
 {
-
     /**
      * 読み込みデータ
      *
      * @var array 取得データ
      */
-    private $cache = [ ];
+    private $cache = [];
 
     /**
-     * 読み込み対象ファイル名
+     * 読み込み対象ファイル名.
      *
      * @var string ファイル名
      */
     private $fileName = null;
 
     /**
-     * $fileNameセッター
+     * $fileNameセッター.
      *
      * @codeCoverageIgnore
      *
      * @param string $fileName
      */
-    public function setFileName( $fileName )
+    public function setFileName($fileName)
     {
         $this->fileName = $fileName;
     }
 
     /**
-     * $cacheセッター
+     * $cacheセッター.
      *
      * @codeCoverageIgnore
      *
      * @param array $cache
      */
-    public function setCache( $cache )
+    public function setCache($cache)
     {
         $this->cache = $cache;
     }
 
     /**
-     * $cacheゲッター
+     * $cacheゲッター.
      *
      * @codeCoverageIgnore
      *
@@ -63,23 +62,22 @@ trait FileRepositoryTrait
     }
 
     /**
-     * キャッシュ済みのチェック
+     * キャッシュ済みのチェック.
      *
-     * @return boolean
+     * @return bool
      */
     public function isCached()
     {
-        return !empty( $this->cache );
+        return !empty($this->cache);
     }
 
     /**
      * データ取得済みかをチェックし、
-     * 未取得時は読み込み、キャッシュする
+     * 未取得時は読み込み、キャッシュする.
      */
     public function feachAll()
     {
-        if( $this->isCached() )
-        {
+        if ($this->isCached()) {
             return;
         }
 
@@ -87,5 +85,4 @@ trait FileRepositoryTrait
         // use元のクラスのreadAllLineに任せる。
         $this->cache = $this->readAllLine();
     }
-
 }
