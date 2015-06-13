@@ -1,6 +1,12 @@
+#!/usr/bin/env php
 <?php
 
-include_once "vendor/autoload.php";
+if (is_file('vendor/autoload.php')) {
+     require 'vendor/autoload.php';
+} else {
+    require __DIR__.'../../../autoload.php';
+}
+
 
 use Comja\Services\File;
 use Comja\Processors\Converter;
