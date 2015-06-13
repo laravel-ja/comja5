@@ -25,17 +25,17 @@ class File
     {
         if( false == ( $realPath = $this->getRealPath( $path )) )
         {
-            throw new RuntimeException( __( $realPath.'ファイルが存在していません。' ) );
+            throw new RuntimeException( c5_trans( $realPath.'ファイルが存在していません。' ) );
         }
 
         if( false === ( $contents = $this->getContents( $realPath )) )
         {
-            throw new RuntimeException( __( $realPath.'ファイルが読み込めませんでした。' ) );
+            throw new RuntimeException( c5_trans( $realPath.'ファイルが読み込めませんでした。' ) );
         }
 
         if( null == ( $arr = json_decode( $contents, true )) )
         {
-            throw new RuntimeException( __( $realPath.'ファイルの形式が不正です。('.$this->getJsonLastError().')' ) );
+            throw new RuntimeException( c5_trans( $realPath.'ファイルの形式が不正です。('.$this->getJsonLastError().')' ) );
         }
 
         return $arr;
@@ -85,7 +85,7 @@ class File
 
         if( false === ($dirHandler = opendir( $srcRealPath )) )
         {
-            fputs( STDERR, __( 'ディレクトリー:'.$srcRealPath.'が開けません。' ).PHP_EOL );
+            fputs( STDERR, c5_trans( 'ディレクトリー:'.$srcRealPath.'が開けません。' ).PHP_EOL );
             return;
         }
 
@@ -140,7 +140,7 @@ class File
 
         if( !$contents )
         {
-            throw new RuntimeException( __( 'ファイル:'.$path ).'が読み込めませんでした。' );
+            throw new RuntimeException( c5_trans( 'ファイル:'.$path ).'が読み込めませんでした。' );
         }
 
         return $contents;
@@ -161,7 +161,7 @@ class File
 
         if( !$ret )
         {
-            throw new RuntimeException( __( 'ファイル:'.$path.'へ書き込めませんでした。' ) );
+            throw new RuntimeException( c5_trans( 'ファイル:'.$path.'へ書き込めませんでした。' ) );
         }
     }
 
