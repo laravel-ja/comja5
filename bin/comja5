@@ -4,7 +4,7 @@
 if (is_file('vendor/autoload.php')) {
      require 'vendor/autoload.php';
 } else {
-    require __DIR__.'../../../autoload.php';
+    require __DIR__.'/../../../autoload.php';
 }
 
 
