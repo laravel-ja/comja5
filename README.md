@@ -4,17 +4,29 @@ A translation command for comments in files of laravel/laravel repository to Jap
 
 Laravel5のlaravel/laravelリポジトリーに含まれているファイルのコメントを日本語に翻訳します。
 
-その他、おまけ機能として、タブの４空白変換とja言語ファイル生成ができます。
+そのほか、おまけ機能として、タブの４空白変換とja言語ファイル生成ができます。
+
+> 注意：コマンドはインストール直後のプロジェクトで実行してください。翻訳機能は英語の文字列を日本語へ変換しています。既にコーディングしたプロジェクトでは、意図しない箇所が変換される可能性があります。
 
 ### インストール
 
-composer.jsonのrequireセクションに以下の1行を加えてください。
+**プロジェクトのみにインストールする**
+
+プロジェクトのルートディレクトリ(composer.jsonファイルがある場所)で実行してください。
 
 ~~~
-"laravel-ja/comja5": "~1"
+composer require laravel-ja/comja5
 ~~~
 
 修正後、composer updateを実行してください。
+
+**グローバルにインストールする**
+
+~~~
+composer global require laravel-ja/comja5
+~~~
+
+ホームディレクトリーの.composer/vendor/binに実行パスが通っていることを確認してください。
 
 > 注意："dev-master"は開発/デバッグ中のリポジトリのため、動作しないことがあります。
 
@@ -22,27 +34,23 @@ composer.jsonのrequireセクションに以下の1行を加えてください�
 
 コマンドの実行は、Laravelをインストールしたディレクトリーのトップで行います。
 
-**Linux/Mac:**
+**プロジェクトにインストールした場合**
 
-vendor/binの中にcomja5コマンドが作成されています。プロジェクトのルートディレクトリー(composer.jsonファイルがある場所)で、実行してください。オプションの説明が表示されます。
+vendor/binの中にcomja5コマンドが作成されています。プロジェクトのルートディレクトリーで以下のように実行してください。オプションの説明が表示されます。
 
 ~~~
 vendor/bin/comja5
 ~~~
 
-**Windows:**
-
-環境がないため直接動作テストできていません。
-
-コマンドプロンプトか、パワーシェルで以下のコマンドを実行してください。
+**グローバルにインストールした場合**
 
 ~~~
-php vendor\laravel-ja\comja5\main.php
+comja5
 ~~~
 
-コマンドがプロンプトやパワーシェルに出力するコードはSJISです。
+Windowsの場合、コマンドがプロンプトやパワーシェルに出力するコードはSJISです。
 
-翻訳したファイルの日本語はUTF8、改行コードは*nix形式です。プログラムエディターであれば、問題なく開けるかと思います。必要に応じオープン時のファイル形式を指定してください。
+翻訳したファイルの日本語はUTF8、改行コードは*nix形式です。
 
 ### 実行時オプション
 
@@ -76,7 +84,7 @@ laravel/laravelリポジトリーに含まれている、コメントを翻訳�
 
 ### 不具合の報告
 
-GitHubでも良いですが、Twitterの@HiroKwsでも、Laravelに関するチャットを行っているlarachat-jp.slack.com（招待制：招待状はlarachat.jp@gmail.comまで）でも結構です。今のところ、一番多いレポートは、インストールディレクトリ以外で実行してエラーになったというものです。composer.jsonの存在するLaravelをインストールしたディレクトリー以外では、正しく動きません。
+GitHubでも良いですが、Twitterの@HiroKwsでも、Laravelに関するチャットを行っているlarachat-jp.slack.com（招待制：招待状はlarachat.jp@gmail.comまで）でも結構です。
 
 ### Licence/Rights
 
