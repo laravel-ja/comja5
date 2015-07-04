@@ -8,7 +8,8 @@
         "We can't find a user with that e-mail address.": "メールアドレスに一致するユーザーは存在していません。",
         "This password reset token is invalid.": "このパスワードリセットトークンは無効です。",
         "We have e-mailed your password reset link!": "パスワードリセットメールを送信しました。",
-        "Your password has been reset!": "パスワードをリセットしました。"
+        "Your password has been reset!": "パスワードをリセットしました。",
+        "Too many login attempts. Please try again in :seconds seconds.": "ログイン失敗が続きました。:seconds秒間お待ちください。"
     },
     "resources/lang/ja/validation.php": {
         "The :attribute must be accepted.": ":attributeを承認してください。",
