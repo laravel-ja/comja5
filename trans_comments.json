@@ -541,7 +541,8 @@
         "Elixir Asset Management": "Elixirアセット管理",
         "Elixir provides a clean, fluent API for defining some basic Gulp tasks": "ElixirはLaravelアプリケーションなのための、基本的なGulpタスクを",
         "for your Laravel application. By default, we are compiling the Less": "定義する、美しく流暢なAPIを提供します。デフォルトでも、アプリケーションの",
-        "file for our application, as well as publishing vendor resources.": "Lessファイルをコンパイルし、同時にベンダーのリソースを発行します。"
+        "for your Laravel application. By default, we are compiling the Sass": "定義する、美しく流暢なAPIを提供します。デフォルトでも、アプリケーションの",
+        "file for our application, as well as publishing vendor resources.": "Sassファイルをコンパイルし、同時にベンダーのリソースを発行します。"
     },
     "tests/ExampleTest.php": {
         "A basic functional test example.": "基本的な機能テストの例"
