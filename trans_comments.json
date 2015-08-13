@@ -56,6 +56,9 @@
         "Create a new filter instance.": "新しいフィルターインスタンス",
         "Handle an incoming request.": "送られてきたリクエストの処理"
     },
+    "app/Http/Middleware/EncryptCookies.php": {
+        "The names of the cookies that should not be encrypted.": "暗号化しないクッキーの名前"
+    },
     "app/Http/Middleware/RedirectIfAuthenticated.php": {
         "The Guard implementation.": "Guardの実装",
         "Create a new filter instance.": "新しいフィルターインスタンス",
@@ -75,7 +78,8 @@
         "Queueable Jobs": "キューイング可能なジョブ",
         "This job base class provides a central location to place any logic that": "このジョブ基底クラスは全ジョブから共通に呼び出されるロジックを",
         "is shared across all of your jobs. The trait included with the class": "設置する場所を提供しています。このクラスに含まれるトレイトは、",
-        "provides access to the \"queueOn\" and \"delay\" queue helper methods.": "\"queueOn\"と\"delay\"キューヘルパーメソッドへのアクセスを提供します。"
+        "provides access to the \"queueOn\" and \"delay\" queue helper methods.": "\"onQueue\"と\"delay\"キューヘルパーメソッドへのアクセスを提供します。",
+        "provides access to the \"onQueue\" and \"delay\" queue helper methods.": "\"onQueue\"と\"delay\"キューヘルパーメソッドへのアクセスを提供します。"
     },
     "app/Providers/AppServiceProvider.php": {
         "Bootstrap any application services.": "アプリケーションサービスの初期化処理",
@@ -428,6 +432,12 @@
         "through the kernel, and send the associated response back to": "リクエストを処理し、関連するレスポンスをユーザーのブラウザへ",
         "the client's browser allowing them to enjoy the creative": "送り返すことで、彼らを刺激する、私達の創造的で素晴らしい",
         "and wonderful application we have prepared for them.": "アプリケーションを楽しんでもらいましょう。"
+    },
+    "resources/lang/en/auth.php": {
+        "Authentication Language Lines": "認証言語行",
+        "The following language lines are used during authentication for various": "以下の言語行は認証時にユーザーに対し表示する必要のある",
+        "messages that we need to display to the user. You are free to modify": "様々なメッセージです。アプリケーションの必要に合わせ",
+        "these language lines according to your application's requirements.": "自由にこれらの言語行を変更してください。"
     },
     "resources/lang/en/pagination.php": {
         "Pagination Language Lines": "ペジネーション言語行",

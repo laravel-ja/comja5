@@ -1,4 +1,8 @@
 {
+    "resources/lang/ja/auth.php": {
+        "These credentials do not match our records.": "ログイン情報が登録されていません。",
+        "Too many login attempts. Please try again in :seconds seconds.": "ログインに続けて失敗しています。:seconds秒後に再度お試しください。"
+    },
     "resources/lang/ja/pagination.php": {
         "&laquo; Previous": "&laquo; 前",
         "Next &raquo;": "次 &raquo"
