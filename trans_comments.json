@@ -88,6 +88,10 @@
         "bindings with the application. As you can see, we are registering our": "コンテナ結合を行うのに最適です。ご覧の通り、\"Registrar\"実装を",
         "\"Registrar\" implementation here. You can add your own bindings too!": "ここで登録しています。皆さんの結合も追加できますよ！"
     },
+    "app/Providers/AuthServiceProvider.php": {
+        "The policy mappings for the application.": "アプリケーションのためにマップ付けるポリシー",
+        "Register any application authentication / authorization services.": "アプリケーションの認証と認可サービスの登録"
+    },
     "app/Providers/BusServiceProvider.php": {
         "Bootstrap any application services.": "アプリケーションサービスの初期化処理",
         "Register any application services.": "アプリケーションサービスの登録"

@@ -63,6 +63,7 @@
         "The :attribute must contain :size items.": ":attributeは:size個ご指定ください。",
         "The :attribute has already been taken.": ":attributeの値は既に存在しています。",
         "The :attribute must be a valid zone.": ":attributeには、有効なゾーンをご指定ください。",
+        "The :attribute must be a valid JSON string.": ":attributeには、有効なJSON文字列を指定してください。",
         "attribute-name": "属性名",
         "rule-name": "ルール名",
         "custom-message": "カスタムメッセージ"
