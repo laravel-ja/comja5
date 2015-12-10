@@ -49,11 +49,13 @@
     },
     "app/Http/Kernel.php": {
         "The application's global HTTP middleware stack.": "アプリケーションのグローバルHTTPミドルウェアスタック",
+        "The application's route middleware groups.": "アプリケーションのルートミドルウェアグループ",
         "The application's route middleware.": "アプリケーションのルートミドルウェアスタック"
     },
     "app/Http/Middleware/Authenticate.php": {
         "The Guard implementation.": "Guardの実装",
         "Create a new filter instance.": "新しいフィルターインスタンス",
+        "Create a new middleware instance.": "新しいミドルウェアインスタンス",
         "Handle an incoming request.": "送られてきたリクエストの処理"
     },
     "app/Http/Middleware/EncryptCookies.php": {
@@ -72,7 +74,10 @@
         "Application Routes": "アプリケーションのルート",
         "Here is where you can register all of the routes for an application.": "ここでアプリケーションのルートを全て登録することが可能です。",
         "It's a breeze. Simply tell Laravel the URIs it should respond to": "簡単です。ただ、Laravelへ対応するURIと、そのURIがリクエスト",
-        "and give it the controller to call when that URI is requested.": "されたときに呼び出されるコントローラーを指定してください。"
+        "and give it the controller to call when that URI is requested.": "されたときに呼び出されるコントローラーを指定してください。",
+        "This route group applies the \"web\" middleware group to every route": "このルートグループは、\"web\"ミドルウェアグループが指定された",
+        "it contains. The \"web\" middleware group is defined in your HTTP": "全ルートに対し適用されます。\"web\"ミドルウェアグループは",
+        "kernel and includes session state, CSRF protection, and more.": "HTTPカーネルで定義されており、セッションの開始やCSRF保護などを含んでいます。"
     },
     "app/Jobs/Job.php": {
         "Queueable Jobs": "キューイング可能なジョブ",
@@ -148,6 +153,10 @@
         "by a request. The Artisan \"optimize\" is used to create this file.": "ファイルを使用しましょう。\"optimize\" Artisanコマンドで生成できます。"
     },
     "config/app.php": {
+        "Application Environment": "アプリケーション環境",
+        "This value determines the \"environment\" your application is currently": "この値により現在実行中のアプリケーションの「環境」が決まります。",
+        "running in. This may determine how you prefer to configure various": "これらの値はアプリケーションで活用する様々なサービスを好み通りに",
+        "services your application utilizes. Set this in your \".env\" file.": "設定するために使用します。\".env\"ファイルに値を設定してください。",
         "Application Debug Mode": "アプリケーションデバッグモード",
         "When your application is in debug mode, detailed error messages with": "アプリケーションをデバッグモードにすると、アプリケーションでエラーが発生する",
         "stack traces will be shown on every error that occurs within your": "たびにスタックトレースともに、詳細なエラーメッセージが表示されます。",
@@ -189,6 +198,26 @@
         "the aliases are \"lazy\" loaded so they don't hinder performance.": "パフォーマンスを妨げることはありません。"
     },
     "config/auth.php": {
+        "Authentication Defaults": "認証デフォルト",
+        "This option controls the default authentication \"guard\" and password": "このオプションはアプリケーションで用いる認証のデフォルト\"guard\"と",
+        "reset options for your application. You may change these defaults": "パスワードリセットオプションをコントロールします。これらのデフォルト値は",
+        "as required, but they're a perfect start for most applications.": "自由に変更できますが、ほとんどのアプリケーションではこのままでよいでしょう。",
+        "Authentication Guards": "認証Guard",
+        "Next, you may define every authentication guard for your application.": "次に、アプリケーションの全認証Guardを定義します。",
+        "Of course, a great default configuration has been defined for you": "もちろん、「セッション」ストレージとEloquentユーザーを元に利用する、",
+        "here which uses \"session\" storage and the Eloquent user source.": "素晴らしいデフォルト設定を既に用意しています。",
+        "All authentication drivers have a user \"source\". This defines how the": "全認証ドライバーはユーザーを「ソース」として持ちます。アプリケーションで",
+        "users are actually retrieved out of your database or other storage": "ユーザー情報を保管するために使用しているデータベースやストレージ",
+        "mechanisms used by this application to persist your user's data.": "メカニズムから実際にどのようにユーザーを取り出すかをドライバーは定義しています。",
+        "Supported:": "サポートドライバー：",
+        "User Sources": "ユーザーソース",
+        "If you have multiple user tables or models you may configure multiple": "複数のユーザーテーブルやモデルが存在している場合、それぞれの",
+        "sources which represent each model / table. These sources may then": "モデルやテーブルを表す複数のソースを設定してください。それからこうした",
+        "be assigned to any extra authentication guards you have defined.": "ソースへあなたが定義した認証Guardを追加でアサインする必要があるでしょう。",
+        "Resetting Passwords": "パスワードリセット",
+        "You may specify multiple password reset configurations if you have more": "アプリケーションで複数のユーザーテーブルやモデルを使用している場合、",
+        "than one user table or model in the application and you want to have": "複数のパスワードリセット設定が必要になるでしょう。そして特定の",
+        "seperate password reset settings based on the specific user types.": "ユーザータイプに応じて、パスワードリセット設定を分けたくなるでしょう。",
         "Default Authentication Driver": "デフォルト認証ドライバー",
         "This option controls the authentication driver that will be utilized.": "このオプションは認証で使用するドライバーを設定します。",
         "This driver manages the retrieval and authentication of the users": "このドライバーはアプリケーションの保護領域へユーザーがアクセスする時の",
@@ -204,6 +233,7 @@
         "Password Reset Settings": "パスワードリセット設定",
         "Here you may set the options for resetting passwords including the view": "ここではパスワードリマインダーの設定を行います。それにはパスワード",
         "that is your password reset e-mail. You can also set the name of the": "メールにリセットメールのビューも含まれます。また、リセット",
+        "that is your password reset e-mail. You may also set the name of the": "メールにリセットメールのビューも含まれます。また、リセット",
         "table that maintains all of the reset tokens for your application.": "トークンを保存しておくためのテーブル名も指定可能です。",
         "The expire time is the number of minutes that the reset token should be": "有効時間の\"expire\"に指定する分数は、良く考えてください。",
         "considered valid. This security feature keeps tokens short-lived so": "このトークン保存時間はセキュリティー機能で、短い時間ほど",
@@ -281,7 +311,8 @@
         "Filesystem Disks": "ファイルシステムディスク",
         "Here you may configure as many filesystem \"disks\" as you wish, and you": "ここで好きなだけ、ファイルシステム「ディスク」を設定できます。",
         "may even configure multiple disks of the same driver. Defaults have": "同じドライバーに複数のディスクを設定することも可能です。指定が必要な",
-        "been setup for each driver as an example of the required options.": "オプションの例として、各ドライバーのデフォルトが用意されています。"
+        "been setup for each driver as an example of the required options.": "オプションの例として、各ドライバーのデフォルトが用意されています。",
+        "Optional FTP Settings...": "追加のFTP設定…"
     },
     "config/mail.php": {
         "Mail Driver": "メールドライバー",
@@ -451,6 +482,7 @@
     },
     "resources/lang/en/passwords.php": {
         "Password Reminder Language Lines": "パスワードリマインダー言語行",
+        "Password Reset Language Lines": "パスワードリセット言語行",
         "The following language lines are the default lines which match reasons": "以下の言語行は既存のパスワードを無効にしたい場合に、無効なトークンや",
         "that are given by the password broker for a password update attempt": "新しいパスワードが入力された場合のように、パスワードの更新に失敗した",
         "has failed, such as for an invalid token or invalid new password.": "理由を示すデフォルトの文言です。"
