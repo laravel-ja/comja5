@@ -1,6 +1,6 @@
 {
     "name": "laravel-ja/comja5",
-    "description": "Translate comments in laravel/laravel version5 to Japanese",
+    "description": "Translate comments in laravel/laravel 5.* project to Japanese",
     "license": "MIT",
     "keywords": [
         "laravel", "japanese", "resource"
