@@ -3,7 +3,8 @@
         "The console command name.": "コンソールコマンド名",
         "The name and signature of the console command.": "コンソールコマンドの識別名",
         "The console command description.": "コンソールコマンドの説明",
-        "Execute the console command.": "コンソールコマンドの実行"
+        "Execute the console command.": "コンソールコマンドの実行",
+        "Register the Closure based commands for the application.": "アプリケーションのクロージャベースコマンドの登録"
     },
     "app/Console/Kernel.php": {
         "The Artisan commands provided by your application.": "アプリケーションで提供するArtisanコマンド",
@@ -13,45 +14,80 @@
         "A list of the exception types that should not be reported.": "レポートしない例外タイプのリスト",
         "Report or log an exception.": "例外をレポート、もしくはログ",
         "This is a great spot to send exceptions to Sentry, Bugsnag, etc.": "ここはSentryやBugsnagなどに例外を送るために良い場所",
-        "Render an exception into an HTTP response.": "HTTPレスポンスに対応する例外をレンダー"
+        "Render an exception into an HTTP response.": "HTTPレスポンスに対応する例外をレンダー",
+        "Convert an authentication exception into an unauthenticated response.": "認証例外を認証失敗レスポンスへ変換"
     },
     "app/Http/Controllers/Auth/AuthController.php": {
-        "Registration & Login Controller": "登録／ログインコントローラー",
+        "Registration & Login Controller": "登録／ログインコントローラ",
         "Where to redirect users after login / registration.": "ログイン／ユーザー登録後にユーザーがリダイレクトする場所",
         "This controller handles the registration of new users, as well as the": "このコントローラハンドラーは新ユーザーを登録し、同時に既存の",
-        "authentication of existing users. By default, this controller uses": "ユーザーを認証します。デフォルトでこのコントローラーは振る舞いを",
+        "authentication of existing users. By default, this controller uses": "ユーザーを認証します。デフォルトでこのコントローラは振る舞いを",
         "a simple trait to add these behaviors. Why don't you explore it?": "追加するためにシンプルなトレイトを使用します。試してみませんか？",
         "Create a new authentication controller instance.": "新しい認証コントローラインスタンスの生成",
         "Get a validator for an incoming registration request.": "やって来た登録リクエストに対するバリデターを取得",
         "Create a new user instance after a valid registration.": "登録内容を確認後、新しいユーザーインスタンスを生成"
     },
-    "app/Http/Controllers/Auth/PasswordController.php": {
-        "Password Reset Controller": "パスワードリセットコントローラー",
-        "This controller is responsible for handling password reset requests": "このコントローラーはパスワードリセットリクエストの処理に責任を持ち、その",
+    "app/Http/Controllers/Auth/ForgotPasswordController.php": {
+        "Password Reset Controller": "パスワードリセットコントローラ",
+        "This controller is responsible for handling password reset emails and": "このコントローラはパスワードリセットメールの処理の責務を持ち、",
+        "includes a trait which assists in sending these notifications from": "アプリケーションからユーザへ通知を送るために役立つトレイトを",
+        "your application to your users. Feel free to explore this trait.": "取り込む。自由にこのトレイトを調べてください。",
+        "Create a new controller instance.": "新しいコントローラインスタンスの生成"
+    },
+    "app/Http/Controllers/Auth/LoginController.php": {
+        "Login Controller": "ログインコントローラ",
+        "This controller handles authenticating users for the application and": "このコントローラはアプリケーションの認証ユーザを処理し、",
+        "redirecting them to your home screen. The controller uses a trait": "トップページへリダイレクトする。コントローラはアプリケーションに",
+        "to conveniently provide its functionality to your applications.": "機能を便利に提供するためにトレイトを使用している",
+        "Where to redirect users after login / registration.": "ログインとユーザ登録後のリダイレクト先",
+        "Create a new controller instance.": "新しいコントローラインスタンスの生成"
+    },
+    "app/Http/Controllers/Auth/RegisterController.php" :{
+        "Register Controller": "ユーザ登録コントローラ",
+        "This controller handles the registration of new users as well as their": "このコントローラは新しいユーザの登録、バリデーション、生成を処理する。",
+        "validation and creation. By default this controller uses a trait to": "デフォルトで、このコントローラはトレイトを使用しており、これにより",
+        "provide this functionality without requiring any additional code.": "他のコードを追加せずとも、この機能を提供している。",
+        "Where to redirect users after login / registration.": "ログイン／ユーザ登録後のリダイレクト先",
+        "Create a new controller instance.": "新しいコントローラインスタンスの生成",
+        "Get a validator for an incoming registration request.": "送られてきたユーザ登録リクエストのバリデター取得",
+        "Create a new user instance after a valid registration.": "ユーザ登録成功後の新しいユーザインスタンス取得"
+    },
+    "app/Http/Controllers/Auth/ResetPasswordController.php": {
+        "Password Reset Controller": "パスワードリセットコントローラ",
+        "This controller is responsible for handling password reset requests": "このコントローラはパスワードリセットリクエストの処理に責任を持ち、その",
         "and uses a simple trait to include this behavior. You're free to": "振る舞いを取り込むために、シンプルなトレイトを使用しています。望み通りに",
         "explore this trait and override any methods you wish to tweak.": "調整するため、このトレイトを使い、メソッドをオーバーライドしてください。",
-        "Create a new password controller instance.": "新しいパスワードコントローラーインスタンスの生成"
+        "Create a new controller instance.": "新しいコントローラインスタンスの生成"
+    },
+    "app/Http/Controllers/Auth/PasswordController.php": {
+        "Password Reset Controller": "パスワードリセットコントローラ",
+        "This controller is responsible for handling password reset requests": "このコントローラはパスワードリセットリクエストの処理に責任を持ち、その",
+        "and uses a simple trait to include this behavior. You're free to": "振る舞いを取り込むために、シンプルなトレイトを使用しています。望み通りに",
+        "explore this trait and override any methods you wish to tweak.": "調整するため、このトレイトを使い、メソッドをオーバーライドしてください。",
+        "Create a new password controller instance.": "新しいパスワードコントローラインスタンスの生成"
     },
     "app/Http/Controllers/HomeController.php": {
-        "Home Controller": "ホームコントローラー",
-        "This controller renders your application's \"dashboard\" for users that": "このコントローラーは認証済みのユーザーのアプリケーション",
+        "Home Controller": "ホームコントローラ",
+        "This controller renders your application's \"dashboard\" for users that": "このコントローラは認証済みのユーザーのアプリケーション",
         "are authenticated. Of course, you are free to change or remove the": "「ダッシュボード」をレンダーします。もちろん、希望に合わせ",
-        "controller as you wish. It is just here to get your app started!": "コントローラーを変更したり削除したりしてください。ここからappがスタートします！",
-        "Create a new controller instance.": "新しいコントローラーインスタンスの生成",
+        "controller as you wish. It is just here to get your app started!": "コントローラを変更したり削除したりしてください。ここからappがスタートします！",
+        "Create a new controller instance.": "新しいコントローラインスタンスの生成",
         "Show the application dashboard to the user.": "アプリケーションのダッシュボードをユーザーへ表示"
     },
     "app/Http/Controllers/WelcomeController.php": {
-        "Welcome Controller": "Welcomeコントローラー",
-        "This controller renders the \"marketing page\" for the application and": "このコントローラーはアプリケーションの「マーケティングページ」を",
+        "Welcome Controller": "Welcomeコントローラ",
+        "This controller renders the \"marketing page\" for the application and": "このコントローラはアプリケーションの「マーケティングページ」を",
         "is configured to only allow guests. Like most of the other sample": "レンダーし、ゲストのみに表示されるように設定されています。",
         "controllers, you are free to modify or remove it as you desire.": "他のコントローラサンプルと同様、好きなように変更したり、削除してください。",
-        "Create a new controller instance.": "新しいコントローラーインスタンスの生成",
+        "Create a new controller instance.": "新しいコントローラインスタンスの生成",
         "Show the application welcome screen to the user.": "アプリケーションのウェルカムページをユーザーへ表示"
     },
     "app/Http/Kernel.php": {
         "The application's global HTTP middleware stack.": "アプリケーションのグローバルHTTPミドルウェアスタック",
+        "These middleware are run during every request to your application.": "これらのミドルウェアはアプリケーションにリクエストが届くごとに実行される",
         "The application's route middleware groups.": "アプリケーションのルートミドルウェアグループ",
-        "The application's route middleware.": "アプリケーションのルートミドルウェアスタック"
+        "The application's route middleware.": "アプリケーションのルートミドルウェアスタック",
+        "These middleware may be assigned to groups or used individually.": "これらのミドルウェアは個別、もしくはグループに指定される"
     },
     "app/Http/Middleware/Authenticate.php": {
         "The Guard implementation.": "Guardの実装",
@@ -77,7 +113,7 @@
         "Here is where you will register all of the routes in an application.": "ここでアプリケーションのルートを全て登録してください。",
         "Here is where you can register all of the routes for an application.": "ここでアプリケーションのルートを全て登録することが可能です。",
         "It's a breeze. Simply tell Laravel the URIs it should respond to": "簡単です。ただ、Laravelへ対応するURIと、そのURIがリクエスト",
-        "and give it the controller to call when that URI is requested.": "されたときに呼び出されるコントローラーを指定してください。",
+        "and give it the controller to call when that URI is requested.": "されたときに呼び出されるコントローラを指定してください。",
         "This route group applies the \"web\" middleware group to every route": "このルートグループは、\"web\"ミドルウェアグループが指定された",
         "it contains. The \"web\" middleware group is defined in your HTTP": "全ルートに対し適用されます。\"web\"ミドルウェアグループは",
         "kernel and includes session state, CSRF protection, and more.": "HTTPカーネルで定義されており、セッションの開始やCSRF保護などを含んでいます。"
@@ -98,7 +134,12 @@
     },
     "app/Providers/AuthServiceProvider.php": {
         "The policy mappings for the application.": "アプリケーションのためにマップ付けるポリシー",
+        "Register any authentication / authorization services.": "認証／認可サービスの登録",
         "Register any application authentication / authorization services.": "アプリケーションの認証と認可サービスの登録"
+    },
+    "app/Providers/BroadcastServiceProvider.php": {
+        "Bootstrap any application services.": "アプリケーションサービスの初期化処理",
+        "Authenticate the user's personal channel...": "ユーザの個別チャンネルの認可"
     },
     "app/Providers/BusServiceProvider.php": {
         "Bootstrap any application services.": "アプリケーションサービスの初期化処理",
@@ -113,13 +154,19 @@
     "app/Providers/EventServiceProvider.php": {
         "The event handler mappings for the application.": "アプリケーションのイベントハンドラーのマップ",
         "The event listener mappings for the application.": "アプリケーションのイベントリスナーのマップ",
+        "Register any events for your application.": "アプリケーションのイベント登録",
         "Register any other events for your application.": "アプリケーションのその他のイベントの登録"
     },
     "app/Providers/RouteServiceProvider.php": {
-        "This namespace is applied to the controller routes in your routes file.": "この名前空間はルートファイルのコントローラールートへ適用されます。",
+        "This namespace is applied to the controller routes in your routes file.": "この名前空間はルートファイルのコントローラルートへ適用されます。",
+        "This namespace is applied to your controller routes.": "この名前空間はコントローラルートへ適用されます。",
         "In addition, it is set as the URL generator's root namespace.": "さらに、URLジェネレーターのルート名前空間としても設定されます。",
         "Define your route model bindings, pattern filters, etc.": "ルートモデル結合、パターンフィルターなどを定義",
-        "Define the routes for the application.": "アプリケーションのルートを定義"
+        "Define the routes for the application.": "アプリケーションのルートを定義",
+        "Define the \"web\" routes for the application.": "アプリケーションの\"Web\"ルート定義",
+        "These routes all receive session state, CSRF protection, etc.": "これらのルートではすべて、セッション状態、CSRF保護などを受ける",
+        "Define the \"api\" routes for the application.": "アプリケーションの\"api\"ルート定義",
+        "These routes are typically stateless.": "通常、これらのルートはステートレス"
     },
     "app/Services/Registrar.php": {
         "Get a validator for an incoming registration request.": "登録リクエストに対するvalidator取得",
@@ -128,6 +175,7 @@
     "app/User.php": {
         "The database table used by the model.": "モデルで使用するデータベーステーブル",
         "The attributes that are mass assignable.": "複数代入を行う属性",
+        "The attributes that should be hidden for arrays.": "配列には含めない属性",
         "The attributes excluded from the model's JSON form.": "モデルのJSON形式に含めない属性"
     },
     "bootstrap/app.php": {
@@ -156,6 +204,10 @@
         "by a request. The Artisan \"optimize\" is used to create this file.": "ファイルを使用しましょう。\"optimize\" Artisanコマンドで生成できます。"
     },
     "config/app.php": {
+        "Application Name": "アプリケーション名",
+        "This value is the name of your application. This value is used when the": "ここにはアプリケーション名を指定します。この名前は",
+        "framework needs to place the application's name in a notification or": "通知時にアプリケーション名をフレームワークが必要な場合や、",
+        "any other location as required by the application or its packages.": "アプリケーションやパッケージが必要としている場合に使用されます。",
         "Application Environment": "アプリケーション環境",
         "This value determines the \"environment\" your application is currently": "この値により現在実行中のアプリケーションの「環境」が決まります。",
         "running in. This may determine how you prefer to configure various": "これらの値はアプリケーションで活用する様々なサービスを好み通りに",
@@ -426,7 +478,15 @@
         "HTTPS Only Cookies": "HTTPS専用クッキー",
         "By setting this option to true, session cookies will only be sent back": "このオプションをtrueに設定することにより、セッションクッキーは",
         "to the server if the browser has a HTTPS connection. This will keep": "ブラウザーがHTTPS接続されている場合のみ、送り返されてきます。",
-        "the cookie from being sent to you if it can not be done securely.": "これにより安全な送信が出来なければ、クッキー送信を防ぐことができます。"
+        "the cookie from being sent to you if it can not be done securely.": "これにより安全な送信が出来なければ、クッキー送信を防ぐことができます。",
+        "Session Cache Store": "セッションキャッシュ保存域",
+        "When using the \"apc\" or \"memcached\" session drivers, you may specify a": "\"apc\"と\"memcached\"セッションドライバーを使用する場合、",
+        "cache store that should be used for these sessions. This value must": "セッションのために使用したいキャッシュ保存域を指定することもあるでしょう。",
+        "correspond with one of the application's configured cache stores.": "この値はアプリケーションのキャッシュ保存域の設定と対応しています。",
+        "HTTP Access Only": "HTTPアクセスのみ",
+        "Setting this value to true will prevent JavaScript from accessing the": "この値をtrueにセットすると、JavaScriptがクッキーの値へアクセスすることを",
+        "value of the cookie and the cookie will only be accessible through": "防ぎ、クッキーはHTTPプロトコルを通してのみアクセス可能になります。",
+        "the HTTP protocol. You are free to modify this option if needed.": "このオプションは必要に応じ、自由に指定してください。"
     },
     "config/view.php": {
         "View Storage Paths": "ビュー保存パス",
@@ -474,6 +534,29 @@
         "through the kernel, and send the associated response back to": "リクエストを処理し、関連するレスポンスをユーザーのブラウザへ",
         "the client's browser allowing them to enjoy the creative": "送り返すことで、彼らを刺激する、私達の創造的で素晴らしい",
         "and wonderful application we have prepared for them.": "アプリケーションを楽しんでもらいましょう。"
+    },
+    "resources/assets/js/app.js": {
+        "First we will load all of this project's JavaScript dependencies which":"VueとVueリソースを含めた、このプロジェクトの全Javascriptの依存を",
+        "include Vue and Vue Resource. This gives a great starting point for":"最初にロードします。これはVueとLaravelを使用する、堅牢でパワフルな",
+        "building robust, powerful web applications using Vue and Laravel.":"アプリケーション構築の素晴らしいスタート地点となるでしょう。",
+        "Next, we will create a fresh Vue application instance and attach it to":"次に、真新しいVueアプリケーションのインスタンスを生成し、",
+        "the body of the page. From here, you may begin adding components to":"ページの本文にアタッチします。ここからは、アプリケーションに",
+        "the application, or feel free to tweak this setup for your needs":"コンポーネントを付け加えたり、必要に応じセットアップを調整してください。"
+    },
+    "resources/assets/js/app.js": {
+        "We'll load jQuery and the Bootstrap jQuery plugin which provides support": "モーダルやタブのような基本的なBootstrap機能をサポートしている",
+        "for JavaScript based Bootstrap features such as modals and tabs. This": "jQueryとBootstrap jQueryプラグインをロードします。このコードは",
+        "code may be modified to fit the specific needs of your application.": "アプリケーション独自の必要に応じて、変更されることになります。",
+        "Vue is a modern JavaScript library for building interactive web interfaces": "VueはモダンなJavaScriptライブラリで、リアクティブなデータ結合と",
+        "using reactive data binding and reusable components. Vue's API is clean": "再利用可能なコンポーネントを使用し、インタラクティブなWebインターフェイスを構築できます。",
+        "and simple, leaving you to focus on building your next great project.": "VueのAPIはクリーンかつシンプルで、次の素晴らしいプロジェクト構築へ集中させてくれます。",
+        "We'll register a HTTP interceptor to attach the \"CSRF\" header to each of": "このアプリケーションから外へ向けて送る各リクエストへヘッダに、",
+        "the outgoing requests issued by this application. The CSRF middleware": "\"CSRF\"ヘッダを付けるため、HTTPインターセプタを登録します。Laravelに",
+        "included with Laravel will automatically verify the header's value.": "含まれるCSRFヘッダが自動的に、ヘッダ中の値の正当性を調べます。",
+        "Echo exposes an expressive API for subscribing to channels and listening": "Echoはチャンネルを購入したり、Laravelによりブロードキャストされるイベントをリスニング",
+        "for events that are broadcast by Laravel. Echo and event broadcasting": "するための、記述的なAPIを提供しています。Echoとイベントブロードキャストにより、",
+        "allows your team to easily build robust real-time web applications.": "あなたのチームは堅牢なリアルタイムWebアプリを簡単に構築できるでしょう。",
+        "import Echo from \"laravel-echo\"": "\"laravel-echo\"からEchoをインポート"
     },
     "resources/lang/en/auth.php": {
         "Authentication Language Lines": "認証言語行",
@@ -558,6 +641,24 @@
     },
     "resources/views/errors/503.blade.php": {
         "Be right back.": "正常な状態に戻しましょう。"
+    },
+    "routes/api.php": {
+        "API Routes": "APIルート",
+        "Here is where you can register API routes for your application. These": "ここでアプリケーションのAPIルートを登録します。これらの",
+        "routes are loaded by the RouteServiceProvider within a group which": "ルートはRouteServiceProviderによりロードされ、\"api\"ミドルウェア",
+        "is assigned the \"api\" middleware group. Enjoy building your API!": "グループにアサインされます。API構築を楽しんでください！"
+    },
+    "routes/console.php": {
+        "Console Routes": "コンソールルート",
+        "This file is where you may define all of your Closure based console": "ここでクロージャベースのコンソールコマンドをすべて定義します。",
+        "commands. Each Closure is bound to a command instance allowing a": "各コマンドのIOメソッドにシンプルに関わりあえるアプローチが",
+        "simple approach to interacting with each command's IO methods.": "取れるように、各クロージャはコマンドインスタンスと結合されます。"
+    },
+    "routes/web.php": {
+        "Web Routes": "Webルート",
+        "This file is where you may define all of the routes that are handled": "このファイルはアプリケーションで処理するすべてのルートを定義する場所です。",
+        "by your application. Just tell Laravel the URIs it should respond": "クロージャやコントローラメソッドを使用し、レスポンスすべきURIを",
+        "to using a Closure or controller method. Build something great!": "Laravelへ指示するだけです。素晴らしい物を作ってください！"
     },
     "server.php": {
         "A PHP Framework For Web Artisans": "Web職人のためのPHPフレームワーク",

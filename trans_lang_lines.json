@@ -66,6 +66,11 @@
         "The :attribute must be a string.": ":attributeは文字列を指定してください。",
         "The :attribute must be a valid zone.": ":attributeには、有効なゾーンを指定してください。",
         "The :attribute must be a valid JSON string.": ":attributeには、有効なJSON文字列を指定してください。",
+        "The :attribute has invalid image dimensions.": ":attributeの図形サイズが正しくありません。",
+        "The :attribute field has a duplicate value.": ":attributeには異なった値を指定してください。",
+        "The :attribute must be a file.": ":attributeにはファイルを指定してください。",
+        "The :attribute field does not exist in :other.": ":attributeには:otherの値を指定してください。",
+        "The :attribute field must be present.": ":attributeが存在していません。",
         "attribute-name": "属性名",
         "rule-name": "ルール名",
         "custom-message": "カスタムメッセージ"
