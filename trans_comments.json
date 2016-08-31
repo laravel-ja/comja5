@@ -8,7 +8,8 @@
     },
     "app/Console/Kernel.php": {
         "The Artisan commands provided by your application.": "アプリケーションで提供するArtisanコマンド",
-        "Define the application's command schedule.": "アプリケーションのコマンド実行スケジュール定義"
+        "Define the application's command schedule.": "アプリケーションのコマンド実行スケジュール定義",
+        "Register the Closure based commands for the application.": "アプリケーションのクロージャベースコマンドの登録"
     },
     "app/Exceptions/Handler.php": {
         "A list of the exception types that should not be reported.": "レポートしない例外タイプのリスト",
@@ -543,7 +544,7 @@
         "the body of the page. From here, you may begin adding components to":"ページの本文にアタッチします。ここからは、アプリケーションに",
         "the application, or feel free to tweak this setup for your needs":"コンポーネントを付け加えたり、必要に応じセットアップを調整してください。"
     },
-    "resources/assets/js/app.js": {
+    "resources/assets/js/bootstrap.js": {
         "We'll load jQuery and the Bootstrap jQuery plugin which provides support": "モーダルやタブのような基本的なBootstrap機能をサポートしている",
         "for JavaScript based Bootstrap features such as modals and tabs. This": "jQueryとBootstrap jQueryプラグインをロードします。このコードは",
         "code may be modified to fit the specific needs of your application.": "アプリケーション独自の必要に応じて、変更されることになります。",

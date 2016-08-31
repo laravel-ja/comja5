@@ -94,6 +94,8 @@ class Converter
             $this->file->globFiles( $cwd.'/config', '*' ),
             $this->file->globFiles( $cwd.'/database', '*' ),
             $this->file->globFiles( $cwd.'/resources', '*.php' ),
+            $this->file->globFiles( $cwd.'/resources', '*.js' ),
+            $this->file->globFiles( $cwd.'/routes', '*.php' ),
             $this->file->globFiles( $cwd.'/tests', '*' ) );
         $files[] = $cwd.'/public/index.php';
         $files[] = $cwd.'/artisan';
