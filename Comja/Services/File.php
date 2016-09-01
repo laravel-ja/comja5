@@ -51,6 +51,8 @@ class File
     {
         $realPath = $this->getRealPath($path);
 
+        if ( !is_dir( $realPath)) return [];
+
         $paths = glob(rtrim($realPath, DS).DS.'*',
             GLOB_MARK | GLOB_ONLYDIR | GLOB_NOSORT);
         $files = glob(rtrim($realPath, DS).DS.$pattern, GLOB_MARK);
