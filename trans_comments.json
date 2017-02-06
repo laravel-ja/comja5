@@ -107,7 +107,7 @@
         "Create a new filter instance.": "新しいフィルターインスタンス",
         "Handle an incoming request.": "送られてきたリクエストの処理"
     },
-    "app/Http/Middleware/VerifyCsrfToken.php": {
+    "app/Http/Middleware/TrimStrings.php": {
         "The names of the attributes that should not be trimmed.": "トリムを行わない属性名"
     },
     "app/Http/Middleware/VerifyCsrfToken.php": {
