@@ -41,7 +41,8 @@
         "redirecting them to your home screen. The controller uses a trait": "トップページへリダイレクトする。コントローラはアプリケーションに",
         "to conveniently provide its functionality to your applications.": "機能を便利に提供するためにトレイトを使用している",
         "Where to redirect users after login / registration.": "ログインとユーザ登録後のリダイレクト先",
-        "Create a new controller instance.": "新しいコントローラインスタンスの生成"
+        "Create a new controller instance.": "新しいコントローラインスタンスの生成",
+        "Where to redirect users after login.": "ログイン後のユーザリダイレクト先"
     },
     "app/Http/Controllers/Auth/RegisterController.php" :{
         "Register Controller": "ユーザ登録コントローラ",
@@ -51,14 +52,16 @@
         "Where to redirect users after login / registration.": "ログイン／ユーザ登録後のリダイレクト先",
         "Create a new controller instance.": "新しいコントローラインスタンスの生成",
         "Get a validator for an incoming registration request.": "送られてきたユーザ登録リクエストのバリデター取得",
-        "Create a new user instance after a valid registration.": "ユーザ登録成功後の新しいユーザインスタンス取得"
+        "Create a new user instance after a valid registration.": "ユーザ登録成功後の新しいユーザインスタンス取得",
+        "Where to redirect users after registration.": "登録後のユーザリダイレクト先"
     },
     "app/Http/Controllers/Auth/ResetPasswordController.php": {
         "Password Reset Controller": "パスワードリセットコントローラ",
         "This controller is responsible for handling password reset requests": "このコントローラはパスワードリセットリクエストの処理に責任を持ち、その",
         "and uses a simple trait to include this behavior. You're free to": "振る舞いを取り込むために、シンプルなトレイトを使用しています。望み通りに",
         "explore this trait and override any methods you wish to tweak.": "調整するため、このトレイトを使い、メソッドをオーバーライドしてください。",
-        "Create a new controller instance.": "新しいコントローラインスタンスの生成"
+        "Create a new controller instance.": "新しいコントローラインスタンスの生成",
+        "Where to redirect users after resetting their password.": "パスワードをリセットした後のユーザリダイレクト先"
     },
     "app/Http/Controllers/Auth/PasswordController.php": {
         "Password Reset Controller": "パスワードリセットコントローラ",
@@ -103,6 +106,9 @@
         "The Guard implementation.": "Guardの実装",
         "Create a new filter instance.": "新しいフィルターインスタンス",
         "Handle an incoming request.": "送られてきたリクエストの処理"
+    },
+    "app/Http/Middleware/VerifyCsrfToken.php": {
+        "The names of the attributes that should not be trimmed.": "トリムを行わない属性名"
     },
     "app/Http/Middleware/VerifyCsrfToken.php": {
         "Handle an incoming request.": "送られてきたリクエストの処理",
