@@ -717,6 +717,15 @@
         "for your Laravel application. By default, we are compiling the Sass": "定義する、美しく流暢なAPIを提供します。デフォルトでも、アプリケーションの",
         "file for our application, as well as publishing vendor resources.": "Sassファイルをコンパイルし、同時にベンダーのリソースを発行します。"
     },
+    "tests/Feature/ExampleTest.php": {
+        "A basic test example.": "基本的なテスト例"
+    },
+    "tests/Unit/ExampleTest.php": {
+        "A basic test example.": "基本的なテスト例"
+    },
+    "tests/CreatesApplication.php": {
+        "Creates the application.": "アプリケーションの生成"
+    },
     "tests/ExampleTest.php": {
         "A basic functional test example.": "基本的な機能テストの例"
     },
