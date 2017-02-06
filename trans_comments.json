@@ -578,10 +578,6 @@
         "to our Laravel back-end. This library automatically handles sending the": "ライブラリをロードします。このライブラリは自動的に\"XSRF\"トークン",
         "CSRF token as a header based on the value of the \"XSRF\" token cookie.": "クッキーの値に基づいて、ヘッダーベースのCSRFトークンを送ります。"
     },
-    "resources/assets/sass/app.scss": {
-        "Fonts": "フォント",
-        "Variables": "変数"
-    },
     "resources/lang/en/auth.php": {
         "Authentication Language Lines": "認証言語行",
         "The following language lines are used during authentication for various": "以下の言語行は認証時にユーザーに対し表示する必要のある",
@@ -672,6 +668,12 @@
         "routes are loaded by the RouteServiceProvider within a group which": "ルートはRouteServiceProviderによりロードされ、\"api\"ミドルウェア",
         "is assigned the \"api\" middleware group. Enjoy building your API!": "グループにアサインされます。API構築を楽しんでください！"
     },
+    "routes/channels.php": {
+        "Broadcast Channels":"ブロードキャストチャンネル",
+        "Here you may register all of the event broadcasting channels that your":"ここで、アプリケーションでサポートする、全てのイベントブロードキャスト",
+        "application supports. The given channel authorization callbacks are":"チャンネルを登録してください。指定されたチャンネルの認可コールバックにより、",
+        "used to check if an authenticated user can listen to the channel.":"認証済みユーザがそのチャンネルをリッスンする許可を持っているかチェックされます。"
+    },
     "routes/console.php": {
         "Console Routes": "コンソールルート",
         "This file is where you may define all of your Closure based console": "ここでクロージャベースのコンソールコマンドをすべて定義します。",
@@ -682,7 +684,10 @@
         "Web Routes": "Webルート",
         "This file is where you may define all of the routes that are handled": "このファイルはアプリケーションで処理するすべてのルートを定義する場所です。",
         "by your application. Just tell Laravel the URIs it should respond": "クロージャやコントローラメソッドを使用し、レスポンスすべきURIを",
-        "to using a Closure or controller method. Build something great!": "Laravelへ指示するだけです。素晴らしい物を作ってください！"
+        "to using a Closure or controller method. Build something great!": "Laravelへ指示するだけです。素晴らしい物を作ってください！",
+        "Here is where you can register web routes for your application. These": "ここでアプリケーションのWebルートを登録できます。\"web\"ルートは",
+        "routes are loaded by the RouteServiceProvider within a group which": "ミドルウェアのグループの中へ、RouteServiceProviderによりロード",
+        "contains the \"web\" middleware group. Now create something great!!": "されます。さあ、素晴らしい何かを作成してください！"
     },
     "server.php": {
         "A PHP Framework For Web Artisans": "Web職人のためのPHPフレームワーク",
