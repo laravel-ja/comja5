@@ -550,12 +550,15 @@
         "and wonderful application we have prepared for them.": "アプリケーションを楽しんでもらいましょう。"
     },
     "resources/assets/js/app.js": {
-        "First we will load all of this project's JavaScript dependencies which":"VueとVueリソースを含めた、このプロジェクトの全Javascriptの依存を",
-        "include Vue and Vue Resource. This gives a great starting point for":"最初にロードします。これはVueとLaravelを使用する、堅牢でパワフルな",
+        "First we will load all of this project's JavaScript dependencies which":"最初にこのプロジェクトのJavascriptの依存パッケージを全てロードします。",
+        "include Vue and Vue Resource. This gives a great starting point for":"これはVueとLaravelも含まれます。堅牢でパワフルな",
+        "includes Vue and other libraries. It is a great starting point when": "これはVueと他のライブラリも含まれます。堅牢でパワフルな",
         "building robust, powerful web applications using Vue and Laravel.":"アプリケーション構築の素晴らしいスタート地点となるでしょう。",
         "Next, we will create a fresh Vue application instance and attach it to":"次に、真新しいVueアプリケーションのインスタンスを生成し、",
         "the body of the page. From here, you may begin adding components to":"ページの本文にアタッチします。ここからは、アプリケーションに",
-        "the application, or feel free to tweak this setup for your needs":"コンポーネントを付け加えたり、必要に応じセットアップを調整してください。"
+        "the application, or feel free to tweak this setup for your needs":"コンポーネントを付け加えたり、必要に応じセットアップを調整してください。",
+        "the page. Then, you may begin adding components to this application": "ページヘアタッチします。それから、このアプリケーションにコンポーネントを追加するか",
+        "or customize the JavaScript scaffolding to fit your unique needs.": "皆さんの要求に合わせて、JacaScriptのスカフォールドをカスタマイズしてください。"
     },
     "resources/assets/js/bootstrap.js": {
         "We'll load jQuery and the Bootstrap jQuery plugin which provides support": "モーダルやタブのような基本的なBootstrap機能をサポートしている",
@@ -570,7 +573,14 @@
         "Echo exposes an expressive API for subscribing to channels and listening": "Echoはチャンネルを購入したり、Laravelによりブロードキャストされるイベントをリスニング",
         "for events that are broadcast by Laravel. Echo and event broadcasting": "するための、記述的なAPIを提供しています。Echoとイベントブロードキャストにより、",
         "allows your team to easily build robust real-time web applications.": "あなたのチームは堅牢なリアルタイムWebアプリを簡単に構築できるでしょう。",
-        "import Echo from \"laravel-echo\"": "\"laravel-echo\"からEchoをインポート"
+        "import Echo from \"laravel-echo\"": "\"laravel-echo\"からEchoをインポート",
+        "We'll load the axios HTTP library which allows us to easily issue requests": "Laravelのバックエンドにリクエストを簡単に発行できるように、axios HTTP",
+        "to our Laravel back-end. This library automatically handles sending the": "ライブラリをロードします。このライブラリは自動的に\"XSRF\"トークン",
+        "CSRF token as a header based on the value of the \"XSRF\" token cookie.": "クッキーの値に基づいて、ヘッダーベースのCSRFトークンを送ります。"
+    },
+    "resources/assets/sass/app.scss": {
+        "Fonts": "フォント",
+        "Variables": "変数"
     },
     "resources/lang/en/auth.php": {
         "Authentication Language Lines": "認証言語行",
