@@ -1,5 +1,9 @@
 # comja5
 
+> Laravel5.5LTSがリリースされました。このパッケージはフレームワーク初心者の理解を手助けするため、リソースの翻訳を提供してきました。しかし、Laravelは高機能化が進み、既に初心者に勧められるほどシンプルではなくなりました。そこで、翻訳機能の更新は停止することにしました。
+>
+> 日本語(ja)の翻訳（言語）ファイル中、バリデーションエラーメッセージに関わる、validation.phpのみ当面保守していきます。
+
 A translation command for comments in files of laravel/laravel repository to Japanese. In addition
 
 Laravel5のlaravel/laravelリポジトリーに含まれているファイルのコメントを日本語に翻訳します。
