@@ -558,7 +558,7 @@
         "the body of the page. From here, you may begin adding components to":"ページの本文にアタッチします。ここからは、アプリケーションに",
         "the application, or feel free to tweak this setup for your needs":"コンポーネントを付け加えたり、必要に応じセットアップを調整してください。",
         "the page. Then, you may begin adding components to this application": "ページヘアタッチします。それから、このアプリケーションにコンポーネントを追加するか",
-        "or customize the JavaScript scaffolding to fit your unique needs.": "皆さんの要求に合わせて、JacaScriptのスカフォールドをカスタマイズしてください。"
+        "or customize the JavaScript scaffolding to fit your unique needs.": "皆さんの要求に合わせて、JavaScriptのスカフォールドをカスタマイズしてください。"
     },
     "resources/assets/js/bootstrap.js": {
         "We'll load jQuery and the Bootstrap jQuery plugin which provides support": "モーダルやタブのような基本的なBootstrap機能をサポートしている",
