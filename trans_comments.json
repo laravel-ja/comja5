@@ -532,7 +532,7 @@
     "public/index.php": {
         "A PHP Framework For Web Artisans": "Web職人のためのフレームワーク",
         "Register The Auto Loader": "オートローダーの登録",
-        "Composer provides a convenient, automatically generated class loader for": "omposerは便利なクラスローダーをアプリケーションのために自動的に",
+        "Composer provides a convenient, automatically generated class loader for": "Composerは便利なクラスローダーをアプリケーションのために自動的に",
         "our application. We just need to utilize it! We'll simply require it": "生成してくれます。使わない手はありません！ここでそのスクリプトを",
         "into the script here so that we don't have to worry about manual": "読み込み、これ以降、クラスを「手動で」読み込む手間から",
         "loading any of our classes later on. It feels nice to relax.": "解放されましょう。リラックスできて、気分がいいですね。",
