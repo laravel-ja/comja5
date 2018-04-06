@@ -643,11 +643,9 @@
         "Name": "名前",
         "E-Mail Address": "メールアドレス",
         "Confirm Password": "パスワード確認",
-        "Password": "パスワード",
-        "Register": "登録"
+        "Password": "パスワード"
     },
     "resources/views/auth/reset.blade.php": {
-        "Reset Password": "",
         "Whoops!": "あれっ！",
         "There were some problems with your input.": "どうやら入力がおかしいようです。",
         "Name": "名前",
