@@ -532,7 +532,7 @@
     "public/index.php": {
         "A PHP Framework For Web Artisans": "Web職人のためのフレームワーク",
         "Register The Auto Loader": "オートローダーの登録",
-        "Composer provides a convenient, automatically generated class loader for": "omposerは便利なクラスローダーをアプリケーションのために自動的に",
+        "Composer provides a convenient, automatically generated class loader for": "Composerは便利なクラスローダーをアプリケーションのために自動的に",
         "our application. We just need to utilize it! We'll simply require it": "生成してくれます。使わない手はありません！ここでそのスクリプトを",
         "into the script here so that we don't have to worry about manual": "読み込み、これ以降、クラスを「手動で」読み込む手間から",
         "loading any of our classes later on. It feels nice to relax.": "解放されましょう。リラックスできて、気分がいいですね。",
@@ -558,7 +558,7 @@
         "the body of the page. From here, you may begin adding components to":"ページの本文にアタッチします。ここからは、アプリケーションに",
         "the application, or feel free to tweak this setup for your needs":"コンポーネントを付け加えたり、必要に応じセットアップを調整してください。",
         "the page. Then, you may begin adding components to this application": "ページヘアタッチします。それから、このアプリケーションにコンポーネントを追加するか",
-        "or customize the JavaScript scaffolding to fit your unique needs.": "皆さんの要求に合わせて、JacaScriptのスカフォールドをカスタマイズしてください。"
+        "or customize the JavaScript scaffolding to fit your unique needs.": "皆さんの要求に合わせて、JavaScriptのスカフォールドをカスタマイズしてください。"
     },
     "resources/assets/js/bootstrap.js": {
         "We'll load jQuery and the Bootstrap jQuery plugin which provides support": "モーダルやタブのような基本的なBootstrap機能をサポートしている",
@@ -643,11 +643,9 @@
         "Name": "名前",
         "E-Mail Address": "メールアドレス",
         "Confirm Password": "パスワード確認",
-        "Password": "パスワード",
-        "Register": "登録"
+        "Password": "パスワード"
     },
     "resources/views/auth/reset.blade.php": {
-        "Reset Password": "",
         "Whoops!": "あれっ！",
         "There were some problems with your input.": "どうやら入力がおかしいようです。",
         "Name": "名前",
